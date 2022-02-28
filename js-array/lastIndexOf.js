@@ -3,7 +3,6 @@
 - Trả về -1 nếu giá trị không được tìm thấy.
 - Bắt đầu tại một chỉ mục cụ thể và tìm kiếm từ phải sang trái.
 - Syntax: array.lastIndexOf(item, start)
-
 -------------------------------------------------------------*/
 
 const arrayLastIndexOf = ["Lê Anh Đức", "Đông Anh", "Hà Nội", "Việt Nam", "Trái đất", "Đông Anh"];
