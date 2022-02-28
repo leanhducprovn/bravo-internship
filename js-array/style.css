@@ -1,0 +1,5 @@
+.run::before {
+	content: "\2192";
+	opacity: 0.3;
+	margin-right: 6px;
+}
