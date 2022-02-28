@@ -1,4 +1,7 @@
+/* --------------------------------
+- Trả về hàm đã tạo mảng nguyên mẫu
+---------------------------------*/
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let constructor = fruits.constructor;
+const info = ["Lê Anh Đức", "Đông Anh", "Hà Nội", "Việt Nam"];
+let constructor = info.constructor;
 document.getElementById("constructor").innerHTML = constructor;
