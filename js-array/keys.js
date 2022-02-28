@@ -4,10 +4,8 @@
 --------------------------------------------------------------*/
 
 const arrayKeys = ["Lê Anh Đức", "Đông Anh", "Hà Nội", "Việt Nam", "Trái đất"];
-// Cách 1
-// const keys = arrayKeys.keys();
-// Cách 2
-const keys = Object.keys(fruits);
+const keys = arrayKeys.keys(); // Cách 1
+// const keys = Object.keys(fruits); // Cách 2
 
 let textKeys = "";
 for (let x of keys) {
