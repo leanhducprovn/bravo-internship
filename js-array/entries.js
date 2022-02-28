@@ -1,6 +1,7 @@
 /* --------------------------------------------
 - Trả về đối tượng với cặp key/values tương ứng
 - Lấy chỉ mục của phần tử trong mảng
+- Không thay đổi mảng ban đầu
 - Syntax: array.entries()
 ---------------------------------------------*/
 
