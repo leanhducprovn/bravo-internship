@@ -1,6 +1,7 @@
 /* --------------------------------------------
 - Trả về đối tượng với cặp key/values tương ứng
 - Lấy chỉ mục của phần tử trong mảng
+- Syntax: array.entries()
 ---------------------------------------------*/
 
 const entriesArray = ["Mục 1", "Mục 2", "Mục 3", "Mục 4"];
