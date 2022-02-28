@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------*/
 
 let text = "";
-const arrayForEach = ["apple", "orange", "cherry"];
+const arrayForEach = ["Lê Anh Đức", "Phạm Văn Linh", "Nguỵ Thị Ngọc Oanh"];
 arrayForEach.forEach(myFunction);
 
 document.getElementById("forEach").innerHTML = text;
