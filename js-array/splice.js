@@ -2,7 +2,7 @@
 - Thêm hoặc loại bỏ các phần tử mảng.
 - Ghi đè mảng ban đầu
 - Syntax: array.splice(index, howmany, item1, ....., itemX)
-----------------------------------------------------------*/
+-----------------------------------------------------------*/
 
 const arraySplice = ["Lê Anh Đức", "Đông Anh", "Hà Nội", "Việt Nam", "Trái đất"];
 
