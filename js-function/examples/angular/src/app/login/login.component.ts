@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  user = {
-    username: 'admin',
-    password: 'admin',
+  username = 'admin';
+  password = 'admin';
+  checking = {
+    done: () => {
+      return this.username + this.password;
+    },
   };
-  constructor() {}
+  done = this.checking.done;
+  login(event: MouseEvent) {
+    const evtMsg = event
+      ? ' Event target is ' + (event.target as HTMLElement).textContent
+      : '';
+    alert('Saved.' + evtMsg);
+  }
+  constructor() {
+    console.log(this.done());
+  }
   ngOnInit(): void {}
 }
