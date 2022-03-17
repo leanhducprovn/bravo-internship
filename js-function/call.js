@@ -1,9 +1,5 @@
 /* ------------------------------------------------------------
 - phương thức có thể được sử dụng trên các đối tượng khác nhau.
-- 
-- 
--
--
 --------------------------------------------------------------*/
 
 const myObjectCall = {
@@ -30,3 +26,12 @@ const person2 = {
 };
 document.getElementById("demo2").innerHTML = person.fullName.call(person1);
 document.getElementById("demo3").innerHTML = person.fullName.call(person2);
+
+const person3 = {
+    fullName: function (city, country) {
+        return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+    },
+};
+
+document.getElementById("demo4").innerHTML = person3.fullName.call(person1, "Hà Nội", "Việt Nam");
+document.getElementById("demo5").innerHTML = person3.fullName.call(person2, "Hà Nội", "Việt Nam");
