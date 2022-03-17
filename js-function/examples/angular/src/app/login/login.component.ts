@@ -1,20 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  user = {
+    username: 'admin',
+    password: 'admin',
+  };
+
+  checking = {
+    done: () => {
+      return this.user.username + this.user.password;
+    },
+  };
+
   login() {
-    const setUsername = 'admin';
-    const setPassword = 'admin';
-    const done = setUsername + setPassword;
+    const done = this.checking.done.bind(this.user);
+    console.log(done);
     const username = document.getElementById('username') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
     if (username != null && password != null) {
       const checking = username.value + password.value;
-      if (checking == done) {
+      if (checking == done()) {
         const wrapper = document.querySelector('.codepro-login-wrapper');
         if (wrapper != null) {
           wrapper.classList.add('hidden');
@@ -28,15 +37,11 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  click(event: MouseEvent) {
-    if (event) {
-      const btn = document.getElementById('button');
-      if (btn != null) {
-        btn.addEventListener('mouseout', this.login);
-      }
+  constructor() {}
+  ngOnInit(): void {
+    const btn = document.getElementById('button');
+    if (btn != null) {
+      btn.addEventListener('mouseout', this.login.bind(this.checking));
     }
   }
-
-  constructor() {}
-  ngOnInit(): void {}
 }
