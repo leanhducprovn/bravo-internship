@@ -24,7 +24,7 @@
   display: none !important;
 }
 
-.codepro-login-wrapper.form-success .codepro-login-container codepro-login-h1 {
+.codepro-login-wrapper.form-success .codepro-login-container p {
   transform: translateY(85px);
 }
 .codepro-login-container {
@@ -34,7 +34,7 @@
   height: 400px;
   text-align: center;
 }
-.codepro-login-container codepro-login-h1 {
+.codepro-login-container p {
   font-size: 40px;
   transition-duration: 1s;
   transition-timing-function: ease-in-put;
