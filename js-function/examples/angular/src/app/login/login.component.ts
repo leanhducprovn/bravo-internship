@@ -6,22 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  username = 'admin';
-  password = 'admin';
-  checking = {
-    done: () => {
-      return this.username + this.password;
-    },
+  user = {
+    username: 'admin',
+    password: 'admin',
   };
-  done = this.checking.done;
-  login(event: MouseEvent) {
-    const evtMsg = event
-      ? ' Event target is ' + (event.target as HTMLElement).textContent
-      : '';
-    alert('Saved.' + evtMsg);
-  }
+
+  login(event: MouseEvent) {}
+
   constructor() {
-    console.log(this.done());
+    const btn = document.getElementById('button');
+    if (btn != null) {
+      btn.addEventListener('click', this.login);
+    }
+    console.log();
   }
   ngOnInit(): void {}
 }
