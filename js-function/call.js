@@ -22,11 +22,11 @@ const person = {
 };
 const person1 = {
     firstName: "Lê",
-    lastName: "Đức",
+    lastName: "Anh Đức",
 };
 const person2 = {
     firstName: "Lê",
-    lastName: "Huy",
+    lastName: "Khả Huy",
 };
 document.getElementById("demo2").innerHTML = person.fullName.call(person1);
 document.getElementById("demo3").innerHTML = person.fullName.call(person2);
