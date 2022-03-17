@@ -1,10 +1,10 @@
 $("#login").click(function (event) {
     event.preventDefault();
 });
+
 var users = [
     { username: "admin", password: "admin" },
     { username: "leanhduc", password: "leanhduc" },
-    { username: "anhyeuem", password: "anhyeuem" },
 ];
 function startlog() {
     var username = document.getElementById("username").value;
@@ -18,3 +18,14 @@ function startlog() {
         }
     }
 }
+
+const user = {
+    username: "admin",
+    password: "admin",
+};
+
+const checking = {
+    done: function () {
+        return (location.href = "/");
+    },
+};
