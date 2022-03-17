@@ -5,3 +5,12 @@
 -
 -
 --------------------------------------------------------------*/
+
+const myObjectCall = {
+    firstName: "Lê",
+    lastName: "Anh Đức",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    },
+};
+document.getElementById("call").innerHTML = myObjectCall.fullName();
