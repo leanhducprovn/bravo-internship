@@ -13,4 +13,20 @@ const myObjectCall = {
         return this.firstName + " " + this.lastName;
     },
 };
-document.getElementById("call").innerHTML = myObjectCall.fullName();
+document.getElementById("demo1").innerHTML = myObjectCall.fullName();
+
+const person = {
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    },
+};
+const person1 = {
+    firstName: "Lê",
+    lastName: "Đức",
+};
+const person2 = {
+    firstName: "Lê",
+    lastName: "Huy",
+};
+document.getElementById("demo2").innerHTML = person.fullName.call(person1);
+document.getElementById("demo3").innerHTML = person.fullName.call(person2);
