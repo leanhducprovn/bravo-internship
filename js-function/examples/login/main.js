@@ -2,23 +2,6 @@ $("#login").click(function (event) {
     event.preventDefault();
 });
 
-var users = [
-    { username: "admin", password: "admin" },
-    { username: "leanhduc", password: "leanhduc" },
-];
-function startlog() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    for (var i = 0; i < users.length; i++) {
-        if (username == users[i].username && password == users[i].password) {
-            document.querySelector(".codepro-login-wrapper").classList.add("hidden");
-            break;
-        } else {
-            document.getElementById("codepro-login-check").innerHTML = "wrong username or password!";
-        }
-    }
-}
-
 const user = {
     username: "admin",
     password: "admin",
@@ -26,6 +9,17 @@ const user = {
 
 const checking = {
     done: function () {
-        return (location.href = "/");
+        return this.username + this.password;
     },
 };
+
+const done = checking.done.bind(user);
+
+function startlog() {
+    var login = document.getElementById("username").value + document.getElementById("password").value;
+    if (login == done()) {
+        document.querySelector(".codepro-login-wrapper").classList.add("hidden");
+    } else {
+        document.getElementById("codepro-login-check").innerHTML = "wrong username or password!";
+    }
+}
