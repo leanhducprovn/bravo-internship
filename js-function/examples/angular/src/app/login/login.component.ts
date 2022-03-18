@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     const password = document.getElementById('password') as HTMLInputElement;
     if (username != null && password != null) {
       const checking = username.value + password.value;
-      if (checking == this.done()) {
+      if (checking == this.user.username + this.user.password) {
         const wrapper = document.querySelector('.codepro-login-wrapper');
         if (wrapper != null) {
           wrapper.classList.add('hidden');
