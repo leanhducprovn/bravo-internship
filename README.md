@@ -52,3 +52,16 @@
 | 1   | apply() | Gọi hàm và cho phép bạn truyền vào một object và các đối số thông qua mảng (array)                  |
 | 2   | call()  | Gọi hàm và cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy (comma)     |
 | 3   | bind()  | Trả về một hàm số mới, cho phép bạn truyền vào một object và các đối số phân cách nhau bởi dấu phẩy |
+
+## Session 3: Tìm hiểu về Lifecycle Hooks trong Angular
+
+| STT | Hook                      | Mục đích & thời điểm                                                                                                                                                                                    |
+| --- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `ngOnChanges()`           | Thự thi khi Angular thiết lập các thuộc tính đầu vào ràng buộc dữ liệu. Được gọi trước `ngOnInit()` và bất cứ khi nào một hoặc nhiều thuộc tính đầu vào ràng buộc dữ liệu thay đổi.                     |
+| 2   | `ngOnInit()`              | Khởi tạo directive / component sau khi Angular hiển thị các thuộc tính ràng buộc dữ liệu và đặt các thuộc tính đầu vào của directive / component. Được gọi một lần, sau `ngOnChanges()` đầu tiên.       |
+| 3   | `ngDoCheck()`             | Phát hiện và hành động theo những thay đổi mà Angular không thể hoặc sẽ không tự mình phát hiện. Được gọi trong mỗi lần chạy phát hiện thay đổi, ngay sau `ngOnChanges()` và `ngOnInit()`.              |
+| 4   | `ngAfterContentInit()`    | Thự thi sau khi Angular thêm nội dung bên ngoài vào view của component / view mà directive được đưa vào. Được gọi một lần sau `ngDoCheck()` đầu tiên.                                                   |
+| 5   | `ngAfterContentChecked()` | Thự thi sau khi Angular đã kiểm tra nội dung bên ngoài đã được đưa vào view của component. Được gọi sauv`ngAfterContentInit()` và mọi `ngDoCheck()` tiếp theo.                                          |
+| 6   | `ngAfterViewInit()`       | Thự thi sau khi Angular khởi tạo các view của component và các view con / view mà directive được đưa vào. Được gọi một lần sau `ngAfterContentChecked()` đầu tiên.                                      |
+| 7   | `ngAfterViewChecked()`    | Thực thi sau khi Angular kiểm tra các view của component và các view con /view mà directive được đưa vào. Được gọi sau `ngAfterViewInit()` và mọi `ngAfterContentChecked()` tiếp theo.                  |
+| 8   | `ngOnDestroy()`           | Dọn dẹp ngay trước khi Angular phá hủy directive / component. Hủy đăng ký Observables và tách trình xử lý sự kiện để tránh rò rỉ bộ nhớ. Được gọi ngay trước khi Angular phá hủy directive / component. |
