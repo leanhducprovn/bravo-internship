@@ -13,15 +13,15 @@ export class LoginComponent implements OnInit {
     },
   };
 
-  // check = this.user.keyUser; // NaN
-  // done = this.check.bind(this.user); // adminadmin
+  check = this.user.keyUser; // NaN
+  done = this.check.bind(this.user); // adminadmin
 
   login() {
     const username = document.getElementById('username') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
     if (username != null && password != null) {
       const checking = username.value + password.value;
-      if (checking == this.user.keyUser()) {
+      if (checking == this.done()) {
         const wrapper = document.querySelector('.codepro-login-wrapper');
         if (wrapper != null) {
           wrapper.classList.add('hidden');
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const btn = document.getElementById('button');
     if (btn != null) {
-      btn.addEventListener('mouseout', this.login.bind(this.user));
+      btn.addEventListener('mouseout', this.login.bind(this));
     }
   }
 }
