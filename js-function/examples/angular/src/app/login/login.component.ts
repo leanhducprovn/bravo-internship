@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
     },
   };
 
-  check = this.user.keyUser;
-  done = this.check.bind(this.user);
+  check = this.user.keyUser; // NaN
+  done = this.check.bind(this.user); // adminadmin
 
   login() {
     const username = document.getElementById('username') as HTMLInputElement;
@@ -39,12 +39,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const btn = document.getElementById('button');
     if (btn != null) {
-      btn.addEventListener(
-        'mouseout',
-        this.login.bind(this.check.bind(this.user))
-      );
+      btn.addEventListener('mouseout', this.login.bind(this.user));
     }
-    console.log(this.check());
-    console.log(this.done());
   }
 }
