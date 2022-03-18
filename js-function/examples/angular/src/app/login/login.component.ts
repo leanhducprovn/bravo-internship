@@ -8,22 +8,20 @@ export class LoginComponent implements OnInit {
   user = {
     username: 'admin',
     password: 'admin',
-  };
-
-  checking = {
-    done: () => {
-      return this.user.username + this.user.password;
+    keyUser: function () {
+      return this.username + this.password;
     },
   };
 
-  done = this.checking.done.bind(this.user);
+  check = this.user.keyUser;
+  done = this.check.bind(this.user);
 
   login() {
     const username = document.getElementById('username') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
     if (username != null && password != null) {
       const checking = username.value + password.value;
-      if (checking == '') {
+      if (checking == this.done()) {
         const wrapper = document.querySelector('.codepro-login-wrapper');
         if (wrapper != null) {
           wrapper.classList.add('hidden');
@@ -41,8 +39,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const btn = document.getElementById('button');
     if (btn != null) {
-      btn.addEventListener('mouseout', this.login.bind(this.done));
+      btn.addEventListener(
+        'mouseout',
+        this.login.bind(this.check.bind(this.user))
+      );
     }
-    console.log(this.login.bind(this.done));
+    console.log(this.check());
+    console.log(this.done());
   }
 }
