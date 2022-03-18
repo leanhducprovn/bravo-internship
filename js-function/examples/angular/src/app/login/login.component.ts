@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
     },
   };
 
-  check = this.user.keyUser; // NaN
-  done = this.check.bind(this.user); // adminadmin
+  // check = this.user.keyUser; // NaN
+  // done = this.check.bind(this.user); // adminadmin
 
   login() {
     const username = document.getElementById('username') as HTMLInputElement;
