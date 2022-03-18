@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { Hero } from '../Hero/hero';
+import { Hero } from '../hero/hero';
 @Component({
   selector: 'app-on-changes',
   templateUrl: './on-changes.component.html',
