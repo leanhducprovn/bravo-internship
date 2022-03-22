@@ -19,7 +19,7 @@ export class OnChangesParentComponent {
   }
 
   reset() {
-    // new Hero object every time; triggers onChanges
+    // new Hero object every time triggers onChanges
     this.hero = new Hero('Lê Anh Đức');
     // setting power only triggers onChanges if this value is different
     this.power = 'web programming';
