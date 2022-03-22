@@ -10,7 +10,13 @@ import { ChildComponent } from './child/child.component';
 import { ChildViewComponent } from './child-view/child-view.component';
 
 @NgModule({
-  declarations: [AppComponent, OnChangesComponent, OnChangesParentComponent, ChildComponent, ChildViewComponent],
+  declarations: [
+    AppComponent,
+    OnChangesComponent,
+    OnChangesParentComponent,
+    ChildComponent,
+    ChildViewComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
