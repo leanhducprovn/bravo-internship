@@ -7,9 +7,7 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 })
 export class OninitComponent implements OnChanges, OnInit {
   title = 'Oninit';
-  constructor() {
-    var name = 'Lê Anh Đức';
-  }
+  constructor() {}
   ngOnChanges(changes: SimpleChanges): void {}
 
   ngOnInit(): void {}
