@@ -12,6 +12,7 @@ import { OninitComponent } from './oninit/oninit.component';
 import { DoCheckComponent } from './do-check/do-check.component';
 import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
 import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
+import { AfterContentInitParentComponent } from './after-content-init-parent/after-content-init-parent.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AfterContentInitComponent } from './after-content-init/after-content-in
     DoCheckComponent,
     DoCheckParentComponent,
     AfterContentInitComponent,
+    AfterContentInitParentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
