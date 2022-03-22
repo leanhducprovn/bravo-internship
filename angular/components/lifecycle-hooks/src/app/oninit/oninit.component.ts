@@ -12,7 +12,5 @@ export class OninitComponent implements OnChanges, OnInit {
   }
   ngOnChanges(changes: SimpleChanges): void {}
 
-  ngOnInit(): void {
-    console.log(OninitComponent.constructor());
-  }
+  ngOnInit(): void {}
 }
