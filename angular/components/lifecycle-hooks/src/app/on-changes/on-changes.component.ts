@@ -3,8 +3,8 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Hero } from '../hero/hero';
 @Component({
   selector: 'app-on-changes',
-  templateUrl: './on-changes.component.html',
-  styleUrls: ['./on-changes.component.css'],
+  templateUrl: 'on-changes.component.html',
+  styleUrls: ['on-changes.component.css'],
 })
 export class OnChangesComponent implements OnChanges {
   @Input() hero!: Hero;
