@@ -9,6 +9,8 @@ import { OnChangesParentComponent } from './on-changes-parent/on-changes-parent.
 import { ChildComponent } from './child/child.component';
 import { ChildViewComponent } from './child-view/child-view.component';
 import { OninitComponent } from './oninit/oninit.component';
+import { DoCheckComponent } from './do-check/do-check.component';
+import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { OninitComponent } from './oninit/oninit.component';
     ChildComponent,
     ChildViewComponent,
     OninitComponent,
+    DoCheckComponent,
+    DoCheckParentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
