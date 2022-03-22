@@ -4,7 +4,7 @@ import { Hero } from '../hero/hero';
 import { OnChangesComponent } from '../on-changes/on-changes.component';
 
 @Component({
-  selector: 'on-changes-parent',
+  selector: 'app-on-changes-parent',
   templateUrl: 'on-changes-parent.component.html',
   styles: [''],
 })
