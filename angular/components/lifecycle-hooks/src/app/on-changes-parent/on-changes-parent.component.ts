@@ -20,9 +20,9 @@ export class OnChangesParentComponent {
 
   reset() {
     // new Hero object every time; triggers onChanges
-    this.hero = new Hero('Windstorm');
+    this.hero = new Hero('Lê Anh Đức');
     // setting power only triggers onChanges if this value is different
-    this.power = 'sing';
+    this.power = 'Web development';
     if (this.childView) {
       this.childView.reset();
     }
