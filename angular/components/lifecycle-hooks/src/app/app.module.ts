@@ -13,6 +13,7 @@ import { DoCheckComponent } from './do-check/do-check.component';
 import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './home/home.component';
     DoCheckParentComponent,
     LifecycleHooksComponent,
     HomeComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
