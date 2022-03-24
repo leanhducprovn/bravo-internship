@@ -15,6 +15,7 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
+import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     PageNotFoundComponent,
     HeaderComponent,
+    AfterContentInitComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
