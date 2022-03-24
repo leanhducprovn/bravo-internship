@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OnChangesComponent } from './on-changes/on-changes.component';
-import { OnChangesParentComponent } from './on-changes-parent/on-changes-parent.component';
-import { ChildComponent } from './child/child.component';
-import { ChildViewComponent } from './child-view/child-view.component';
-import { OninitComponent } from './oninit/oninit.component';
-import { DoCheckComponent } from './do-check/do-check.component';
-import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
-import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { OnChangesComponent } from './lifecycle-hooks/on-changes/on-changes.component';
+import { OnChangesParentComponent } from './lifecycle-hooks/on-changes-parent/on-changes-parent.component';
+import { ChildComponent } from './lifecycle-hooks/child/child.component';
+import { ChildViewComponent } from './lifecycle-hooks/child-view/child-view.component';
+import { OninitComponent } from './lifecycle-hooks/oninit/oninit.component';
+import { DoCheckComponent } from './lifecycle-hooks/do-check/do-check.component';
+import { DoCheckParentComponent } from './lifecycle-hooks/do-check-parent/do-check-parent.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks/lifecycle-hooks.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
-import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
-import { AfterContentInitParentComponent } from './after-content-init-parent/after-content-init-parent.component';
+import { AfterContentInitComponent } from './lifecycle-hooks/after-content-init/after-content-init.component';
+import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-init-parent/after-content-init-parent.component';
 
 @NgModule({
   declarations: [

@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 import { ChildComponent } from '../child/child.component';
-import { LoggerService } from '../logger.service';
+import { LoggerService } from '../../logger.service';
 
 @Component({
   selector: 'app-after-content-init',

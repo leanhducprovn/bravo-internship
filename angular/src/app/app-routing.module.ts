@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AfterContentInitParentComponent } from './after-content-init-parent/after-content-init-parent.component';
-import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
-import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
+import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-init-parent/after-content-init-parent.component';
+import { AfterContentInitComponent } from './lifecycle-hooks/after-content-init/after-content-init.component';
+import { DoCheckParentComponent } from './lifecycle-hooks/do-check-parent/do-check-parent.component';
 import { HomeComponent } from './home/home.component';
-import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
-import { OnChangesParentComponent } from './on-changes-parent/on-changes-parent.component';
-import { OninitComponent } from './oninit/oninit.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks/lifecycle-hooks.component';
+import { OnChangesParentComponent } from './lifecycle-hooks/on-changes-parent/on-changes-parent.component';
+import { OninitComponent } from './lifecycle-hooks/oninit/oninit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
