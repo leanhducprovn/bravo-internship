@@ -8,8 +8,8 @@ import { OninitComponent } from './oninit/oninit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '**', component: PageNotFoundComponent },
   { path: '', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent },
   { path: 'lifecycle-hooks', component: LifecycleHooksComponent },
   { path: 'lifecycle-hooks/on-changes', component: OnChangesParentComponent },
   { path: 'lifecycle-hooks/do-check', component: DoCheckParentComponent },
