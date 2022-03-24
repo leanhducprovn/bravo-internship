@@ -12,9 +12,9 @@ import { OninitComponent } from './lifecycle-hooks/oninit/oninit.component';
 import { DoCheckComponent } from './lifecycle-hooks/do-check/do-check.component';
 import { DoCheckParentComponent } from './lifecycle-hooks/do-check-parent/do-check-parent.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks/lifecycle-hooks.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './partials/home/home.component';
+import { PageNotFoundComponent } from './partials/page-not-found/page-not-found.component';
+import { HeaderComponent } from './partials/header/header.component';
 import { AfterContentInitComponent } from './lifecycle-hooks/after-content-init/after-content-init.component';
 import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-init-parent/after-content-init-parent.component';
 
