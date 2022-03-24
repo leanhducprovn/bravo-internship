@@ -12,6 +12,7 @@ import { OninitComponent } from './oninit/oninit.component';
 import { DoCheckComponent } from './do-check/do-check.component';
 import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
     DoCheckComponent,
     DoCheckParentComponent,
     LifecycleHooksComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
