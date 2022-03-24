@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { LoggerService } from '../../logger.service';
+import { LoggerService } from '../../service/logger.service';
 @Component({
   selector: 'app-after-content-init-parent',
   templateUrl: './after-content-init-parent.component.html',
