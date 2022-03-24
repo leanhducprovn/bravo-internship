@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-init-parent/after-content-init-parent.component';
-import { AfterContentInitComponent } from './lifecycle-hooks/after-content-init/after-content-init.component';
+import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-parent/after-content-init-parent.component';
+import { AfterContentInitComponent } from './lifecycle-hooks/after-content/after-content-init.component';
 import { DoCheckParentComponent } from './lifecycle-hooks/do-check-parent/do-check-parent.component';
 import { HomeComponent } from './partials/home/home.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks/lifecycle-hooks.component';

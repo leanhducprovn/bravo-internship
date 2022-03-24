@@ -15,8 +15,8 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks/lifec
 import { HomeComponent } from './partials/home/home.component';
 import { PageNotFoundComponent } from './partials/page-not-found/page-not-found.component';
 import { HeaderComponent } from './partials/header/header.component';
-import { AfterContentInitComponent } from './lifecycle-hooks/after-content-init/after-content-init.component';
-import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-init-parent/after-content-init-parent.component';
+import { AfterContentInitComponent } from './lifecycle-hooks/after-content/after-content-init.component';
+import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-parent/after-content-init-parent.component';
 import { AfterViewComponent } from './lifecycle-hooks/after-view/after-view.component';
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
 
