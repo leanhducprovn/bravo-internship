@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'lifecycle-hooks/on-changes', component: OnChangesParentComponent },
   { path: 'lifecycle-hooks/do-check', component: DoCheckParentComponent },
   { path: 'lifecycle-hooks/oninit', component: OninitComponent },
-  { path: '**', component: PageNotFoundComponent },
   { path: '', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
