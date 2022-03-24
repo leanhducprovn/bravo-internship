@@ -16,6 +16,7 @@ h3 {
 }
 body {
   padding: 0.5rem;
+  max-width: 1080px;
   margin: auto;
 }
 @media (min-width: 600px) {
