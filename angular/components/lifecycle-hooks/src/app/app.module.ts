@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
+import { AfterContentInitParentComponent } from './after-content-init-parent/after-content-init-parent.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AfterContentInitComponent } from './after-content-init/after-content-in
     PageNotFoundComponent,
     HeaderComponent,
     AfterContentInitComponent,
+    AfterContentInitParentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
