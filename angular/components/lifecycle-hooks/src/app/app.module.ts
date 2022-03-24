@@ -14,6 +14,7 @@ import { DoCheckParentComponent } from './do-check-parent/do-check-parent.compon
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LifecycleHooksComponent,
     HomeComponent,
     PageNotFoundComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

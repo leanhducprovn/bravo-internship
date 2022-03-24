@@ -20,9 +20,9 @@ const routes: Routes = [
     path: 'lifecycle-hooks/do-check',
     component: DoCheckParentComponent,
   },
-  { path: ' lifecycle-hooks/oninit', component: OninitComponent },
-  { path: '', component: HomeComponent },
+  { path: 'lifecycle-hooks/oninit', component: OninitComponent },
   { path: '404', component: PageNotFoundComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: '**', redirectTo: '/404' },
 ];
 
