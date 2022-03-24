@@ -8,12 +8,22 @@ import { OninitComponent } from './oninit/oninit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'lifecycle-hooks', component: LifecycleHooksComponent },
-  { path: 'lifecycle-hooks/on-changes', component: OnChangesParentComponent },
-  { path: 'lifecycle-hooks/do-check', component: DoCheckParentComponent },
-  { path: 'lifecycle-hooks/oninit', component: OninitComponent },
+  {
+    path: 'lifecycle-hooks',
+    component: LifecycleHooksComponent,
+  },
+  {
+    path: 'lifecycle-hooks/on-changes',
+    component: OnChangesParentComponent,
+  },
+  {
+    path: 'lifecycle-hooks/do-check',
+    component: DoCheckParentComponent,
+  },
+  { path: ' lifecycle-hooks/oninit', component: OninitComponent },
   { path: '', component: HomeComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
