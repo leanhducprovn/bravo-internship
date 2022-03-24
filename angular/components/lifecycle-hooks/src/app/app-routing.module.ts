@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AfterContentInitParentComponent } from './after-content-init-parent/after-content-init-parent.component';
+import { AfterContentInitComponent } from './after-content-init/after-content-init.component';
 import { DoCheckParentComponent } from './do-check-parent/do-check-parent.component';
 import { HomeComponent } from './home/home.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
@@ -21,6 +23,10 @@ const routes: Routes = [
     component: DoCheckParentComponent,
   },
   { path: 'lifecycle-hooks/oninit', component: OninitComponent },
+  {
+    path: 'lifecycle-hooks/after-content-init',
+    component: AfterContentInitParentComponent,
+  },
   { path: '404', component: PageNotFoundComponent },
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: '**', redirectTo: '/404' },

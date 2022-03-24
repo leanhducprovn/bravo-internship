@@ -1,1 +1,15 @@
-<p>after-content-init-parent works!</p>
+<div class="parent">
+    <h2>AfterContent</h2>
+
+    <div *ngIf="show">
+        <app-after-content-init-parent>
+            <app-child></app-child>
+        </app-after-content-init-parent>
+    </div>
+
+    <div class="info">
+        <h3>AfterContent Logs</h3>
+        <button type="button" (click)="reset()">Reset</button>
+        <div *ngFor="let msg of logger.logs" class="log">{{msg}}</div>
+    </div>
+</div>
