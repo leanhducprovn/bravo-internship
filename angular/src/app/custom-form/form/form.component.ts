@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -29,11 +30,10 @@ export class FormComponent implements OnInit {
   }
 
   login() {
-    console.warn(this.checkLogin.value);
     const checking =
       this.checkLogin.value.Username + this.checkLogin.value.Password;
     if (checking == this.done()) {
-      return window.location.replace('/');
+      this.router.navigate(['/']);
     } else {
       const wrong = document.getElementById('codepro-login-check');
       if (wrong != null) {
@@ -42,7 +42,7 @@ export class FormComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {}
 }

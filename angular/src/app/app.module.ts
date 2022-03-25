@@ -24,7 +24,6 @@ import { SpyDirective } from './lifecycle-hooks/spy/spy.directive';
 import { InputComponent } from './custom-form/input/input.component';
 import { LoginComponent } from './custom-form/login/login.component';
 import { FormComponent } from './custom-form/form/form.component';
-
 @NgModule({
   declarations: [
     AppComponent,
