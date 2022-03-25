@@ -19,7 +19,13 @@ export class InputComponent implements OnInit {
     return this.checkLogin.get('Password')!;
   }
 
+  login() {
+    console.warn(this.checkLogin.value);
+  }
+
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.checkLogin);
+  }
 }
