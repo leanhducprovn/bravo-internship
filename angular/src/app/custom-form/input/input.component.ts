@@ -7,7 +7,11 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./input.component.css'],
 })
 export class InputComponent implements OnInit {
-  constructor() {}
+  checkLogin = this.fb.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
 }
