@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -7,23 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./input.component.css'],
 })
 export class InputComponent implements OnInit {
-  checkLogin = this.fb.group({
-    Username: ['', [Validators.required]],
-    Password: ['', [Validators.required]],
-  });
-
-  get Username() {
-    return this.checkLogin.get('Username')!;
-  }
-  get Password() {
-    return this.checkLogin.get('Password')!;
-  }
-
-  login() {
-    console.warn(this.checkLogin.value);
-  }
-
-  constructor(private fb: FormBuilder) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
