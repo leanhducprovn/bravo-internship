@@ -19,7 +19,7 @@ export class AfterContentInitComponent
   private prevHero = '';
   comment = '';
 
-  // Query for a CONTENT child of type `ChildComponent`
+  // truy vấn cho content con của "ChildComponent"
   @ContentChild(ChildComponent) contentChild!: ChildComponent;
 
   constructor(private logger: LoggerService) {
@@ -27,7 +27,7 @@ export class AfterContentInitComponent
   }
 
   ngAfterContentInit() {
-    // contentChild is set after the content has been initialized
+    // contentChild được đặt sau khi nội dung đã được khởi tạo
     this.logIt('AfterContentInit');
     this.doSomething();
   }

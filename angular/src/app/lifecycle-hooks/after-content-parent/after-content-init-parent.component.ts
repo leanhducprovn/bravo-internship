@@ -14,7 +14,7 @@ export class AfterContentInitParentComponent {
 
   reset() {
     this.logger.clear();
-    // quickly remove and reload AfterContentComponent which recreates it
+    // xóa và tải lại AfterContentComponent để tạo lại nó
     this.show = false;
     this.logger.tick_then(() => (this.show = true));
   }
