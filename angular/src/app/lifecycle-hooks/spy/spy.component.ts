@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { LoggerService } from '../../service/logger.service';
 
 @Component({
@@ -7,10 +7,11 @@ import { LoggerService } from '../../service/logger.service';
   styleUrls: ['./spy.component.css'],
   providers: [LoggerService],
 })
-export class SpyComponent {
+export class SpyComponent implements OnDestroy {
   newName = 'Herbie';
   heroes: string[] = ['Windstorm', 'Magneta'];
   constructor(public logger: LoggerService) {}
+  ngOnDestroy(): void {}
   addHero() {
     if (this.newName.trim()) {
       this.heroes.push(this.newName.trim());
