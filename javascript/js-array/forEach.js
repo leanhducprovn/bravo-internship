@@ -25,10 +25,11 @@ for (index2; index2 < arrayForEach.length; index2++) {
 	console.error(arrayForEach[index2]);
 }
 
-let index3 = arrayForEach.map((arr) => arr);
-for (var i = 0; i < arrayForEach.length; i++) {
-	console.warn(index3[i]);
-}
+let index3 = 0;
+arrayForEach.map(function (item) {
+	index3 = item;
+	console.warn(index3);
+});
 
 let index4 = 0;
 do {
