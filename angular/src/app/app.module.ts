@@ -19,7 +19,6 @@ import { AfterContentInitComponent } from './lifecycle-hooks/after-content/after
 import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-parent/after-content-init-parent.component';
 import { AfterViewComponent } from './lifecycle-hooks/after-view/after-view.component';
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
-import { OndestroyComponent } from './lifecycle-hooks/ondestroy/ondestroy.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { OndestroyComponent } from './lifecycle-hooks/ondestroy/ondestroy.compon
     AfterContentInitParentComponent,
     AfterViewComponent,
     AfterViewParentComponent,
-    OndestroyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
