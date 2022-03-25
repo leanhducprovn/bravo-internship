@@ -20,8 +20,20 @@
             <p>Welcome</p>
             <form [formGroup]="checkLogin">
                 <div class="codepro-login-form">
-                    <input id='username' type="username" formControlName="username" placeholder="Username" required />
-                    <input id='password' type="password" formControlName="password" placeholder="Password" required />
+                    <input id='username' type="text" formControlName="Username" placeholder="Username" required />
+                    <div *ngIf="Username.invalid && (Username.dirty || Username.touched)" class="alert alert-danger"
+                        role="alert">
+                        <div *ngIf="Username.errors?.['required']">
+                            Username không được bỏ trống!
+                        </div>
+                    </div>
+                    <input id='password' type="password" formControlName="Password" placeholder="Password" required />
+                    <div *ngIf="Password.invalid && (Password.dirty || Password.touched)" class="alert alert-danger"
+                        role="alert">
+                        <div *ngIf="Password.errors?.['required']">
+                            Password không được bỏ trống!
+                        </div>
+                    </div>
                     <button id="button" type="button">Login</button>
                 </div>
             </form>

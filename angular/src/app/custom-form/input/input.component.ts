@@ -8,9 +8,17 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
   checkLogin = this.fb.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    Username: ['', [Validators.required]],
+    Password: ['', [Validators.required]],
   });
+
+  get Username() {
+    return this.checkLogin.get('Username')!;
+  }
+  get Password() {
+    return this.checkLogin.get('Password')!;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
