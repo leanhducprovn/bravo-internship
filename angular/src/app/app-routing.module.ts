@@ -9,6 +9,7 @@ import { OninitComponent } from './lifecycle-hooks/oninit/oninit.component';
 import { PageNotFoundComponent } from './partials/page-not-found/page-not-found.component';
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
 import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
+import { LoginComponent } from './custom-form/login/login.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'lifecycle-hooks/spy',
     component: SpyComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'lifecycle-hooks',
