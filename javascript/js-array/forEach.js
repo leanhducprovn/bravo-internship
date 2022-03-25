@@ -51,10 +51,9 @@ for (var index6 in arrayForEach) {
 	console.error(arrayForEach[index6]);
 }
 
-console.log("forEach breack");
+console.log("forEach");
 arrayForEach.forEach(function (item) {
 	console.warn(item);
 	if (item == "Phạm Văn Linh") {
-		breack;
 	}
 });
