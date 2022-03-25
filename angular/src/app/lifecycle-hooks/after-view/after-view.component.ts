@@ -17,7 +17,7 @@ export class AfterViewComponent implements AfterViewChecked, AfterViewInit {
   comment = '';
   private prevHero = '';
 
-  // Query for a VIEW child of type `ChildViewComponent`
+  // Truy vấn cho VIEW con của `ChildViewComponent`
   @ViewChild(ChildViewComponent) viewChild!: ChildViewComponent;
 
   constructor(private logger: LoggerService) {
@@ -25,13 +25,13 @@ export class AfterViewComponent implements AfterViewChecked, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // viewChild is set after the view has been initialized
+    // viewChild được đặt sau khi chế độ xem đã được khởi tạo
     this.logIt('AfterViewInit');
     this.doSomething();
   }
 
   ngAfterViewChecked() {
-    // viewChild is updated after the view has been checked
+    // viewChild được cập nhật sau khi chế độ xem đã được kiểm tra
     if (this.prevHero === this.viewChild.hero) {
       this.logIt('AfterViewChecked (no change)');
     } else {
@@ -41,11 +41,11 @@ export class AfterViewComponent implements AfterViewChecked, AfterViewInit {
     }
   }
 
-  // This surrogate for real business logic sets the `comment`
+  // Đại diện này cho logic nghiệp vụ thực sự đặt bình luận
   private doSomething() {
     const c = this.viewChild.hero.length > 10 ? "That's a long name" : '';
     if (c !== this.comment) {
-      // Wait a tick because the component's view has already been checked
+      // Chờ đánh dấu vì chế độ xem của thành phần đã được kiểm tra
       this.logger.tick_then(() => (this.comment = c));
     }
   }
@@ -55,5 +55,4 @@ export class AfterViewComponent implements AfterViewChecked, AfterViewInit {
     const message = `${method}: ${child ? child.hero : 'no'} child view`;
     this.logger.log(message);
   }
-  // ...
 }

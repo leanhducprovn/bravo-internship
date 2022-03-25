@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./child-view.component.css'],
 })
 export class ChildViewComponent {
-  hero = 'Magneta';
+  hero = 'Lê Anh Đức';
 }
