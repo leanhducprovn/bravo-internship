@@ -20,6 +20,7 @@ import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content
 import { AfterViewComponent } from './lifecycle-hooks/after-view/after-view.component';
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
 import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
+import { SpyDirective } from './lifecycle-hooks/spy/spy.directive';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
     AfterViewComponent,
     AfterViewParentComponent,
     SpyComponent,
+    SpyDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

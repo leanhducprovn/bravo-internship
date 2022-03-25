@@ -8,6 +8,7 @@ import { OnChangesParentComponent } from './lifecycle-hooks/on-changes-parent/on
 import { OninitComponent } from './lifecycle-hooks/oninit/oninit.component';
 import { PageNotFoundComponent } from './partials/page-not-found/page-not-found.component';
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
+import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'lifecycle-hooks/after-view',
     component: AfterViewParentComponent,
+  },
+  {
+    path: 'lifecycle-hooks/spy',
+    component: SpyComponent,
   },
   {
     path: 'lifecycle-hooks',
