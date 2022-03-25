@@ -21,6 +21,8 @@ import { AfterViewComponent } from './lifecycle-hooks/after-view/after-view.comp
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
 import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
 import { SpyDirective } from './lifecycle-hooks/spy/spy.directive';
+import { InputComponent } from './custom-form/input/input.component';
+import { LoginComponent } from './custom-form/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { SpyDirective } from './lifecycle-hooks/spy/spy.directive';
     AfterViewParentComponent,
     SpyComponent,
     SpyDirective,
+    InputComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
