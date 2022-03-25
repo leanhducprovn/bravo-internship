@@ -219,3 +219,13 @@ h2 {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+.alert {
+  padding: unset !important;
+}
+
+.alert-warning {
+  color: #50a8a2 !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
