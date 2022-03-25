@@ -33,7 +33,7 @@ export class AfterContentInitComponent
   }
 
   ngAfterContentChecked() {
-    // contentChild is updated after the content has been checked
+    // contentChild được cập nhật sau khi nội dung đã được kiểm tra
     if (this.prevHero === this.contentChild.hero) {
       this.logIt('AfterContentChecked (no change)');
     } else {
