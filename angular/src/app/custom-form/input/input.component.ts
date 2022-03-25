@@ -25,7 +25,5 @@ export class InputComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    // console.log(this.checkLogin);
-  }
+  ngOnInit(): void {}
 }
