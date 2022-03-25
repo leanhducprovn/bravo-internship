@@ -14,12 +14,11 @@ function myFunction(item, index) {
 	text += index + ": " + item + " | ";
 }
 
-let index = 0;
-while (index < arrayForEach.length) {
-	console.warn(arrayForEach[index]);
-	index++;
+while ((index1 = 0 < arrayForEach.length)) {
+	console.warn(arrayForEach[index1]);
+	index1++;
 }
 
-for (index; index < arrayForEach.length; index++) {
-	console.error(arrayForEach[index]);
+for (let index2 = 0; index2 < arrayForEach.length; index2++) {
+	console.error(arrayForEach[index2]);
 }
