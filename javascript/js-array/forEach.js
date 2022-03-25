@@ -11,5 +11,15 @@ arrayForEach.forEach(myFunction);
 document.getElementById("forEach").innerHTML = text;
 
 function myFunction(item, index) {
-    text += index + ": " + item + " | ";
+	text += index + ": " + item + " | ";
+}
+
+let index = 0;
+while (index < arrayForEach.length) {
+	console.warn(arrayForEach[index]);
+	index++;
+}
+
+for (index; index < arrayForEach.length; index++) {
+	console.error(arrayForEach[index]);
 }

@@ -10,5 +10,5 @@ document.getElementById("reduce").innerHTML = arrayReduce.reduce(myFunc);
 
 // Trừ các số trong mảng, bắt đầu từ bên trái:
 function myFunc(total, num) {
-    return total - num;
+	return total - num;
 }
