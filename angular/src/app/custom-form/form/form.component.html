@@ -17,7 +17,8 @@
             <p>Welcome</p>
             <form [formGroup]="checkLogin">
                 <div class="codepro-login-form">
-                    <input id='username' type="text" formControlName="Username" placeholder="Username" required />
+                    <app-input id='username' type="text" formControlName="Username" placeholder="Username" required>
+                    </app-input>
                     <div *ngIf="Username.invalid && (Username.dirty || Username.touched)" class="alert alert-warning"
                         role="alert">
                         <div *ngIf="Username.errors?.['required']">
