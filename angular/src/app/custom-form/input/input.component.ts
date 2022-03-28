@@ -52,7 +52,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   ngOnInit(): void {
     const input = document.getElementById('input') as HTMLInputElement;
     if (input != null) {
-      console.log(input);
       input.setAttribute('placeholder', this.placeholder);
       input.setAttribute('type', this.type);
     }
