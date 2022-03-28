@@ -15,7 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputComponent implements OnInit, ControlValueAccessor {
   typing: any;
 
-  onChange = (typing: any) => {};
+  onChange = (value: any) => {};
 
   onTouched = () => {};
 
@@ -23,14 +23,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   constructor() {}
 
-  checkUsername() {
+  checking(event: any) {
     this.markAsTouched();
-    this.onChange(this.typing);
-  }
-
-  checkPasswork() {
-    this.markAsTouched();
-    this.onChange(this.typing);
+    this.onChange((this.typing = event.target.value));
   }
 
   markAsTouched() {
@@ -52,10 +47,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
 
   ngOnInit(): void {
-    const input = document.getElementById('input');
+    const input = document.querySelector('input') as HTMLInputElement;
     if (input != null) {
-      input.inputMode = 'text';
-      input.innerText = 'admin';
+      input.setAttribute;
     }
   }
 }
