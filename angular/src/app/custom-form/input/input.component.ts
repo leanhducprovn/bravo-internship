@@ -50,9 +50,11 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   type = 'text';
 
   ngOnInit(): void {
-    const input = document.querySelector('input') as HTMLInputElement;
+    const input = document.getElementById('input') as HTMLInputElement;
     if (input != null) {
+      console.log(input);
       input.setAttribute('placeholder', this.placeholder);
+      input.setAttribute('type', this.type);
     }
   }
 }
