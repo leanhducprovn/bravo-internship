@@ -25,7 +25,8 @@
                             Username không được bỏ trống!
                         </div>
                     </div>
-                    <input id='password' type="password" formControlName="Password" placeholder="Password" required />
+                    <app-input id='password' type="password" formControlName="Password" placeholder="Password" required>
+                    </app-input>
                     <div *ngIf="Password.invalid && (Password.dirty || Password.touched)" class="alert alert-warning"
                         role="alert">
                         <div *ngIf="Password.errors?.['required']">
