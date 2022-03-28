@@ -14,15 +14,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
-  @Input() username!: string;
-  @Input() passwork!: string;
-
   constructor() {}
 
   typing() {
-    if (this.username != '' && this.passwork != '') {
-      console.log('test');
-    }
+    console.log('test');
   }
 
   writeValue(obj: any): void {}
