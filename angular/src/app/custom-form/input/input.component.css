@@ -25,8 +25,8 @@ input:focus {
   width: 250px;
   color: #53e3a6;
 }
-#username::-webkit-input-placeholder,
-#password::-webkit-input-placeholder {
+::-webkit-input-placeholder,
+::-webkit-input-placeholder {
   font-family: "Source Sans Pro", sans-serif;
   color: white;
   font-weight: 300;

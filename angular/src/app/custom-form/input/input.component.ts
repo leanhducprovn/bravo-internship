@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-input',
@@ -46,10 +46,13 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.onTouched = onTouched;
   }
 
+  placeholder = 'username';
+  type = 'text';
+
   ngOnInit(): void {
     const input = document.querySelector('input') as HTMLInputElement;
     if (input != null) {
-      input.setAttribute;
+      input.setAttribute('placeholder', this.placeholder);
     }
   }
 }
