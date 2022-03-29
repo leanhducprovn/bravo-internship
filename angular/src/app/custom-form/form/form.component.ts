@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  ElementRef,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InputComponent } from '../input/input.component';
 
 @Component({
   selector: 'app-form',
@@ -8,6 +15,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+  @ViewChild(InputComponent)
+  child!: InputComponent;
+
   user = {
     username: 'admin',
     password: 'admin',
@@ -45,4 +55,18 @@ export class FormComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    const username_placeholder = document.getElementById('username');
+    const password_placeholder = document.getElementById('password');
+    const input = document.getElementById('input') as HTMLInputElement;
+    if (input != null) {
+      if (username_placeholder) {
+        input.setAttribute('placeholder', 'username');
+      }
+      if (password_placeholder) {
+        input.setAttribute('placeholder', 'password');
+      }
+    }
+  }
 }
