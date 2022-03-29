@@ -60,6 +60,7 @@ export class FormComponent implements OnInit, AfterViewInit {
     const username_placeholder = document.getElementById('username');
     const password_placeholder = document.getElementById('password');
     const input = document.getElementById('input') as HTMLInputElement;
+    console.log(input);
     if (input != null) {
       if (username_placeholder) {
         input.setAttribute('placeholder', 'username');
