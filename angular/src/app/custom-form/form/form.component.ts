@@ -15,8 +15,8 @@ import { InputComponent } from '../input/input.component';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit, AfterViewInit {
-  @ViewChild(InputComponent)
-  child!: InputComponent;
+  @ViewChild('username') username!: InputComponent;
+  @ViewChild('password') password!: InputComponent;
 
   user = {
     username: 'admin',
@@ -57,17 +57,7 @@ export class FormComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    const username_placeholder = document.getElementById('username');
-    const password_placeholder = document.getElementById('password');
-    const input = document.getElementById('input') as HTMLInputElement;
-    console.log(input);
-    if (input != null) {
-      if (username_placeholder) {
-        input.setAttribute('placeholder', 'username');
-      }
-      if (password_placeholder) {
-        input.setAttribute('placeholder', 'password');
-      }
-    }
+    console.warn(this.username);
+    console.warn(this.password);
   }
 }

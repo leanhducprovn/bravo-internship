@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-input',
@@ -20,6 +20,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   onTouched = () => {};
 
   touched = false;
+  nativeElement: any;
 
   constructor() {}
 

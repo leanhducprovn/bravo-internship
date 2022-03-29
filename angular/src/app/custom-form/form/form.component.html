@@ -17,14 +17,14 @@
             <p>Welcome</p>
             <form [formGroup]="checkLogin">
                 <div class="codepro-login-form">
-                    <app-input #username id="username" formControlName="Username" required></app-input>
+                    <app-input #username formControlName="Username" required></app-input>
                     <div *ngIf="Username.invalid && (Username.dirty || Username.touched)" class="alert alert-warning"
                         role="alert">
                         <div *ngIf="Username.errors?.['required']">
                             Username không được bỏ trống!
                         </div>
                     </div>
-                    <app-input id="password" formControlName="Password" required></app-input>
+                    <app-input #password formControlName="Password" required></app-input>
                     <div *ngIf="Password.invalid && (Password.dirty || Password.touched)" class="alert alert-warning"
                         role="alert">
                         <div *ngIf="Password.errors?.['required']">
