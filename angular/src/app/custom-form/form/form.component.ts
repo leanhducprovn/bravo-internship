@@ -14,7 +14,7 @@ import { InputComponent } from '../input/input.component';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, AfterViewInit {
   @ViewChild(InputComponent)
   child!: InputComponent;
 
