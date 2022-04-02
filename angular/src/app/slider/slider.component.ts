@@ -31,7 +31,7 @@ export class SliderComponent
   ngOnInit(): void {
     this.slider();
     this.onEvent();
-    console.log('commit về ngày hôm qua');
+    console.log('commit về 61 ngày trước');
   }
 
   start!: number;
