@@ -11,43 +11,55 @@ import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/af
 import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
 import { LoginComponent } from './custom-form/login/login.component';
 import { FlexPropertyComponent } from './flex-property/flex-property.component';
+import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 
 const routes: Routes = [
   {
-    path: 'lifecycle-hooks/on-changes',
-    component: OnChangesParentComponent,
-  },
-  {
-    path: 'lifecycle-hooks/do-check',
-    component: DoCheckParentComponent,
-  },
-  { path: 'lifecycle-hooks/on-init', component: OninitComponent },
-  {
-    path: 'lifecycle-hooks/after-content',
-    component: AfterContentInitParentComponent,
-  },
-  {
-    path: 'lifecycle-hooks/after-view',
-    component: AfterViewParentComponent,
-  },
-  {
-    path: 'lifecycle-hooks/spy',
-    component: SpyComponent,
+    path: 'css-website-layout',
+    component: CssWebsiteLayoutComponent,
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'lifecycle-hooks',
-    component: LifecycleHooksComponent,
-  },
-  {
-    path: 'flex-property',
-    component: FlexPropertyComponent,
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'flex-property',
+        component: FlexPropertyComponent,
+      },
+      {
+        path: 'lifecycle-hooks',
+        component: LifecycleHooksComponent,
+        children: [
+          {
+            path: 'on-changes',
+            component: OnChangesParentComponent,
+          },
+          {
+            path: 'do-check',
+            component: DoCheckParentComponent,
+          },
+          { path: 'on-init', component: OninitComponent },
+          {
+            path: 'after-content',
+            component: AfterContentInitParentComponent,
+          },
+          {
+            path: 'after-view',
+            component: AfterViewParentComponent,
+          },
+          {
+            path: 'spy',
+            component: SpyComponent,
+          },
+        ],
+      },
+    ],
   },
   { path: '404', component: PageNotFoundComponent },
-  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: '**', redirectTo: '/404' },
 ];
 
