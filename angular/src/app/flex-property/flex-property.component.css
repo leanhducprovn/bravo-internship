@@ -35,7 +35,7 @@ p {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .flex-direction-container-2 div {
   background-color: #000000;
@@ -45,7 +45,7 @@ p {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .flex-direction-container-3 div {
   background-color: #000000;
@@ -55,7 +55,7 @@ p {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .flex-direction-container-4 div {
   background-color: #000000;
@@ -65,5 +65,5 @@ p {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
