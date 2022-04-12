@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './partials/page-not-found/page-not-found.
 import { AfterViewParentComponent } from './lifecycle-hooks/after-view-parent/after-view-parent.component';
 import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
 import { LoginComponent } from './custom-form/login/login.component';
+import { FlexPropertyComponent } from './flex-property/flex-property.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'lifecycle-hooks',
     component: LifecycleHooksComponent,
+  },
+  {
+    path: 'flex-property',
+    component: FlexPropertyComponent,
   },
   { path: '404', component: PageNotFoundComponent },
   { path: '', pathMatch: 'full', component: HomeComponent },

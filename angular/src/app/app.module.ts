@@ -24,6 +24,7 @@ import { SpyDirective } from './lifecycle-hooks/spy/spy.directive';
 import { InputComponent } from './custom-form/input/input.component';
 import { LoginComponent } from './custom-form/login/login.component';
 import { FormComponent } from './custom-form/form/form.component';
+import { FlexPropertyComponent } from './flex-property/flex-property.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { FormComponent } from './custom-form/form/form.component';
     InputComponent,
     LoginComponent,
     FormComponent,
+    FlexPropertyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
