@@ -69,4 +69,26 @@
 
 ## Session 4: Tìm hiểu về CSS flex Property
 
+### Các thuộc tính của Flex Container
+
+-   List item
+-   display
+-   flex-direction
+-   flex-wrap
+-   flex-flow
+-   justify-content
+-   align-items
+-   align-content
+
+### Các thuộc tính của Flex Item
+
+-   order
+-   flex-grow
+-   flex-shrink
+-   flex-basis
+-   flex
+-   align-self
+
+### Flexbox Layout website kiểu mẫu
+
 Xây dựng bố cục một trang web cơ bản sử dụng flex property!
