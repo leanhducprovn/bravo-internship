@@ -69,6 +69,15 @@
 
 ## Session 4: Tìm hiểu về CSS flex Property
 
+### Các khái niệm cơ bản và thuật ngữ
+
+**Bố cục Flex** được thiết lập từ một khung lớn (parent container) đóng vai trò là khung linh hoạt (flex containter) và các thẻ con ngay trong nó (immediate children) đóng vai trò các mục nhỏ linh hoạt (flex item).
+
+Thành phần quan trọng nhất của **Flexbox** là:
+
+-   **`container`:** là thành phần lớn bao quanh các phần tử bên trong, các item bên trong sẽ hiển thị dựa trên thiết lập của container này.
+-   **`item`:** là phần tử con của container, bạn có thể thiết lập nó sẽ sử dụng bao nhiêu cột trong một container, hoặc thiết lập thứ tự hiển thị của nó.
+
 ### Các thuộc tính của Flex Container
 
 -   display
