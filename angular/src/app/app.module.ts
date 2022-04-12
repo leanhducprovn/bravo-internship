@@ -25,6 +25,7 @@ import { InputComponent } from './custom-form/input/input.component';
 import { LoginComponent } from './custom-form/login/login.component';
 import { FormComponent } from './custom-form/form/form.component';
 import { FlexPropertyComponent } from './flex-property/flex-property.component';
+import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { FlexPropertyComponent } from './flex-property/flex-property.component';
     LoginComponent,
     FormComponent,
     FlexPropertyComponent,
+    CssWebsiteLayoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
