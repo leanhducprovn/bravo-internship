@@ -78,24 +78,33 @@ Thành phần quan trọng nhất của **Flexbox** là:
 -   **`container`:** là thành phần lớn bao quanh các phần tử bên trong, các item bên trong sẽ hiển thị dựa trên thiết lập của container này.
 -   **`item`:** là phần tử con của container, bạn có thể thiết lập nó sẽ sử dụng bao nhiêu cột trong một container, hoặc thiết lập thứ tự hiển thị của nó.
 
+Các item sẽ được bố trí theo trục main axis (bắt đầu từ main-start, kết thúc ở main-end) hoặc theo trục cross axis (bắt đầu từ cross-start, kết thúc ở cross-end).
+
+-   **`main axis`:** đây là trục chính để điều khiển hướng mà các item sẽ hiển thị. **Lưu ý**, main axis không phải lúc nào cũng nằm ngang như sơ đồ trên, bạn có thể sử dụng thuộc tính flex-direction để thay đổi hướng của trục và lúc đó các item sẽ hiển thị theo nó.
+-   **`main-start` | `main-end`:** khi thiết lập flexbox, các item nằm trong container hiển thị từ điểm bắt đầu gọi là main-start tới điểm kết thúc gọi là main-end.
+-   **`main size`:** kích thước (chiều rộng hoặc chiều cao) của các item, tùy thuộc vào hướng của main axis.
+-   **`cross axis`**: cross axis luôn là trục vuông góc của main axis. Hướng của nó phụ thuộc vào hướng của main axis.
+-   **`cross-start` | `cross-end`:** có ý nghĩa tương tự nhưng luôn vuông góc với main start, main end.
+-   **`cross size`:** kích thước (chiều rộng hoặc chiều cao) của các item dựa trên trục cross axis, tùy thuộc vào hướng của main axis.
+
 ### Các thuộc tính của Flex Container
 
--   display
--   flex-direction
--   flex-wrap
--   flex-flow
--   justify-content
--   align-items
--   align-content
+-   `display`
+-   `flex-direction`
+-   `flex-wrap`
+-   `flex-flow`
+-   `justify-content`
+-   `align-items`
+-   `align-content`
 
 ### Các thuộc tính của Flex Item
 
--   order
--   flex-grow
--   flex-shrink
--   flex-basis
--   flex
--   align-self
+-   `order`
+-   `flex-grow`
+-   `flex-shrink`
+-   `flex-basis`
+-   `flex`
+-   `align-self`
 
 ### Flexbox Layout website kiểu mẫu
 
