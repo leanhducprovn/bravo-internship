@@ -159,6 +159,8 @@ p {
   justify-content: space-around;
 }
 .justify-content-container-6 {
+  display: flex;
+  background-color: #eeeeee;
   justify-content: space-evenly;
 }
 .justify-content-container-1 div {
