@@ -71,7 +71,6 @@
 
 ### Các thuộc tính của Flex Container
 
--   List item
 -   display
 -   flex-direction
 -   flex-wrap
