@@ -59,6 +59,12 @@
   flex-wrap: wrap;
 }
 
+/* column */
+.column {
+  flex: 0 0 50%;
+  max-width: 40%;
+}
+
 /* card */
 .card {
   background-color: #ffffff;
@@ -79,4 +85,10 @@
 /* custom */
 .right {
   margin-left: auto;
+}
+
+.stretch-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
 }
