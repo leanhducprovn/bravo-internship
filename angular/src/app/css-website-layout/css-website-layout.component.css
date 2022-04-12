@@ -51,8 +51,6 @@
   width: 78%;
   height: fit-content;
   background-color: #eeeeee;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* row */
