@@ -51,6 +51,21 @@
   width: 78%;
   height: fit-content;
   background-color: #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* card */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
 }
 
 /* footer */
