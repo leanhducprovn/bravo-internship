@@ -66,3 +66,7 @@
 | 7   | `ngAfterViewInit()`       | Thực thi sau khi Angular khởi tạo các view của component và các view con / view mà directive được đưa vào. Được gọi một lần sau `ngAfterContentChecked()` đầu tiên.                                     |
 | 8   | `ngAfterViewChecked()`    | Thực thi sau khi Angular kiểm tra các view của component và các view con /view mà directive được đưa vào. Được gọi sau `ngAfterViewInit()` và mọi `ngAfterContentChecked()` tiếp theo.                  |
 | 9   | `ngOnDestroy()`           | Dọn dẹp ngay trước khi Angular phá hủy directive / component. Hủy đăng ký Observables và tách trình xử lý sự kiện để tránh rò rỉ bộ nhớ. Được gọi ngay trước khi Angular phá hủy directive / component. |
+
+## Session 4: Tìm hiểu về CSS flex Property
+
+Xây dựng bố cục một trang web cơ bản sử dụng flex property!
