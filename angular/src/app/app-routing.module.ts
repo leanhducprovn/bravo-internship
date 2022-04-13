@@ -12,6 +12,7 @@ import { SpyComponent } from './lifecycle-hooks/spy/spy.component';
 import { LoginComponent } from './custom-form/login/login.component';
 import { FlexPropertyComponent } from './flex-property/flex-property.component';
 import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
+import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'javascript-errors',
+        component: JavascriptErrorsComponent,
+      },
       {
         path: 'flex-property',
         component: FlexPropertyComponent,

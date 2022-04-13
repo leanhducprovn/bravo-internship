@@ -109,3 +109,20 @@ Các item sẽ được bố trí theo trục main axis (bắt đầu từ main-
 ### Flexbox Layout website kiểu mẫu
 
 Xây dựng bố cục một trang web cơ bản sử dụng flex property!
+
+## Session 5: Exception trong Javascript được xử lý như thế nào?
+
+Exception là một sự kiện mà phá vỡ luồng chuẩn của chương trình. Nó là một đối tượng mà được ném tại Runtime. Một exception (ngoại lệ) là một vấn đề xảy ra trong quá trình thực hiện của chương trình. Một ngoại lệ có thể xảy ra với nhiều lý do khác nhau...
+
+### Throw, and Try...Catch...Finally
+
+-   Câu lệnh `try` xác định một khối mã để chạy (để thử).
+-   Câu lệnh `catch` xác định một khối mã để xử lý bất kỳ lỗi nào.
+-   Câu lệnh `finally` xác định một khối mã để chạy bất kể kết quả.
+-   Câu lệnh `throw` xác định một lỗi tùy chỉnh.
+
+### Errors will happen!
+
+Khi thực thi mã JavaScript, các lỗi khác nhau có thể xảy ra.
+
+Lỗi có thể là lỗi mã hóa do lập trình viên thực hiện, lỗi do nhập sai, và những điều không thể lường trước khác.
