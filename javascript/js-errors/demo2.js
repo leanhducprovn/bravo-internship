@@ -1,6 +1,6 @@
-function checkInput() {
+function checkInput1() {
 	const message = document.getElementById("demo2");
-	let x = document.getElementById("input").value;
+	let x = document.getElementById("input1").value;
 	try {
 		if (x == "") throw "trống!";
 		if (isNaN(x)) throw "không phải là một số!";
