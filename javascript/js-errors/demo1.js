@@ -1,6 +1,6 @@
 try {
 	leanhduc("Welcome Bravo");
 } catch (err) {
-	console.warn(err);
+	console.log(err);
 	document.getElementById("demo1").innerHTML = err.message;
 }
