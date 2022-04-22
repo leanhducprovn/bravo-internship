@@ -1,5 +1,12 @@
-<wj-calendar #theCalendar>
+<h1>Overview</h1>
+<wj-calendar #theCalendarOverview>
 </wj-calendar>
 <p>
-    Ngày hiện tại là: <b>{{ theCalendar.value | date:'fullDate':'':'vi'}}</b>.
+    Ngày hiện tại là: <b>{{ theCalendarOverview.value | date:'fullDate':'':'vi'}}</b>.
+</p>
+<h1>Ranges (min/max)</h1>
+<wj-calendar [showHeader]="false" [min]="firstDay" [max]="lastDay" #theCalendarRanges>
+</wj-calendar>
+<p>
+    Ngày hiện tại là: <b>{{ theCalendarRanges.value | date:'fullDate':'':'vi'}}</b>.
 </p>
