@@ -46,9 +46,14 @@ export class InputCalendarComponent implements OnInit {
     // console.log(holiday);
     wijmo.toggleClass(e.item, 'date-weekend', weekday == 0 || weekday == 6);
     wijmo.toggleClass(e.item, 'date-holiday', holiday != null);
-    e.item.title = holiday;
+    e.item.title = holiday || 'Không là ngày gì cả!';
     // console.log(e.item);
   }
+
+  // Validation
+  validator = (date: Date) => {
+    return date.getDay() % 6 != 0 && !this.getHoliday(date);
+  };
 
   getHoliday(date: Date) {
     let day = date.getDate();
