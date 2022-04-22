@@ -28,6 +28,7 @@ import { FlexPropertyComponent } from './flex-property/flex-property.component';
 import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
 import { WijmoComponent } from './wijmo/wijmo.component';
+import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { WijmoComponent } from './wijmo/wijmo.component';
     CssWebsiteLayoutComponent,
     JavascriptErrorsComponent,
     WijmoComponent,
+    InputCalendarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

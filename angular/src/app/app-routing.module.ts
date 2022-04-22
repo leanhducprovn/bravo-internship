@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AfterContentInitParentComponent } from './lifecycle-hooks/after-content-parent/after-content-init-parent.component';
 import { DoCheckParentComponent } from './lifecycle-hooks/do-check-parent/do-check-parent.component';
@@ -14,6 +14,7 @@ import { FlexPropertyComponent } from './flex-property/flex-property.component';
 import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
 import { WijmoComponent } from './wijmo/wijmo.component';
+import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,16 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'wijmo', component: WijmoComponent },
+      {
+        path: 'wijmo',
+        component: WijmoComponent,
+        children: [
+          {
+            path: 'input-calendar',
+            component: InputCalendarComponent,
+          },
+        ],
+      },
       {
         path: 'javascript-errors',
         component: JavascriptErrorsComponent,
