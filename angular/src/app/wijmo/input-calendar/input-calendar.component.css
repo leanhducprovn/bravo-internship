@@ -12,3 +12,16 @@
 .wj-calendar .date-weekend:not(.wj-state-selected) {
   background-color: #d8ffa6;
 }
+
+td[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  font-size: small;
+}

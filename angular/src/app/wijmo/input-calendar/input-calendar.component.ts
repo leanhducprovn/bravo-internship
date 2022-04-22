@@ -32,30 +32,28 @@ export class InputCalendarComponent implements OnInit {
 
     // Styling
     this.holidays = inputCalendarService.getHolidays();
-    console.log(this.holidays);
+    // console.log(this.holidays);
   }
 
   ngOnInit(): void {
-    this.theCalendarStyling.invalidate();
+    // this.theCalendarStyling.invalidate();
   }
 
   formatItem(e: input.FormatItemEventArgs) {
-    let weekday = e.data.getDay(),
-      holiday = this._getHoliday(e.data);
+    let weekday = e.data.getDay();
+    // console.log(weekday);
+    let holiday = this.getHoliday(e.data);
+    // console.log(holiday);
     wijmo.toggleClass(e.item, 'date-weekend', weekday == 0 || weekday == 6);
     wijmo.toggleClass(e.item, 'date-holiday', holiday != null);
     e.item.title = holiday;
+    // console.log(e.item);
   }
 
-  private _getHoliday(date: Date) {
-    let day = date.getDate(),
-      month = date.getMonth() + 1,
-      holiday = this.holidays[month + '/' + day];
-    if (!holiday) {
-      let weekDay = date.getDay(),
-        weekNum = Math.floor((day - 1) / 7) + 1;
-      holiday = this.holidays[month + '/' + weekNum + '/' + weekDay];
-    }
+  getHoliday(date: Date) {
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let holiday = this.holidays[day + '/' + month];
     return holiday;
   }
 }
