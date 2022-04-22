@@ -2,30 +2,21 @@
   border-radius: 6px;
 }
 
-.wj-calendar .wj-calendar-outer {
+:host .wj-control {
   background-color: #eeeeee !important;
 }
 
-.wj-calendar .date-holiday:not(.wj-state-selected) {
+:host .date-holiday {
   font-weight: bold;
   color: #008f22;
   background: #f0fff0;
   outline: 2pt solid #008f22;
 }
 
-.wj-calendar .date-weekend:not(.wj-state-selected) {
+:host .date-weekend:not(.wj-state-selected) {
   background-color: #d8ffa6;
 }
 
-td[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 5px;
-  font-size: small;
+:host .wj-day-weekend {
+  background-color: #d8ffa6;
 }
