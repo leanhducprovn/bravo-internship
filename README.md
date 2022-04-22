@@ -126,3 +126,19 @@ Exception là một sự kiện mà phá vỡ luồng chuẩn của chương tr�
 Khi thực thi mã JavaScript, các lỗi khác nhau có thể xảy ra.
 
 Lỗi có thể là lỗi mã hóa do lập trình viên thực hiện, lỗi do nhập sai, và những điều không thể lường trước khác.
+
+## Session 6: Tìm hiểu về Wijmo
+
+Use our JavaScript UI components to build advanced HTML5/JavaScript apps fast with zero dependencies.
+
+### Input
+
+#### Calendar
+
+| Options                   | Describe                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Overview**              | The [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control displays a one-month calendar by default. It allows users to select any date by day, month or year. The [selectionMode](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#selectionmode) can switch between _Day_ or _Month_ by clicking the "`MM, YYYY`" in the upper left.                                               |
+| **Ranges (min/max)**      | The [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control can prevent users from selecting values outside of a range determined by the [min](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#min) and [max](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#max) properties. This sample only allows users to select dates within the current week.          |
+| **Styling**               | You can style the [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control using CSS, or using the calendar's [formatItem](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#formatitem) event to customize the appearance of specific dates. The calendar in this sample uses a custom style for weekends and holidays.                                                                |
+| **Slack Status Calendar** | This is a Wijmo version of the [Slack status page](https://status.slack.com/calendar). It shows several [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) controls and use the [formatItem](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#formatitem) event to add icons to days where significant events took place. Plain CSS is used to customize the appearance of the Calendar. |
+| **Validation**            | In some cases, not all dates in the range are valid. To handle these situations, the [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control has an [itemValidator](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#itemvalidator) property. This sample uses this property to demonstrate a common use case. It prevents users from selecting dates on weekends and holidays.       |
