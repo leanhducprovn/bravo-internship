@@ -36,7 +36,7 @@ export class InputCalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.theCalendarStyling.invalidate();
+    this.theCalendarStyling.invalidate();
   }
 
   formatItem(e: input.FormatItemEventArgs) {

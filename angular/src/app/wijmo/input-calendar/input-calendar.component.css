@@ -16,7 +16,3 @@
 :host .date-weekend:not(.wj-state-selected) {
   background-color: #d8ffa6;
 }
-
-:host .wj-day-weekend {
-  background-color: #d8ffa6;
-}
