@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import * as wijmo from '@grapecity/wijmo';
 import * as input from '@grapecity/wijmo.input';

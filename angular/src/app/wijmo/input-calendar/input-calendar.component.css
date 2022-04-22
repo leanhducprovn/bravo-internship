@@ -2,6 +2,10 @@
   border-radius: 6px;
 }
 
+.wj-calendar .wj-calendar-outer {
+  background-color: #eeeeee !important;
+}
+
 .wj-calendar .date-holiday:not(.wj-state-selected) {
   font-weight: bold;
   color: #008f22;
