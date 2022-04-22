@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WjInputModule } from '@grapecity/wijmo.angular2.input';
+
+import localeVi from '@angular/common/locales/vi';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeVi, 'vi');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +63,13 @@ import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.co
     WijmoComponent,
     InputCalendarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    WjInputModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

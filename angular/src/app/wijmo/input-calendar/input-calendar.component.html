@@ -1,1 +1,5 @@
-<p>input-calendar works!</p>
+<wj-calendar #theCalendar>
+</wj-calendar>
+<p>
+    Ngày hiện tại là: <b>{{ theCalendar.value | date:'fullDate':'':'vi'}}</b>.
+</p>
