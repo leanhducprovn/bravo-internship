@@ -27,6 +27,7 @@ import { FormComponent } from './custom-form/form/form.component';
 import { FlexPropertyComponent } from './flex-property/flex-property.component';
 import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
+import { WijmoComponent } from './wijmo/wijmo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors
     FlexPropertyComponent,
     CssWebsiteLayoutComponent,
     JavascriptErrorsComponent,
+    WijmoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

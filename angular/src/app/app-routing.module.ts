@@ -13,6 +13,7 @@ import { LoginComponent } from './custom-form/login/login.component';
 import { FlexPropertyComponent } from './flex-property/flex-property.component';
 import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layout.component';
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
+import { WijmoComponent } from './wijmo/wijmo.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      { path: 'wijmo', component: WijmoComponent },
       {
         path: 'javascript-errors',
         component: JavascriptErrorsComponent,
