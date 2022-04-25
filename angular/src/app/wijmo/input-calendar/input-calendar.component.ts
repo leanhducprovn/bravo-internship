@@ -61,4 +61,13 @@ export class InputCalendarComponent implements OnInit {
     let holiday = this.holidays[day + '/' + month];
     return holiday;
   }
+
+  styling() {
+    return {
+      'background-repeat': 'no-repeat, repeat',
+      'background-size': 'cover',
+      'background-image':
+        'url(https://png.pngtree.com/thumb_back/fw800/background/20190630/pngtree-vector-white-background-with-abstract-geometric-pattern-or-textu-image_265390.jpg)',
+    };
+  }
 }
