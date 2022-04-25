@@ -16,7 +16,7 @@ import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors
 import { WijmoComponent } from './wijmo/wijmo.component';
 import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
 import { CoreComponent } from './core/core.component';
-import { ContentChildParentComponent } from './core/content-child-parent/content-child-parent.component';
+import { ContentChildComponent } from './core/content-child/content-child.component';
 
 const routes: Routes = [
   {
@@ -36,8 +36,8 @@ const routes: Routes = [
         component: CoreComponent,
         children: [
           {
-            path: 'content-child-parent',
-            component: ContentChildParentComponent,
+            path: 'content-child',
+            component: ContentChildComponent,
           },
         ],
       },
