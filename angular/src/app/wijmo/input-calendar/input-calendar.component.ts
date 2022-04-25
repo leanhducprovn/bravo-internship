@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import * as wijmo from '@grapecity/wijmo';
 import * as input from '@grapecity/wijmo.input';
@@ -10,7 +10,7 @@ import { InputCalendarService } from './input-calendar.service';
   templateUrl: './input-calendar.component.html',
   styleUrls: ['./input-calendar.component.css'],
 })
-export class InputCalendarComponent implements OnInit {
+export class InputCalendarComponents implements OnInit {
   firstDay!: Date;
   lastDay!: Date;
 
@@ -19,7 +19,10 @@ export class InputCalendarComponent implements OnInit {
   @ViewChild('theCalendarStyling', { static: true })
   theCalendarStyling!: input.Calendar;
 
-  constructor(private inputCalendarService: InputCalendarService) {
+  constructor(
+    private inputCalendarService: InputCalendarService,
+    private hostElment: ElementRef
+  ) {
     // Ranges (min/max)
     let curr = new Date();
     // console.log(curr);
@@ -37,6 +40,9 @@ export class InputCalendarComponent implements OnInit {
 
   ngOnInit(): void {
     this.theCalendarStyling.invalidate();
+
+    wijmo.addClass(this.hostElment?.nativeElement, '');
+    console.log(this.hostElment);
   }
 
   formatItem(e: input.FormatItemEventArgs) {
