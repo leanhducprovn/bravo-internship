@@ -3,7 +3,7 @@
 }
 
 :host .wj-control {
-  background-color: #eeeeee !important;
+  background-color: rgba(238, 238, 238, 0.8) !important;
 }
 
 :host >>> .date-holiday {
