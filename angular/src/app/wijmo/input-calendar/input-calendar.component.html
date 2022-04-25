@@ -11,8 +11,10 @@
     Ngày hiện tại là: <b>{{ theCalendarRanges.value | date:'fullDate':'':'vi'}}</b>.
 </p>
 <h1>Styling & Validation</h1>
-<wj-calendar #theCalendarStyling (formatItem)="formatItem($event)" [itemValidator]="validator">
-</wj-calendar>
+<div class="styling">
+    <wj-calendar #theCalendarStyling (formatItem)="formatItem($event)" [itemValidator]="validator">
+    </wj-calendar>
+</div>
 <p>
     Ngày hiện tại là: <b>{{ theCalendarStyling.value | date:'fullDate':'':'vi'}}</b>.
 </p>
