@@ -67,7 +67,7 @@ export class InputCalendarComponent implements OnInit {
       'background-repeat': 'no-repeat, repeat',
       'background-size': 'cover',
       'background-image':
-        'url(https://png.pngtree.com/thumb_back/fw800/background/20190630/pngtree-vector-white-background-with-abstract-geometric-pattern-or-textu-image_265390.jpg)',
+        'url(../../../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp)',
     };
   }
 }
