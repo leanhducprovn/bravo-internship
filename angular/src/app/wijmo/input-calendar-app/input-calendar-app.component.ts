@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-calendar-app.component.css'],
 })
 export class InputCalendarAppComponent implements OnInit {
-  currentDate!: Date;
+  currentDate = new Date();
+  calendarApp = true;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.currentDate = new Date();
-  }
+  ngOnInit(): void {}
 }
