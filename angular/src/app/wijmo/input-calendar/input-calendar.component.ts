@@ -10,7 +10,7 @@ import { InputCalendarService } from './input-calendar.service';
   templateUrl: './input-calendar.component.html',
   styleUrls: ['./input-calendar.component.css'],
 })
-export class InputCalendarComponents implements OnInit {
+export class InputCalendarComponent implements OnInit {
   firstDay!: Date;
   lastDay!: Date;
 
@@ -40,8 +40,6 @@ export class InputCalendarComponents implements OnInit {
 
   ngOnInit(): void {
     this.theCalendarStyling.invalidate();
-
-    wijmo.addClass(this.hostElment?.nativeElement, '');
     console.log(this.hostElment);
   }
 
