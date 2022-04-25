@@ -6,14 +6,18 @@ import { Component, DoCheck, OnInit } from '@angular/core';
   styleUrls: ['./content-child-parent.component.css'],
 })
 export class ContentChildParentComponent implements OnInit, DoCheck {
+  input!: string;
   output!: string;
 
   constructor() {}
 
   ngDoCheck() {
-    let input = document.getElementById('input') as HTMLInputElement;
-    if (input != null) {
-      this.output = input.value.toLocaleUpperCase();
+    let _input = document.getElementById('input') as HTMLInputElement;
+    if (_input != null) {
+      // case 1
+      this.output = _input.value.toLocaleUpperCase();
+      // case 2
+      this.input = _input.value.toLocaleUpperCase();
     }
   }
 
