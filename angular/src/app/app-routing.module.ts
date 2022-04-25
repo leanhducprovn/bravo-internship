@@ -15,6 +15,8 @@ import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layo
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
 import { WijmoComponent } from './wijmo/wijmo.component';
 import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
+import { CoreComponent } from './core/core.component';
+import { ContentChildComponent } from './core/content-child/content-child.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,16 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'core',
+        component: CoreComponent,
+        children: [
+          {
+            path: 'content-child',
+            component: ContentChildComponent,
+          },
+        ],
+      },
       {
         path: 'wijmo',
         component: WijmoComponent,

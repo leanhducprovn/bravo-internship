@@ -34,6 +34,8 @@ import { CssWebsiteLayoutComponent } from './css-website-layout/css-website-layo
 import { JavascriptErrorsComponent } from './javascript-errors/javascript-errors.component';
 import { WijmoComponent } from './wijmo/wijmo.component';
 import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
+import { CoreComponent } from './core/core.component';
+import { ContentChildComponent } from './core/content-child/content-child.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +64,8 @@ import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.co
     JavascriptErrorsComponent,
     WijmoComponent,
     InputCalendarComponent,
+    CoreComponent,
+    ContentChildComponent,
   ],
   imports: [
     BrowserModule,
