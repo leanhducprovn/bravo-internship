@@ -17,6 +17,7 @@ import { WijmoComponent } from './wijmo/wijmo.component';
 import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.component';
 import { CoreComponent } from './core/core.component';
 import { ContentChildParentComponent } from './core/content-child-parent/content-child-parent.component';
+import { InputCalendarAppComponent } from './wijmo/input-calendar-app/input-calendar-app.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
           {
             path: 'input-calendar',
             component: InputCalendarComponent,
+          },
+          {
+            path: 'input-calendar-app',
+            component: InputCalendarAppComponent,
           },
         ],
       },

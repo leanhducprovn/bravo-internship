@@ -37,6 +37,7 @@ import { InputCalendarComponent } from './wijmo/input-calendar/input-calendar.co
 import { CoreComponent } from './core/core.component';
 import { ContentChildComponent } from './core/content-child/content-child.component';
 import { ContentChildParentComponent } from './core/content-child-parent/content-child-parent.component';
+import { InputCalendarAppComponent } from './wijmo/input-calendar-app/input-calendar-app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { ContentChildParentComponent } from './core/content-child-parent/content
     CoreComponent,
     ContentChildComponent,
     ContentChildParentComponent,
+    InputCalendarAppComponent,
   ],
   imports: [
     BrowserModule,
