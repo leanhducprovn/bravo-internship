@@ -6,13 +6,13 @@
   background-color: #eeeeee !important;
 }
 
-:host .date-holiday {
+:host >>> .date-holiday {
   font-weight: bold;
   color: #008f22;
   background: #f0fff0;
   outline: 2pt solid #008f22;
 }
 
-:host .date-weekend:not(.wj-state-selected) {
+:host >>> .date-weekend:not(.wj-state-selected) {
   background-color: #d8ffa6;
 }
