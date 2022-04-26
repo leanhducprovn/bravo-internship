@@ -12,7 +12,7 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   constructor() {}
 
   ngDoCheck() {
-    const setHeader = document.getElementsByClassName('wj-header');
+    let setHeader = document.getElementsByClassName('wj-header');
     setHeader[0].innerHTML = `
       <td>CN</td>
       <td>T2</td>
@@ -24,10 +24,7 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     `;
   }
 
-  previousMonth() {
-    wijmo;
-    console.log(wijmo);
-  }
+  previousMonth() {}
   nextMonth() {}
 
   ngOnInit(): void {}

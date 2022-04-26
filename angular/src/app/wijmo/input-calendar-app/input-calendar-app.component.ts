@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as input from '@grapecity/wijmo.input';
 
 @Component({
   selector: 'app-input-calendar-app',
