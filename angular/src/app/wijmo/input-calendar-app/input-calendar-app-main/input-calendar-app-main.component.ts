@@ -1,7 +1,5 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 
-import * as wijmo from '@grapecity/wijmo';
-import * as input from '@grapecity/wijmo.input';
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 
 @Component({
