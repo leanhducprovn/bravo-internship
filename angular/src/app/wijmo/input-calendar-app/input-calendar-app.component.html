@@ -2,4 +2,6 @@
 <div class="right">
     <button (click)="calendarApp = !calendarApp">{{ currentDate | date:'fullDate':'':'vi'}}</button>
 </div>
-<app-input-calendar-app-main [hidden]="calendarApp"></app-input-calendar-app-main>
+<div [hidden]="calendarApp">
+    <app-input-calendar-app-main></app-input-calendar-app-main>
+</div>
