@@ -1,10 +1,4 @@
-import {
-  Component,
-  DoCheck,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 
 import * as wijmo from '@grapecity/wijmo';
 import * as input from '@grapecity/wijmo.input';
@@ -41,11 +35,12 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   onPreviousMonth() {
     this.calendarApp.displayMonth = new Date();
     this.currentMonth = this.curentTime.getMonth();
-    this.currentYear = this.curentTime.getFullYear();
     this.previousMonth = this.currentMonth - 1;
     this.calendarApp.displayMonth.setMonth(this.previousMonth);
   }
   onNextMonth() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentYear = this.curentTime.getFullYear();
+  }
 }
