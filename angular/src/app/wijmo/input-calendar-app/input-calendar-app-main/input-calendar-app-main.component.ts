@@ -1,5 +1,8 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 
+import * as wijmo from '@grapecity/wijmo';
+import * as input from '@grapecity/wijmo.input';
+
 @Component({
   selector: 'app-input-calendar-app-main',
   templateUrl: './input-calendar-app-main.component.html',
