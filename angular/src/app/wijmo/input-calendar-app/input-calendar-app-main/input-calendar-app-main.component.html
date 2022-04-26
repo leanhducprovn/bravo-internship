@@ -1,7 +1,9 @@
 <div class="header">
-    <button (click)="previousMonth()"><i class="fad fa-chevron-circle-left"></i></button>
-    <h1>{{ calendarApp.value | date:'fullDate':'':'vi'}}</h1>
-    <button (click)="nextMonth()"><i class="fad fa-chevron-circle-right"></i></button>
+    <button (click)="onPreviousMonth()"><i class="fad fa-chevron-circle-left"></i></button>
+    <h1>Tháng {{ currentMonth ? currentMonth : curentTime | date:'M' }}, {{ currentYear ? currentYear : curentTime |
+        date:'Y' }}
+    </h1>
+    <button (click)="onNextMonth()"><i class="fad fa-chevron-circle-right"></i></button>
 </div>
 <div>
     <wj-calendar [showHeader]="false" #calendarApp></wj-calendar>

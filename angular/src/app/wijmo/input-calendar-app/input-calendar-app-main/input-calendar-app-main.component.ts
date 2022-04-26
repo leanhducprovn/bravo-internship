@@ -1,7 +1,14 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 import * as wijmo from '@grapecity/wijmo';
 import * as input from '@grapecity/wijmo.input';
+import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 
 @Component({
   selector: 'app-input-calendar-app-main',
@@ -9,6 +16,13 @@ import * as input from '@grapecity/wijmo.input';
   styleUrls: ['./input-calendar-app-main.component.css'],
 })
 export class InputCalendarAppMainComponent implements OnInit, DoCheck {
+  @ViewChild('calendarApp') calendarApp!: WjCalendar;
+
+  curentTime = new Date();
+  currentMonth!: number;
+  previousMonth!: number;
+  currentYear!: number;
+
   constructor() {}
 
   ngDoCheck() {
@@ -24,8 +38,14 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     `;
   }
 
-  previousMonth() {}
-  nextMonth() {}
+  onPreviousMonth() {
+    this.calendarApp.displayMonth = new Date();
+    this.currentMonth = this.curentTime.getMonth();
+    this.currentYear = this.curentTime.getFullYear();
+    this.previousMonth = this.currentMonth - 1;
+    this.calendarApp.displayMonth.setMonth(this.previousMonth);
+  }
+  onNextMonth() {}
 
   ngOnInit(): void {}
 }
