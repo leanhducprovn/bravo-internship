@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-calendar-app-confirm',
@@ -7,11 +7,6 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class InputCalendarAppConfirmComponent implements OnInit {
   @Input() confirm!: string;
-  @Output() clickEvent = new EventEmitter<string>();
-
-  onClose() {
-    this.clickEvent.emit();
-  }
 
   constructor() {}
 
