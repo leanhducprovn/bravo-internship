@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputCalendarAppComponent implements OnInit {
   currentDate = new Date();
-  calendarApp = true;
 
   constructor() {}
 

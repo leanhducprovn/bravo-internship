@@ -1,7 +1,8 @@
 <h1>Calendar App</h1>
-<div class="right">
-    <button (click)="calendarApp = !calendarApp">{{ currentDate | date:'fullDate':'':'vi'}}</button>
+<div class="center">
+    <button (click)="calendarApp.show(true)">{{ currentDate |
+        date:'fullDate':'':'vi'}}</button>
 </div>
-<div [hidden]="calendarApp">
+<wj-popup #calendarApp>
     <app-input-calendar-app-main></app-input-calendar-app-main>
-</div>
+</wj-popup>
