@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputCalendarAppConfirmComponent implements OnInit {
   @Input() confirm!: string;
-
+  @Input() click!: void;
   constructor() {}
 
   ngOnInit(): void {}
