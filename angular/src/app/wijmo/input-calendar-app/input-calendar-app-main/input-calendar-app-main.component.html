@@ -15,6 +15,6 @@
 </div>
 <div class="ml-10">
     <app-input-calendar-app-confirm confirm="Chấp nhận"></app-input-calendar-app-confirm>
-    <app-input-calendar-app-confirm confirm="Đóng"></app-input-calendar-app-confirm>
+    <app-input-calendar-app-confirm (clickEvent)="onClose()" confirm="Đóng"></app-input-calendar-app-confirm>
     <app-input-calendar-app-confirm confirm="Tuỳ chọn điều kiện"></app-input-calendar-app-confirm>
 </div>

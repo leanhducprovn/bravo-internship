@@ -1,5 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
+import * as input from '@grapecity/wijmo.input';
 
 @Component({
   selector: 'app-input-calendar-app-main',
@@ -20,6 +20,11 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
       <td>T6</td>
       <td>T7</td>
     `;
+  }
+
+  onClose(popup: input.Popup) {
+    alert('form submitted');
+    popup.hide();
   }
 
   ngOnInit(): void {}
