@@ -24,5 +24,11 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     `;
   }
 
+  previousMonth() {
+    wijmo;
+    console.log(wijmo);
+  }
+  nextMonth() {}
+
   ngOnInit(): void {}
 }
