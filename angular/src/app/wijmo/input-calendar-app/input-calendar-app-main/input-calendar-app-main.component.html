@@ -1,5 +1,10 @@
+<div class="header">
+    <button><i class="fad fa-chevron-circle-left"></i></button>
+    <h1>{{ calendarApp.value | date:'fullDate':'':'vi'}}</h1>
+    <button><i class="fad fa-chevron-circle-right"></i></button>
+</div>
 <div>
-    <wj-calendar [showHeader]="false" #CalendarApp></wj-calendar>
+    <wj-calendar [showHeader]="false" #calendarApp></wj-calendar>
 </div>
 <div class="ml-10">
     <app-input-calendar-app-selection chooseTime="Hôm nay"></app-input-calendar-app-selection>
