@@ -1,6 +1,8 @@
 import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
+import * as wijmo from '@grapecity/wijmo';
+import * as input from '@grapecity/wijmo.input';
 
 @Component({
   selector: 'app-input-calendar-app-main',
@@ -80,7 +82,13 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onToday() {
-    console.log(this.calendarApp.value);
+    this.calendarApp.value = new Date();
+  }
+
+  onYesterday() {
+    let data = new Date();
+    data.setDate(data.getDate() - 1);
+    this.calendarApp.value = data;
   }
 
   ngOnInit(): void {}
