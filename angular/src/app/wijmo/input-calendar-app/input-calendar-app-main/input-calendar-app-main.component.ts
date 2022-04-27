@@ -26,15 +26,17 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     let setHeader = document.getElementsByClassName('wj-header');
-    setHeader[0].innerHTML = `
-      <td>CN</td>
-      <td>T2</td>
-      <td>T3</td>
-      <td>T4</td>
-      <td>T5</td>
-      <td>T6</td>
-      <td>T7</td>
-    `;
+    if (setHeader[0]) {
+      setHeader[0].innerHTML = `
+        <td>CN</td>
+        <td>T2</td>
+        <td>T3</td>
+        <td>T4</td>
+        <td>T5</td>
+        <td>T6</td>
+        <td>T7</td>
+      `;
+    }
   }
 
   onPreviousMonth() {
