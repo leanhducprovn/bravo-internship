@@ -13,7 +13,7 @@
     <wj-calendar [showHeader]="false" #calendarApp></wj-calendar>
 </div>
 <div class="ml-10">
-    <app-input-calendar-app-selection chooseTime="Hôm nay"></app-input-calendar-app-selection>
+    <app-input-calendar-app-selection (click)="onToday()" chooseTime="Hôm nay"></app-input-calendar-app-selection>
     <app-input-calendar-app-selection chooseTime="Hôm qua"></app-input-calendar-app-selection>
     <app-input-calendar-app-selection chooseTime="Tuần này"></app-input-calendar-app-selection>
     <app-input-calendar-app-selection chooseTime="Tuần trước"></app-input-calendar-app-selection>

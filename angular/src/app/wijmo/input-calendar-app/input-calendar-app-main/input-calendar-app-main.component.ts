@@ -79,5 +79,9 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     }
   }
 
+  onToday() {
+    console.log(this.calendarApp.value);
+  }
+
   ngOnInit(): void {}
 }
