@@ -91,5 +91,33 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     this.calendarApp.value = data;
   }
 
+  onThisWeek() {
+    let current = new Date();
+    let dayCurrent = current.getDay();
+    let dateCurrent = current.getDate();
+    let dateCurrent_1 = dateCurrent;
+    let dateCurrent_2 = dateCurrent;
+    let arrDate = [];
+    let arrDateLeft = [];
+    let arrDateRight = [];
+    for (let i = 0; i < dayCurrent; i++) {
+      dateCurrent_1--;
+      arrDateLeft.unshift(dateCurrent_1);
+    }
+    for (let i = 0; i < 6 - dayCurrent; i++) {
+      dateCurrent_2++;
+      arrDateRight.push(dateCurrent_2);
+    }
+    arrDateLeft.push(dateCurrent);
+    arrDate = arrDateLeft.concat(arrDateRight);
+    console.log(arrDate);
+    this.calendarApp.formatItem.addHandler((s, e) => {
+      let day = e.data.getDate();
+      if (day == 0 || day == 6) {
+        e.item.title = 'Không là ngày gì cả!';
+      }
+    });
+  }
+
   ngOnInit(): void {}
 }
