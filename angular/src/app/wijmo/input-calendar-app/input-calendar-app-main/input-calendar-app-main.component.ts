@@ -11,15 +11,16 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
 
   curentTime = new Date();
+
   currentMonth!: number;
 
-  previousMonth!: number;
-  currentYear!: number;
-
-  defaultMonth!: number;
-  countClick = 1;
+  clickPrevious = 1;
+  clickNext = 1;
   currentSelectionMonth!: number;
   currentSelectionYear!: number;
+
+  previousMonth!: number;
+  nextMonth!: number;
 
   constructor() {}
 
@@ -37,26 +38,45 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onPreviousMonth() {
-    this.defaultMonth = this.curentTime.getMonth();
-    this.previousMonth = this.defaultMonth - this.countClick;
-    this.calendarApp.displayMonth = new Date();
-    this.calendarApp.displayMonth.setMonth(this.previousMonth);
-    this.countClick++;
-    this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
-    this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+    if (this.nextMonth) {
+      this.previousMonth = this.nextMonth - this.clickPrevious;
+      this.calendarApp.displayMonth = new Date();
+      this.calendarApp.displayMonth.setMonth(this.previousMonth);
+      this.clickPrevious++;
+      this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+      this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+      console.log('<', this.previousMonth);
+    } else {
+      this.currentMonth = this.curentTime.getMonth();
+      this.previousMonth = this.currentMonth - this.clickPrevious;
+      this.calendarApp.displayMonth = new Date();
+      this.calendarApp.displayMonth.setMonth(this.previousMonth);
+      this.clickPrevious++;
+      this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+      this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+    }
   }
 
   onNextMonth() {
-    this.defaultMonth = this.curentTime.getMonth();
-    this.previousMonth = this.defaultMonth + this.countClick;
-    this.calendarApp.displayMonth = new Date();
-    this.calendarApp.displayMonth.setMonth(this.previousMonth);
-    this.countClick++;
-    this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
-    this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+    if (this.previousMonth) {
+      this.nextMonth = this.previousMonth + this.clickNext;
+      this.calendarApp.displayMonth = new Date();
+      this.calendarApp.displayMonth.setMonth(this.nextMonth);
+      this.clickNext++;
+      this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+      this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+      console.log('>>', this.nextMonth);
+    } else {
+      this.currentMonth = this.curentTime.getMonth();
+      this.nextMonth = this.currentMonth + this.clickNext;
+      this.calendarApp.displayMonth = new Date();
+      this.calendarApp.displayMonth.setMonth(this.nextMonth);
+      this.clickNext++;
+      this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+      this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+      console.log('>', this.nextMonth);
+    }
   }
 
-  ngOnInit(): void {
-    this.currentYear = this.curentTime.getFullYear();
-  }
+  ngOnInit(): void {}
 }
