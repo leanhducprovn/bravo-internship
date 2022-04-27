@@ -97,7 +97,7 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     let dateCurrent = current.getDate();
     let dateCurrent_1 = dateCurrent;
     let dateCurrent_2 = dateCurrent;
-    let arrDate = [];
+    let arrDate: string | any[] = [];
     let arrDateLeft = [];
     let arrDateRight = [];
     for (let i = 0; i < dayCurrent; i++) {
@@ -110,11 +110,12 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     }
     arrDateLeft.push(dateCurrent);
     arrDate = arrDateLeft.concat(arrDateRight);
-    console.log(arrDate);
     this.calendarApp.formatItem.addHandler((s, e) => {
-      let day = e.data.getDate();
-      if (day == 0 || day == 6) {
-        e.item.title = 'Không là ngày gì cả!';
+      let data = e.data.getDate();
+      for (let i = 0; i < arrDate.length; i++) {
+        if (data == arrDate[i]) {
+          e.item.className = 'selection';
+        }
       }
     });
   }
