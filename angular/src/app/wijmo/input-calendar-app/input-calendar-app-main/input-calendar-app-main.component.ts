@@ -12,8 +12,11 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
 
   curentTime = new Date();
   currentMonth!: number;
+  currentSelectionMonth!: number;
   previousMonth!: number;
   currentYear!: number;
+
+  countClick = 1;
 
   constructor() {}
 
@@ -33,9 +36,11 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   onPreviousMonth() {
     this.calendarApp.displayMonth = new Date();
     this.currentMonth = this.curentTime.getMonth();
-    this.previousMonth = this.currentMonth - 1;
+    this.previousMonth = this.currentMonth - this.countClick;
     this.calendarApp.displayMonth.setMonth(this.previousMonth);
+    console.log(this.countClick++);
   }
+
   onNextMonth() {}
 
   ngOnInit(): void {

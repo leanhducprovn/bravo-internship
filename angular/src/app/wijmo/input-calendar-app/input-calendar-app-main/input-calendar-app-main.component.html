@@ -1,7 +1,8 @@
 <div class="header">
     <button (click)="onPreviousMonth()"><i class="fad fa-chevron-circle-left"></i></button>
     <div>
-        <h1>Tháng {{ currentMonth ? currentMonth : curentTime | date:'M' }}, {{ currentYear ? currentYear : curentTime |
+        <h1>Tháng {{ currentSelectionMonth ? currentSelectionMonth : curentTime | date:'M' }}, {{ currentYear ?
+            currentYear : curentTime |
             date:'Y' }}
         </h1>
         <p class="description">Ngày hiện tại là: <b>{{ calendarApp.value | date:'fullDate':'':'vi'}}</b></p>
