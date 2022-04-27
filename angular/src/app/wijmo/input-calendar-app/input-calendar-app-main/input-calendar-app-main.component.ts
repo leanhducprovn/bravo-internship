@@ -45,7 +45,6 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
       this.nextMonth--;
       this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
       this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
-      console.log('<', this.previousMonth);
     } else {
       this.currentMonth = this.curentTime.getMonth();
       this.previousMonth = this.currentMonth - this.clickPrevious;
@@ -65,7 +64,6 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
       this.previousMonth++;
       this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
       this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
-      console.log('>>', this.nextMonth);
     } else {
       this.currentMonth = this.curentTime.getMonth();
       this.nextMonth = this.currentMonth + this.clickNext;
@@ -74,7 +72,6 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
       this.clickNext++;
       this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
       this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
-      console.log('>', this.nextMonth);
     }
   }
 
