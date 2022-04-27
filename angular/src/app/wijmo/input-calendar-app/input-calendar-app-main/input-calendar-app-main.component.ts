@@ -12,11 +12,14 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
 
   curentTime = new Date();
   currentMonth!: number;
-  currentSelectionMonth!: number;
+
   previousMonth!: number;
   currentYear!: number;
 
+  defaultMonth!: number;
   countClick = 1;
+  currentSelectionMonth!: number;
+  currentSelectionYear!: number;
 
   constructor() {}
 
@@ -34,14 +37,24 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onPreviousMonth() {
+    this.defaultMonth = this.curentTime.getMonth();
+    this.previousMonth = this.defaultMonth - this.countClick;
     this.calendarApp.displayMonth = new Date();
-    this.currentMonth = this.curentTime.getMonth();
-    this.previousMonth = this.currentMonth - this.countClick;
     this.calendarApp.displayMonth.setMonth(this.previousMonth);
-    console.log(this.countClick++);
+    this.countClick++;
+    this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+    this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
   }
 
-  onNextMonth() {}
+  onNextMonth() {
+    this.defaultMonth = this.curentTime.getMonth();
+    this.previousMonth = this.defaultMonth + this.countClick;
+    this.calendarApp.displayMonth = new Date();
+    this.calendarApp.displayMonth.setMonth(this.previousMonth);
+    this.countClick++;
+    this.currentSelectionMonth = this.calendarApp.displayMonth.getMonth() + 1;
+    this.currentSelectionYear = this.calendarApp.displayMonth.getFullYear();
+  }
 
   ngOnInit(): void {
     this.currentYear = this.curentTime.getFullYear();
