@@ -11,17 +11,17 @@ import * as input from '@grapecity/wijmo.input';
 })
 export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
+
   curentTime = new Date();
-
   currentMonth!: number;
-
   clickPrevious = 1;
   clickNext = 1;
   currentSelectionMonth!: number;
   currentSelectionYear!: number;
-
   previousMonth!: number;
   nextMonth!: number;
+
+  check = false;
 
   constructor() {}
 
@@ -91,13 +91,6 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onThisWeek() {
-    this.calendarApp.weeksAfter = 1;
-    this.calendarApp.monthCount = 4;
-    this.calendarApp.itemFormatter = (date, element) => {
-      let day = date.getDay();
-      element.style.backgroundColor = day == 0 || day == 6 ? 'green' : '';
-    };
-
     // let data = new Date();
     // data.setDate(data.getDate());
     // this.calendarApp.displayMonth = data;
@@ -127,6 +120,22 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     //     }
     //   }
     // });
+  }
+
+  onWeekend() {
+    if (this.check == false) {
+      this.calendarApp.itemFormatter = (date, element) => {
+        let day = date.getDay();
+        element.style.backgroundColor = day == 0 || day == 6 ? '#ffb9b9' : '';
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        let day = date.getDay();
+        element.style.backgroundColor = day == 0 || day == 6 ? '' : '';
+      };
+      this.check = false;
+    }
   }
 
   onClose() {
