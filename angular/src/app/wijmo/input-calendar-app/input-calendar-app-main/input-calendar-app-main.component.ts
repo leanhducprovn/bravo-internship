@@ -94,32 +94,32 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     // let data = new Date();
     // data.setDate(data.getDate());
     // this.calendarApp.displayMonth = data;
-    let current = new Date();
-    let dayCurrent = current.getDay();
-    let dateCurrent = current.getDate();
-    let dateCurrent_1 = dateCurrent;
-    let dateCurrent_2 = dateCurrent;
-    let arrDate: string | any[] = [];
-    let arrDateLeft = [];
-    let arrDateRight = [];
-    for (let i = 0; i < dayCurrent; i++) {
-      dateCurrent_1--;
-      arrDateLeft.unshift(dateCurrent_1);
-    }
-    for (let i = 0; i < 6 - dayCurrent; i++) {
-      dateCurrent_2++;
-      arrDateRight.push(dateCurrent_2);
-    }
-    arrDateLeft.push(dateCurrent);
-    arrDate = arrDateLeft.concat(arrDateRight);
-    this.calendarApp.formatItem.addHandler((s, e) => {
-      let data = e.data.getDate();
-      for (let i = 0; i < arrDate.length; i++) {
-        if (data == arrDate[i]) {
-          e.item.className = 'selection';
-        }
-      }
-    });
+    // let current = new Date();
+    // let dayCurrent = current.getDay();
+    // let dateCurrent = current.getDate();
+    // let dateCurrent_1 = dateCurrent;
+    // let dateCurrent_2 = dateCurrent;
+    // let arrDate: string | any[] = [];
+    // let arrDateLeft = [];
+    // let arrDateRight = [];
+    // for (let i = 0; i < dayCurrent; i++) {
+    //   dateCurrent_1--;
+    //   arrDateLeft.unshift(dateCurrent_1);
+    // }
+    // for (let i = 0; i < 6 - dayCurrent; i++) {
+    //   dateCurrent_2++;
+    //   arrDateRight.push(dateCurrent_2);
+    // }
+    // arrDateLeft.push(dateCurrent);
+    // arrDate = arrDateLeft.concat(arrDateRight);
+    // this.calendarApp.formatItem.addHandler((s, e) => {
+    //   let data = e.data.getDate();
+    //   for (let i = 0; i < arrDate.length; i++) {
+    //     if (data == arrDate[i]) {
+    //       e.item.className = 'selection';
+    //     }
+    //   }
+    // });
   }
 
   onClose() {
