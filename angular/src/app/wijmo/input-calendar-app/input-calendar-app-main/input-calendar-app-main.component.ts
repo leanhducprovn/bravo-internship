@@ -40,12 +40,11 @@ export class InputCalendarAppMainComponent
     // this.calendarApp.refreshed.addHandler((s, e) => {
     //   console.log(s, e);
     // });
-  }
 
-  ngDoCheck() {
-    let setHeader = document.getElementsByClassName('wj-header');
-    if (setHeader[0]) {
-      setHeader[0].innerHTML = `
+    this.calendarApp.refreshed.addHandler(() => {
+      let setHeader = document.getElementsByClassName('wj-header');
+      if (setHeader[0]) {
+        setHeader[0].innerHTML = `
         <td>CN</td>
         <td>T2</td>
         <td>T3</td>
@@ -54,8 +53,11 @@ export class InputCalendarAppMainComponent
         <td>T6</td>
         <td>T7</td>
       `;
-    }
+      }
+    });
   }
+
+  ngDoCheck() {}
 
   onPreviousMonth() {
     if (this.nextMonth) {
