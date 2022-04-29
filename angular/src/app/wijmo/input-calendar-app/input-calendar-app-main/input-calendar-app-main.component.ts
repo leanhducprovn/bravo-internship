@@ -91,6 +91,13 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onThisWeek() {
+    this.calendarApp.weeksAfter = 1;
+    this.calendarApp.monthCount = 4;
+    this.calendarApp.itemFormatter = (date, element) => {
+      let day = date.getDay();
+      element.style.backgroundColor = day == 0 || day == 6 ? 'green' : '';
+    };
+
     // let data = new Date();
     // data.setDate(data.getDate());
     // this.calendarApp.displayMonth = data;
