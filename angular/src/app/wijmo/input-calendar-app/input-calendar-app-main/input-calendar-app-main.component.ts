@@ -91,13 +91,20 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   }
 
   onThisWeek() {
+    let current = new Date();
+    let dayCurrent = current.getDay();
+    let dateCurrent = current.getDate();
     let arr: any[] = [];
     this.calendarApp.itemFormatter = (date) => {
       let data = date.getDate();
       arr.push(data);
       console.log(arr);
 
-      for (let i = 0; i < arr.length; i++) {}
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == dateCurrent) {
+          console.log(i);
+        }
+      }
     };
 
     console.log(arr);
