@@ -110,31 +110,31 @@ export class InputCalendarAppMainComponent
   }
 
   onThisWeek() {
-    let current = new Date();
-    let dayCurrent = current.getDay();
-    let dateCurrent = current.getDate();
-    let monthCurrent = current.getMonth() + 1;
-    let yearCurrent = current.getFullYear();
-    let arr: any[] = [];
-    this.calendarApp.itemFormatter = (date, element) => {
-      let data = date.getDate();
-      arr.push(data);
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == 1) {
-          for (
-            let j = i;
-            j < this.countDays(monthCurrent, yearCurrent) + i;
-            j++
-          ) {
-            if (arr[j] == 29) {
-              console.log(j);
-              console.log(element);
-            }
-          }
-        }
-      }
-    };
-
+    // let current = new Date();
+    // let dayCurrent = current.getDay();
+    // let dateCurrent = current.getDate();
+    // let monthCurrent = current.getMonth() + 1;
+    // let yearCurrent = current.getFullYear();
+    // let arr: any[] = [];
+    // this.calendarApp.itemFormatter = (date, element) => {
+    //   let data = date.getDate();
+    //   arr.push(data);
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] == 1) {
+    //       for (
+    //         let j = i;
+    //         j < this.countDays(monthCurrent, yearCurrent) + i;
+    //         j++
+    //       ) {
+    //         if (arr[j] == 29) {
+    //           console.log(j);
+    //           console.log(element);
+    //         }
+    //       }
+    //     }
+    //   }
+    // };
+    /////////////////////////////////////////////////////////
     // let current = new Date();
     // let dayCurrent = current.getDay();
     // let dateCurrent = current.getDate();
