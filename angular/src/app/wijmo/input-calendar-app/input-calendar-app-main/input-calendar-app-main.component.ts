@@ -127,6 +127,7 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
       this.calendarApp.itemFormatter = (date, element) => {
         let day = date.getDay();
         element.style.backgroundColor = day == 0 || day == 6 ? '#ffb9b9' : '';
+        element.title = 'Ngày cuối tuần';
       };
       this.check = true;
     } else {
