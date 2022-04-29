@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import * as input from '@grapecity/wijmo.input';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 
 @Component({
   selector: 'app-input-calendar-app',
@@ -7,6 +8,8 @@ import * as input from '@grapecity/wijmo.input';
   styleUrls: ['./input-calendar-app.component.css'],
 })
 export class InputCalendarAppComponent implements OnInit {
+  @ViewChild('calendarApp') calendarApp!: WjCalendar;
+
   currentDate = new Date();
 
   constructor() {}

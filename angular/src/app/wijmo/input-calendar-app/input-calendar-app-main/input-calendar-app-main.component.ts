@@ -11,7 +11,6 @@ import * as input from '@grapecity/wijmo.input';
 })
 export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
-
   curentTime = new Date();
 
   currentMonth!: number;
@@ -121,6 +120,10 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
         }
       }
     });
+  }
+
+  onClose() {
+    console.log(this.calendarApp);
   }
 
   ngOnInit(): void {}
