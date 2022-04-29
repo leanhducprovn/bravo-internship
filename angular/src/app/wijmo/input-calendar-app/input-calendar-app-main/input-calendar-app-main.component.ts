@@ -126,7 +126,7 @@ export class InputCalendarAppMainComponent
     //         j < this.countDays(monthCurrent, yearCurrent) + i;
     //         j++
     //       ) {
-    //         if (arr[j] == 29) {
+    //         if (arr[j] == dateCurrent) {
     //           console.log(j);
     //           console.log(element);
     //         }
