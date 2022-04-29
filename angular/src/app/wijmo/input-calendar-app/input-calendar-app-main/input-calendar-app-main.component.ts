@@ -95,7 +95,11 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
     this.calendarApp.itemFormatter = (date) => {
       let data = date.getDate();
       arr.push(data);
+      console.log(arr);
+
+      for (let i = 0; i < arr.length; i++) {}
     };
+
     console.log(arr);
     // let current = new Date();
     // let dayCurrent = current.getDay();
