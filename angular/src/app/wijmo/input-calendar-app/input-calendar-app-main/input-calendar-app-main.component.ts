@@ -1,4 +1,10 @@
-import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 import * as wijmo from '@grapecity/wijmo';
@@ -9,7 +15,9 @@ import * as input from '@grapecity/wijmo.input';
   templateUrl: './input-calendar-app-main.component.html',
   styleUrls: ['./input-calendar-app-main.component.css'],
 })
-export class InputCalendarAppMainComponent implements OnInit, DoCheck {
+export class InputCalendarAppMainComponent
+  implements OnInit, DoCheck, AfterViewInit
+{
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
 
   curentTime = new Date();
@@ -24,6 +32,15 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
   check = false;
 
   constructor() {}
+
+  ngAfterViewInit(): void {
+    // this.calendarApp.formatItem.addHandler((s, e) => {
+    //   console.log(s, e.data, e.item.textContent);
+    // });
+    // this.calendarApp.refreshed.addHandler((s, e) => {
+    //   console.log(s, e);
+    // });
+  }
 
   ngDoCheck() {
     let setHeader = document.getElementsByClassName('wj-header');
@@ -155,6 +172,38 @@ export class InputCalendarAppMainComponent implements OnInit, DoCheck {
 
   onClose() {
     console.log(this.calendarApp);
+  }
+
+  countDays(month: number, year: number) {
+    switch (month) {
+      case 2:
+        if (year % 100 == 0) {
+          if (year % 400 == 0) {
+            return 29;
+            break;
+          } else {
+            return 28;
+            break;
+          }
+        } else if (year % 4 == 0) {
+          return 29;
+          break;
+        } else {
+          return 28;
+          break;
+        }
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        return 31;
+        break;
+      default:
+        return 30;
+    }
   }
 
   ngOnInit(): void {}
