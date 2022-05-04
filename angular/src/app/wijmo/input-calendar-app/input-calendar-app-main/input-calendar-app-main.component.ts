@@ -270,9 +270,43 @@ export class InputCalendarAppMainComponent
 
   onLastQuy() {}
 
-  onThisYear() {}
+  onThisYear() {
+    if (this.check == false) {
+      let data = new Date();
+      data.setMonth(data.getMonth());
+      this.calendarApp.value = data;
+      this.calendarApp.itemFormatter = (date, element) => {
+        if (date.getFullYear() == data.getFullYear()) {
+          element.style.backgroundColor = '#c3e4ff';
+        }
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
+  }
 
-  onLastYear() {}
+  onLastYear() {
+    if (this.check == false) {
+      let data = new Date();
+      data.setFullYear(data.getFullYear() - 1);
+      this.calendarApp.value = data;
+      this.calendarApp.itemFormatter = (date, element) => {
+        if (date.getFullYear() == data.getFullYear()) {
+          element.style.backgroundColor = '#c3e4ff';
+        }
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
+  }
 
   onAccept() {
     this.timeSelect = this.calendarApp.value;
