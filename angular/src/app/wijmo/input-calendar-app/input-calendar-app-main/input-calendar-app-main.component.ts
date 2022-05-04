@@ -270,6 +270,10 @@ export class InputCalendarAppMainComponent
 
   onLastQuy() {}
 
+  onThisYear() {}
+
+  onLastYear() {}
+
   onAccept() {
     this.timeSelect = this.calendarApp.value;
     this.selected.emit(this.timeSelect);

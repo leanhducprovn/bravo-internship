@@ -23,8 +23,8 @@
     </app-input-calendar-app-selection>
     <app-input-calendar-app-selection (click)="onThisQuy()" chooseTime="Quý này"></app-input-calendar-app-selection>
     <app-input-calendar-app-selection (click)="onLastQuy()" chooseTime="Quý trước"></app-input-calendar-app-selection>
-    <app-input-calendar-app-selection chooseTime="Năm này"></app-input-calendar-app-selection>
-    <app-input-calendar-app-selection chooseTime="Năm trước"></app-input-calendar-app-selection>
+    <app-input-calendar-app-selection (click)="onThisYear()" chooseTime="Năm này"></app-input-calendar-app-selection>
+    <app-input-calendar-app-selection (click)="onLastYear()" chooseTime="Năm trước"></app-input-calendar-app-selection>
 </div>
 <div class="ml-10">
     <app-input-calendar-app-confirm (click)="onAccept()" confirm="Chấp nhận"></app-input-calendar-app-confirm>
