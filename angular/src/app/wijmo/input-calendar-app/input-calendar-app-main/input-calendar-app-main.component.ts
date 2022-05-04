@@ -2,7 +2,10 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  EventEmitter,
+  Input,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 
@@ -30,6 +33,9 @@ export class InputCalendarAppMainComponent
   nextMonth!: number;
 
   check = false;
+
+  timeSelect!: any;
+  @Output() selected = new EventEmitter<string>();
 
   constructor() {}
 
@@ -212,6 +218,11 @@ export class InputCalendarAppMainComponent
       };
       this.check = false;
     }
+  }
+
+  onAccept() {
+    this.timeSelect = this.calendarApp.value;
+    this.selected.emit(this.timeSelect);
   }
 
   onClose() {}

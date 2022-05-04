@@ -4,5 +4,7 @@
         date:'fullDate':'':'vi'}}</button>
 </div>
 <wj-popup #calendarApp>
-    <app-input-calendar-app-main></app-input-calendar-app-main>
+    <app-input-calendar-app-main (selected)="eventSelected($event)"></app-input-calendar-app-main>
 </wj-popup>
+<h3>Đã chọn: {{ (dateSelected | date:'fullDate':'':'vi') ? (dateSelected | date:'fullDate':'':'vi') : currentDate |
+    date:'fullDate':'':'vi' }}</h3>

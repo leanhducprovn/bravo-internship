@@ -27,7 +27,7 @@
     <app-input-calendar-app-selection chooseTime="Năm trước"></app-input-calendar-app-selection>
 </div>
 <div class="ml-10">
-    <app-input-calendar-app-confirm confirm="Chấp nhận"></app-input-calendar-app-confirm>
+    <app-input-calendar-app-confirm (click)="onAccept()" confirm="Chấp nhận"></app-input-calendar-app-confirm>
     <app-input-calendar-app-confirm (click)="onClose()" confirm="Đóng"></app-input-calendar-app-confirm>
     <app-input-calendar-app-confirm confirm="Tuỳ chọn điều kiện"></app-input-calendar-app-confirm>
 </div>

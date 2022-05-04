@@ -6,3 +6,11 @@
 .wj-popup {
   border-radius: 6px;
 }
+
+h3 {
+  color: #264d73;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
