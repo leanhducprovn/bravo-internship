@@ -217,6 +217,59 @@ export class InputCalendarAppMainComponent
     }
   }
 
+  onThisQuy() {
+    // 1, 2, 3
+    // 4, 5, 6
+    // 7, 8, 9
+    // 10, 11, 12
+    if (this.check == false) {
+      let data = new Date();
+      data.setMonth(data.getMonth());
+      this.calendarApp.value = data;
+      this.calendarApp.itemFormatter = (date, element) => {
+        if (
+          data.getMonth() + 1 == 1 ||
+          data.getMonth() + 1 == 4 ||
+          data.getMonth() + 1 == 7 ||
+          data.getMonth() + 1 == 10
+        ) {
+          if (
+            date.getMonth() == data.getMonth() ||
+            date.getMonth() == data.getMonth() + 1 ||
+            date.getMonth() == data.getMonth() + 2
+          ) {
+            element.style.backgroundColor = '#c3e4ff';
+          }
+        } else if (
+          data.getMonth() + 1 == 2 ||
+          data.getMonth() + 1 == 5 ||
+          data.getMonth() + 1 == 8 ||
+          data.getMonth() + 1 == 11
+        ) {
+          if (
+            date.getMonth() == data.getMonth() ||
+            date.getMonth() == data.getMonth() + 1 ||
+            date.getMonth() == data.getMonth() - 1
+          ) {
+            element.style.backgroundColor = '#c3e4ff';
+          }
+        } else {
+          date.getMonth() == data.getMonth() ||
+            date.getMonth() == data.getMonth() - 1 ||
+            date.getMonth() == data.getMonth() - 2;
+        }
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
+  }
+
+  onLastQuy() {}
+
   onAccept() {
     this.timeSelect = this.calendarApp.value;
     this.selected.emit(this.timeSelect);
