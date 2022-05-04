@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-input-calendar-app-main',
@@ -135,7 +136,12 @@ export class InputCalendarAppMainComponent
       data.setMonth(data.getMonth());
       this.calendarApp.value = data;
       this.calendarApp.itemFormatter = (date, element) => {
-        if (this.getWeek(date) == this.getWeek(new Date())) {
+        if (
+          DateTime.local(date.getFullYear(), date.getMonth(), date.getDate())
+            .weekNumber ==
+          DateTime.local(data.getFullYear(), data.getMonth(), data.getDate())
+            .weekNumber
+        ) {
           element.style.backgroundColor = '#c3e4ff';
         }
       };
@@ -199,7 +205,24 @@ export class InputCalendarAppMainComponent
     // });
   }
 
-  onLastWeek() {}
+  onLastWeek() {
+    if (this.check == false) {
+      let data = new Date();
+      data.setMonth(data.getMonth());
+      this.calendarApp.value = data;
+      this.calendarApp.itemFormatter = (date, element) => {
+        if (date.getMonth() == data.getMonth()) {
+          element.style.backgroundColor = '#c3e4ff';
+        }
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
+  }
 
   onThisMonth() {
     if (this.check == false) {
@@ -279,14 +302,11 @@ export class InputCalendarAppMainComponent
   }
 
   getWeek(time: any) {
-    let dayNr = (time.getDay() + 6) % 7;
-    let firstThursday = time.valueOf();
-    time.setDate(time.getDate() - dayNr + 3);
-    time.setMonth(0, 1);
-    if (time.getDay() != 4) {
-      time.setMonth(0, 1 + ((4 - time.getDay() + 7) % 7));
-    }
-    return 1 + Math.ceil((firstThursday - time) / 604800000);
+    let oneJan = new Date(time.getFullYear(), 0, 1);
+    let numberOfDays = Math.floor(
+      (time - oneJan.getTime()) / (24 * 60 * 60 * 1000)
+    );
+    return Math.ceil((time.getDay() + 1 + numberOfDays) / 7);
   }
 
   ngOnInit(): void {}

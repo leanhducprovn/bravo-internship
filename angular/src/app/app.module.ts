@@ -7,6 +7,8 @@ import localeVi from '@angular/common/locales/vi';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeVi, 'vi');
 
+import { LuxonModule } from 'luxon-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OnChangesComponent } from './lifecycle-hooks/on-changes/on-changes.component';
@@ -83,6 +85,7 @@ import { InputCalendarAppConfirmComponent } from './wijmo/input-calendar-app/inp
     FormsModule,
     ReactiveFormsModule,
     WjInputModule,
+    LuxonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
