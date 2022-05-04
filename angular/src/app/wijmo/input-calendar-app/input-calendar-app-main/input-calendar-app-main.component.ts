@@ -109,6 +109,23 @@ export class InputCalendarAppMainComponent
     this.calendarApp.value = data;
   }
 
+  onWeekend() {
+    if (this.check == false) {
+      this.calendarApp.itemFormatter = (date, element) => {
+        let day = date.getDay();
+        element.style.backgroundColor = day == 0 || day == 6 ? '#ffb9b9' : '';
+        element.title = 'Ngày cuối tuần';
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        let day = date.getDay();
+        element.style.backgroundColor = day == 0 || day == 6 ? '' : '';
+      };
+      this.check = false;
+    }
+  }
+
   onThisWeek() {
     // let current = new Date();
     // let dayCurrent = current.getDay();
@@ -163,24 +180,9 @@ export class InputCalendarAppMainComponent
     // });
   }
 
-  onWeekend() {
-    if (this.check == false) {
-      this.calendarApp.itemFormatter = (date, element) => {
-        let day = date.getDay();
-        element.style.backgroundColor = day == 0 || day == 6 ? '#ffb9b9' : '';
-        element.title = 'Ngày cuối tuần';
-      };
-      this.check = true;
-    } else {
-      this.calendarApp.itemFormatter = (date, element) => {
-        let day = date.getDay();
-        element.style.backgroundColor = day == 0 || day == 6 ? '' : '';
-      };
-      this.check = false;
-    }
-  }
+  onLastWeek() {}
 
-  thisMonth() {
+  onThisMonth() {
     if (this.check == false) {
       this.calendarApp.value = new Date();
       this.calendarApp.itemFormatter = (date, element) => {
@@ -195,7 +197,7 @@ export class InputCalendarAppMainComponent
     }
   }
 
-  lastMonth() {
+  onLastMonth() {
     if (this.check == false) {
       let data = new Date();
       data.setMonth(data.getMonth() - 1);
