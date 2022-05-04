@@ -152,57 +152,6 @@ export class InputCalendarAppMainComponent
       };
       this.check = false;
     }
-    // let current = new Date();
-    // let dayCurrent = current.getDay();
-    // let dateCurrent = current.getDate();
-    // let monthCurrent = current.getMonth() + 1;
-    // let yearCurrent = current.getFullYear();
-    // let arr: any[] = [];
-    // this.calendarApp.itemFormatter = (date, element) => {
-    //   let data = date.getDate();
-    //   arr.push(data);
-    //   for (let i = 0; i < arr.length; i++) {
-    //     if (arr[i] == 1) {
-    //       for (
-    //         let j = i;
-    //         j < this.countDays(monthCurrent, yearCurrent) + i;
-    //         j++
-    //       ) {
-    //         if (arr[j] == dateCurrent) {
-    //           console.log(j);
-    //           console.log(element);
-    //         }
-    //       }
-    //     }
-    //   }
-    // };
-    /////////////////////////////////////////////////////////
-    // let current = new Date();
-    // let dayCurrent = current.getDay();
-    // let dateCurrent = current.getDate();
-    // let dateCurrent_1 = dateCurrent;
-    // let dateCurrent_2 = dateCurrent;
-    // let arrDate: string | any[] = [];
-    // let arrDateLeft = [];
-    // let arrDateRight = [];
-    // for (let i = 0; i < dayCurrent; i++) {
-    //   dateCurrent_1--;
-    //   arrDateLeft.unshift(dateCurrent_1);
-    // }
-    // for (let i = 0; i < 6 - dayCurrent; i++) {
-    //   dateCurrent_2++;
-    //   arrDateRight.push(dateCurrent_2);
-    // }
-    // arrDateLeft.push(dateCurrent);
-    // arrDate = arrDateLeft.concat(arrDateRight);
-    // this.calendarApp.formatItem.addHandler((s, e) => {
-    //   let data = e.data.getDate();
-    //   for (let i = 0; i < arrDate.length; i++) {
-    //     if (data == arrDate[i]) {
-    //       e.item.className = 'selection';
-    //     }
-    //   }
-    // });
   }
 
   onLastWeek() {
