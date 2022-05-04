@@ -36,7 +36,7 @@ export class InputCalendarAppMainComponent
   ngAfterViewInit(): void {
     // this.calendarApp.formatItem.addHandler((s, e) => {
     //   console.log(s, e.data, e.item.textContent);
-    // });
+    // // });
     // this.calendarApp.refreshed.addHandler((s, e) => {
     //   console.log(s, e);
     // });
