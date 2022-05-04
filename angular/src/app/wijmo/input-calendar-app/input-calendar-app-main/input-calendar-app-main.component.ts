@@ -214,9 +214,7 @@ export class InputCalendarAppMainComponent
     }
   }
 
-  onClose() {
-    console.log(this.calendarApp);
-  }
+  onClose() {}
 
   countDays(month: number, year: number) {
     switch (month) {
