@@ -181,28 +181,35 @@ export class InputCalendarAppMainComponent
   }
 
   thisMonth() {
-    this.calendarApp.value = new Date();
-    let arr: any[] = [];
-    this.calendarApp.itemFormatter = (date, element) => {
-      let data = date.getDate();
-      arr.push(data);
-      for (let i = 0; i < arr.length; i++) {
-        if ((arr[i] = 1)) {
-          for (
-            let j = i;
-            j <
-            this.countDays(
-              this.curentTime.getMonth() + 1,
-              this.curentTime.getFullYear()
-            ) +
-              i;
-            j++
-          ) {
-            console.log(arr[j]);
-          }
-        }
-      }
-    };
+    if (this.check == false) {
+      this.calendarApp.value = new Date();
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '#c3e4ff';
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
+  }
+
+  lastMonth() {
+    if (this.check == false) {
+      let data = new Date();
+      data.setMonth(data.getMonth() - 1);
+      this.calendarApp.value = data;
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '#c3e4ff';
+      };
+      this.check = true;
+    } else {
+      this.calendarApp.itemFormatter = (date, element) => {
+        element.style.backgroundColor = '';
+      };
+      this.check = false;
+    }
   }
 
   onClose() {
