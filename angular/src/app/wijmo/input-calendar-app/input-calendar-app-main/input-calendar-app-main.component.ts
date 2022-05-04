@@ -211,7 +211,13 @@ export class InputCalendarAppMainComponent
       data.setMonth(data.getMonth());
       this.calendarApp.value = data;
       this.calendarApp.itemFormatter = (date, element) => {
-        if (date.getMonth() == data.getMonth()) {
+        if (
+          DateTime.local(date.getFullYear(), date.getMonth(), date.getDate())
+            .weekNumber ==
+          DateTime.local(data.getFullYear(), data.getMonth(), data.getDate())
+            .weekNumber -
+            1
+        ) {
           element.style.backgroundColor = '#c3e4ff';
         }
       };
