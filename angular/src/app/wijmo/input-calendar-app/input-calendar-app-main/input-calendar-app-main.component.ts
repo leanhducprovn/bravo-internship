@@ -190,9 +190,13 @@ export class InputCalendarAppMainComponent
 
   onThisMonth() {
     if (this.check == false) {
-      this.calendarApp.value = new Date();
+      let data = new Date();
+      data.setMonth(data.getMonth());
+      this.calendarApp.value = data;
       this.calendarApp.itemFormatter = (date, element) => {
-        element.style.backgroundColor = '#c3e4ff';
+        if (date.getMonth() == data.getMonth()) {
+          element.style.backgroundColor = '#c3e4ff';
+        }
       };
       this.check = true;
     } else {
@@ -209,7 +213,9 @@ export class InputCalendarAppMainComponent
       data.setMonth(data.getMonth() - 1);
       this.calendarApp.value = data;
       this.calendarApp.itemFormatter = (date, element) => {
-        element.style.backgroundColor = '#c3e4ff';
+        if (date.getMonth() == data.getMonth()) {
+          element.style.backgroundColor = '#c3e4ff';
+        }
       };
       this.check = true;
     } else {
