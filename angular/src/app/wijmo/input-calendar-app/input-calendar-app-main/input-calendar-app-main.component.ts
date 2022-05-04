@@ -186,24 +186,23 @@ export class InputCalendarAppMainComponent
     this.calendarApp.itemFormatter = (date, element) => {
       let data = date.getDate();
       arr.push(data);
-      // for (let i = 0; i < arr.length; i++) {
-      //   if ((arr[i] = 1)) {
-      //     for (
-      //       let j = i;
-      //       j <
-      //       this.countDays(
-      //         this.curentTime.getMonth() + 1,
-      //         this.curentTime.getFullYear()
-      //       );
-      //       j++
-      //     ) {
-      //       console.log(element);
-      //     }
-      //   }
-      // }
+      for (let i = 0; i < arr.length; i++) {
+        if ((arr[i] = 1)) {
+          for (
+            let j = i;
+            j <
+            this.countDays(
+              this.curentTime.getMonth() + 1,
+              this.curentTime.getFullYear()
+            ) +
+              i;
+            j++
+          ) {
+            console.log(arr[j]);
+          }
+        }
+      }
     };
-
-    console.log(arr);
   }
 
   onClose() {
