@@ -3,15 +3,12 @@ import {
   Component,
   DoCheck,
   EventEmitter,
-  Input,
   OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
-import * as wijmo from '@grapecity/wijmo';
-import * as input from '@grapecity/wijmo.input';
 
 @Component({
   selector: 'app-input-calendar-app-main',
