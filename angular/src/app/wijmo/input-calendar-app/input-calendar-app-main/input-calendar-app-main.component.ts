@@ -133,6 +133,9 @@ export class InputCalendarAppMainComponent
   onThisWeek() {
     if (this.check == false) {
       let data = new Date();
+      let firstDay = data.getDate() - data.getDay();
+      let lastDay = firstDay + 6;
+      console.log(firstDay, lastDay);
       data.setMonth(data.getMonth());
       this.calendarApp.value = data;
       this.calendarApp.itemFormatter = (date, element) => {
