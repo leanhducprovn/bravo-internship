@@ -157,7 +157,40 @@ export class InputCalendarAppMainComponent
     }
   }
 
-  onLastWeek() {}
+  onLastWeek() {
+    if (this.check == false) {
+      let data = new Date();
+      data.setDate(data.getDate() - data.getDay() - 7);
+      this.calendarApp.value = data;
+      this.calendarApp.formatItem.addHandler(this.onLastWeekBind);
+      this.check = true;
+    } else {
+      this.calendarApp.formatItem.removeHandler(this.onLastWeekBind);
+      this.check = false;
+    }
+  }
+
+  onLastWeekBind = this.onLastWeekFormatItem.bind(this);
+
+  private onLastWeekFormatItem(
+    s: any,
+    e: {
+      data: { getDate: () => any; getMonth: () => any };
+      item: { style: { backgroundColor: string } };
+      index: {};
+    }
+  ) {
+    let data = new Date();
+    for (let i = 0; i < 7; i++) {
+      if (
+        e.data.getDate() == this.calendarApp.value.getDate() + i &&
+        (e.data.getMonth() == data.getMonth() ||
+          e.data.getMonth() == data.getMonth() - 1)
+      ) {
+        e.item.style.backgroundColor = '#c3e4ff';
+      }
+    }
+  }
 
   onThisMonth() {
     if (this.check == false) {
