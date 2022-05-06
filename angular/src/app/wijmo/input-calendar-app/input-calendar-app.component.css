@@ -23,3 +23,7 @@ h3::before {
   opacity: 0.3;
   margin-right: 6px;
 }
+
+.wj-content.wj-dropdown, .wj-content.wj-inputnumber, .wj-content.wj-inputmask, .wj-content.wj-calendar-outer, .wj-content.wj-pager {
+  border-radius: 6px !important;
+}
