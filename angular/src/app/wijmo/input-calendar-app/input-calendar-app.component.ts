@@ -40,7 +40,7 @@ export class InputCalendarAppComponent implements OnInit {
   }
 
   private _loadCulture(culture: string) {
-    let url = `../../../../../node_modules/@grapecity/wijmo.cultures/wijmo.culture.${culture}.js`,
+    let url = `../../../../node_modules/@grapecity/wijmo.cultures/wijmo.culture.${culture}.js`,
       scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
       let script = scripts[i];
@@ -57,9 +57,5 @@ export class InputCalendarAppComponent implements OnInit {
     document.head.appendChild(script);
   }
 
-  ngOnInit(): void {
-    let dt = new Date();
-    let format = wijmo.Globalize.format(dt, 'ddMMMMyyyy');
-    console.log(format);
-  }
+  ngOnInit(): void {}
 }
