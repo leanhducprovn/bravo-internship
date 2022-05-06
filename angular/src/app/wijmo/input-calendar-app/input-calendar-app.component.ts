@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
-import * as wjc from '@grapecity/wijmo';
+import * as wijmo from '@grapecity/wijmo';
 
 import { InputCalendarAppMainComponent } from './input-calendar-app-main/input-calendar-app-main.component';
 @Component({
@@ -36,11 +36,11 @@ export class InputCalendarAppComponent implements OnInit {
   }
 
   formatDate(format: string) {
-    return wjc.Globalize.format(new Date(), format);
+    return wijmo.Globalize.format(this.currentDate, format);
   }
 
   private _loadCulture(culture: string) {
-    let url = `../../../../node_modules/@grapecity/wijmo.cultures/wijmo.culture.${culture}.js`,
+    let url = `../../../../../node_modules/@grapecity/wijmo.cultures/wijmo.culture.${culture}.js`,
       scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
       let script = scripts[i];
@@ -52,14 +52,14 @@ export class InputCalendarAppComponent implements OnInit {
       }
     }
     let script = document.createElement('script');
-    script.onload = () => wjc.Control.invalidateAll();
+    script.onload = () => wijmo.Control.invalidateAll();
     script.src = url;
     document.head.appendChild(script);
   }
 
   ngOnInit(): void {
     let dt = new Date();
-    let format = wjc.Globalize.format(dt, 'ddMMMMyyyy');
+    let format = wijmo.Globalize.format(dt, 'ddMMMMyyyy');
     console.log(format);
   }
 }
