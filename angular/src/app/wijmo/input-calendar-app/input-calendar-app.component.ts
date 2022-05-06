@@ -22,7 +22,7 @@ export class InputCalendarAppComponent implements OnInit {
     this.dateSelected = $event;
   }
 
-  private _culture = 'vi';
+  private _culture = 'en';
 
   get culture(): string {
     return this._culture;
@@ -40,7 +40,7 @@ export class InputCalendarAppComponent implements OnInit {
   }
 
   private _loadCulture(culture: string) {
-    let url = `../../../../node_modules/@grapecity/wijmo.cultures/wijmo.culture.${culture}.js`,
+    let url = `../../../assets/js/wijmo.cultures/wijmo.culture.${culture}.js`,
       scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
       let script = scripts[i];
