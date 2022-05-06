@@ -130,32 +130,32 @@ export class InputCalendarAppMainComponent
     }
   }
 
-  onThisWeek() {}
-
-  onLastWeek() {
+  onThisWeek() {
     if (this.check == false) {
       let data = new Date();
+      let firstDay = data.getDate() - data.getDay();
       data.setMonth(data.getMonth());
       this.calendarApp.value = data;
-      this.calendarApp.itemFormatter = (date, element) => {
-        if (
-          DateTime.local(date.getFullYear(), date.getMonth(), date.getDate())
-            .weekNumber ==
-          DateTime.local(data.getFullYear(), data.getMonth(), data.getDate())
-            .weekNumber -
-            1
-        ) {
-          element.style.backgroundColor = '#c3e4ff';
+      this.calendarApp.formatItem.addHandler((s, e) => {
+        for (let i = 0; i < 7; i++) {
+          if (
+            e.data.getDate() == firstDay + i &&
+            e.data.getMonth() == data.getMonth()
+          ) {
+            e.item.style.backgroundColor = '#c3e4ff';
+          }
         }
-      };
+      });
       this.check = true;
     } else {
-      this.calendarApp.itemFormatter = (date, element) => {
-        element.style.backgroundColor = '';
-      };
+      this.calendarApp.formatItem.addHandler((s, e) => {
+        e.item.style.backgroundColor = '';
+      });
       this.check = false;
     }
   }
+
+  onLastWeek() {}
 
   onThisMonth() {
     if (this.check == false) {
