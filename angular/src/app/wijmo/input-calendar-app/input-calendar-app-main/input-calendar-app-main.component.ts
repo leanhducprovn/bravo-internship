@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
-import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-input-calendar-app-main',
