@@ -14,7 +14,7 @@
     <wj-menu-item [value]="'zh'">Chinese</wj-menu-item>
 </wj-menu>
 <div class="center">
-    <button (click)="calendarApp.show(true)">{{ currentDate | date:'EEEE':'':'vi' }}, {{ formatDate("d MMMM,
+    <button (click)="calendarApp.show(true)">{{ currentDate | date:'EEEE':'':culture }}, {{ formatDate("d MMMM,
         yyyy")}}</button>
 </div>
 <wj-popup #calendarApp>

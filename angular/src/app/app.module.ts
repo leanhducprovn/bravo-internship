@@ -4,8 +4,30 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 
 import localeVi from '@angular/common/locales/vi';
+import localeEn from '@angular/common/locales/en';
+import localeEnGB from '@angular/common/locales/en-GB';
+import localeEs from '@angular/common/locales/es';
+import localeDe from '@angular/common/locales/de';
+import localeIt from '@angular/common/locales/it';
+import localeFr from '@angular/common/locales/fr';
+import localePt from '@angular/common/locales/pt';
+import localeRu from '@angular/common/locales/ru';
+import localeJa from '@angular/common/locales/ja';
+import localeKo from '@angular/common/locales/ko';
+import localeZh from '@angular/common/locales/zh';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeVi, 'vi');
+registerLocaleData(localeEn, 'en');
+registerLocaleData(localeEnGB, 'en-GB');
+registerLocaleData(localeEs, 'es');
+registerLocaleData(localeDe, 'de');
+registerLocaleData(localeIt, 'it');
+registerLocaleData(localeFr, 'fr');
+registerLocaleData(localePt, 'pt');
+registerLocaleData(localeRu, 'ru');
+registerLocaleData(localeJa, 'ja');
+registerLocaleData(localeKo, 'ko');
+registerLocaleData(localeZh, 'zh');
 
 import { LuxonModule } from 'luxon-angular';
 
