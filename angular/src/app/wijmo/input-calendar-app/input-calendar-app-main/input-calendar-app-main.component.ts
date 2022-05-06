@@ -38,13 +38,6 @@ export class InputCalendarAppMainComponent
   constructor() {}
 
   ngAfterViewInit(): void {
-    // this.calendarApp.formatItem.addHandler((s, e) => {
-    //   console.log(s, e.data, e.item.textContent);
-    // // });
-    // this.calendarApp.refreshed.addHandler((s, e) => {
-    //   console.log(s, e);
-    // });
-
     this.calendarApp.refreshed.addHandler(() => {
       let setHeader = document.getElementsByClassName('wj-header');
       if (setHeader[0]) {
