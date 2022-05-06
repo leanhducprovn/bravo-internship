@@ -130,25 +130,7 @@ export class InputCalendarAppMainComponent
     }
   }
 
-  onThisWeek() {
-    let data = new Date();
-    let currentDay = data.getDate();
-    let firstDay = data.getDate() - data.getDay();
-    let lastDay = firstDay + 6;
-    let indexCurrentDay: number;
-    data.setMonth(data.getMonth());
-    this.calendarApp.value = data;
-    this.calendarApp.formatItem.addHandler((s, e) => {
-      if (
-        e.data.getDate() == data.getDate() &&
-        e.data.getMonth() == data.getMonth()
-      ) {
-        if (e.index - data.getDay() == 7) {
-          console.log(e.index, e);
-        }
-      }
-    });
-  }
+  onThisWeek() {}
 
   onLastWeek() {
     if (this.check == false) {
