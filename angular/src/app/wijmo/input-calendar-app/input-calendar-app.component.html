@@ -14,7 +14,7 @@
     <wj-menu-item [value]="'zh'">Chinese</wj-menu-item>
 </wj-menu>
 <div class="center">
-    <button (click)="calendarApp.show(true)">{{ formatDate("MMMM dd, yyyy") }}</button>
+    <button (click)="calendarApp.show(true)">{{ formatDate("D")}}</button>
 </div>
 <wj-popup #calendarApp>
     <app-input-calendar-app-main (selected)="eventSelected($event)"></app-input-calendar-app-main>
