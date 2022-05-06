@@ -133,26 +133,34 @@ export class InputCalendarAppMainComponent
   onThisWeek() {
     if (this.check == false) {
       let data = new Date();
-      let firstDay = data.getDate() - data.getDay();
       data.setMonth(data.getMonth());
       this.calendarApp.value = data;
-      this.calendarApp.formatItem.addHandler((s, e) => {
-        for (let i = 0; i < 7; i++) {
-          if (
-            e.data.getDate() == firstDay + i &&
-            e.data.getMonth() == data.getMonth()
-          ) {
-            e.item.style.backgroundColor = '#c3e4ff';
-          }
-        }
-      });
+      this.calendarApp.formatItem.addHandler(this.onThisWeekBind);
       this.check = true;
     } else {
-      this.calendarApp.formatItem.removeHandler((s, e) => {
-        console.log(e);
-        e.item.style.backgroundColor;
-      });
+      this.calendarApp.formatItem.removeHandler(this.onThisWeekBind);
       this.check = false;
+    }
+  }
+
+  onThisWeekBind = this.onThisWeekFormatItem.bind(this);
+
+  private onThisWeekFormatItem(
+    s: any,
+    e: {
+      data: { getDate: () => any; getMonth: () => any };
+      item: { style: { backgroundColor: string } };
+    }
+  ) {
+    let data = new Date();
+    let firstDay = data.getDate() - data.getDay();
+    for (let i = 0; i < 7; i++) {
+      if (
+        e.data.getDate() == firstDay + i &&
+        e.data.getMonth() == data.getMonth()
+      ) {
+        e.item.style.backgroundColor = '#c3e4ff';
+      }
     }
   }
 
