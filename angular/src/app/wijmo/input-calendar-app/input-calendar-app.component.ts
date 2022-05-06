@@ -35,8 +35,8 @@ export class InputCalendarAppComponent implements OnInit {
     }
   }
 
-  formatDate(format: string) {
-    return wijmo.Globalize.format(this.currentDate, format);
+  formatDate(time: any, format: string) {
+    return wijmo.Globalize.format(time, format);
   }
 
   private _loadCulture(culture: string) {

@@ -14,11 +14,15 @@
     <wj-menu-item [value]="'zh'">Chinese</wj-menu-item>
 </wj-menu>
 <div class="center">
-    <button (click)="calendarApp.show(true)">{{ currentDate | date:'EEEE':'':culture }}, {{ formatDate("d MMMM,
-        yyyy")}}</button>
+    <button (click)="calendarApp.show(true)">{{ currentDate | date:'EEEE':'':culture }}, {{ formatDate(currentDate, "d
+        MMMM, yyyy")}}</button>
 </div>
 <wj-popup #calendarApp>
     <app-input-calendar-app-main (selected)="eventSelected($event)"></app-input-calendar-app-main>
 </wj-popup>
-<h3>{{ (dateSelected | date:'fullDate':'':'vi') ? (dateSelected | date:'fullDate':'':'vi') : currentDate |
-    date:'fullDate':'':'vi' }}</h3>
+<h3>
+    {{ (dateSelected | date:'EEEE':'':culture) ? (dateSelected | date:'EEEE':'':culture) : (currentDate |
+    date:'EEEE':'':culture) }},
+    {{ (formatDate(dateSelected, "d MMMM, yyyy")) ? (formatDate(dateSelected, "d MMMM, yyyy")) :
+    (formatDate(currentDate, "d MMMM, yyyy")) }}
+</h3>
