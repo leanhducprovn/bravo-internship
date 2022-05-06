@@ -148,8 +148,9 @@ export class InputCalendarAppMainComponent
       });
       this.check = true;
     } else {
-      this.calendarApp.formatItem.addHandler((s, e) => {
-        e.item.style.backgroundColor = '';
+      this.calendarApp.formatItem.removeHandler((s, e) => {
+        console.log(e);
+        e.item.style.backgroundColor;
       });
       this.check = false;
     }
