@@ -135,39 +135,19 @@ export class InputCalendarAppMainComponent
     let currentDay = data.getDate();
     let firstDay = data.getDate() - data.getDay();
     let lastDay = firstDay + 6;
+    let indexCurrentDay: number;
     data.setMonth(data.getMonth());
     this.calendarApp.value = data;
-
     this.calendarApp.formatItem.addHandler((s, e) => {
-      if (e.data.getDate() == firstDay) {
-        console.log(s, e.index, e);
+      if (
+        e.data.getDate() == data.getDate() &&
+        e.data.getMonth() == data.getMonth()
+      ) {
+        if (e.index - data.getDay() == 7) {
+          console.log(e.index, e);
+        }
       }
     });
-
-    // if (this.check == false) {
-    //   let data = new Date();
-    //   let firstDay = data.getDate() - data.getDay();
-    //   let lastDay = firstDay + 6;
-    //   console.log(firstDay, lastDay);
-    //   data.setMonth(data.getMonth());
-    //   this.calendarApp.value = data;
-    //   this.calendarApp.itemFormatter = (date, element) => {
-    //     if (
-    //       DateTime.local(date.getFullYear(), date.getMonth(), date.getDate())
-    //         .weekNumber ==
-    //       DateTime.local(data.getFullYear(), data.getMonth(), data.getDate())
-    //         .weekNumber
-    //     ) {
-    //       element.style.backgroundColor = '#c3e4ff';
-    //     }
-    //   };
-    //   this.check = true;
-    // } else {
-    //   this.calendarApp.itemFormatter = (date, element) => {
-    //     element.style.backgroundColor = '';
-    //   };
-    //   this.check = false;
-    // }
   }
 
   onLastWeek() {
