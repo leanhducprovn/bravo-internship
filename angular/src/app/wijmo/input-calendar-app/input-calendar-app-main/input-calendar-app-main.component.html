@@ -10,7 +10,7 @@
     <button (click)="onNextMonth()"><i class="fad fa-chevron-circle-right"></i></button>
 </div>
 <div>
-    <wj-calendar [showHeader]="false" #calendarApp></wj-calendar>
+    <wj-calendar [ngStyle]="styleSelection" [showHeader]="false" #calendarApp></wj-calendar>
 </div>
 <div class="ml-10">
     <app-input-calendar-app-selection (click)="onToday()" chooseTime="Hôm nay"></app-input-calendar-app-selection>

@@ -15,15 +15,15 @@
         <wj-menu-item [value]="'zh'">Chinese</wj-menu-item>
     </wj-menu>
     <div class="wj-labeled-input">
-        <input id="btnBackgroundImage" type="radio" name="color" />
+        <input (click)="setStyle('backgroundImage')" id="btnBackgroundImage" type="radio" name="color" />
         <label for="btnBackgroundImage">Background image</label>
     </div>
     <div class="wj-labeled-input">
-        <input id="btnGreenBackground" type="radio" name="color" />
+        <input (click)="setStyle('greenBackground')" id="btnGreenBackground" type="radio" name="color" />
         <label for="btnGreenBackground">Green background</label>
     </div>
     <div class="wj-labeled-input">
-        <input id="btnPinkBackground" type="radio" name="color" />
+        <input (click)="setStyle('pinkBackground')" id="btnPinkBackground" type="radio" name="color" />
         <label for="btnPinkBackground">Pink background</label>
     </div>
 </div>
@@ -32,7 +32,8 @@
         MMMM, yyyy")}}</button>
 </div>
 <wj-popup #calendarApp>
-    <app-input-calendar-app-main (selected)="eventSelected($event)"></app-input-calendar-app-main>
+    <app-input-calendar-app-main [styleSelection]="styling()" (selected)="eventSelected($event)">
+    </app-input-calendar-app-main>
 </wj-popup>
 <h3>
     {{ (dateSelected | date:'EEEE':'':culture) ? (dateSelected | date:'EEEE':'':culture) : (currentDate |

@@ -57,5 +57,18 @@ export class InputCalendarAppComponent implements OnInit {
     document.head.appendChild(script);
   }
 
+  setStyle(style: any) {
+    console.log(style);
+  }
+
+  styling() {
+    return {
+      'background-repeat': 'no-repeat, repeat',
+      'background-size': 'cover',
+      'background-image':
+        'url(../../../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp)',
+    };
+  }
+
   ngOnInit(): void {}
 }

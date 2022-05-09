@@ -3,6 +3,7 @@ import {
   Component,
   DoCheck,
   EventEmitter,
+  Input,
   OnInit,
   Output,
   ViewChild,
@@ -19,6 +20,8 @@ export class InputCalendarAppMainComponent
   implements OnInit, DoCheck, AfterViewInit
 {
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
+
+  @Input() styleSelection!: any;
 
   curentTime = new Date();
   currentMonth!: number;
