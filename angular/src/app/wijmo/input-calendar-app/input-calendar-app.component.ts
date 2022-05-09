@@ -94,14 +94,20 @@ export class InputCalendarAppComponent
   }
 
   ngOnDestroy(): void {
-    document.body.removeEventListener('click', this.click);
+    document.body.removeEventListener('click', this.clicked);
   }
 
   ngOnInit(): void {
-    document.body.addEventListener('click', this.click);
+    document.body.addEventListener('click', this.clicked);
   }
 
-  click(e: any) {
+  displayPosition(e: MouseEvent) {
     console.log(e.x, e.y);
+  }
+
+  clicked = this.click.bind(this);
+
+  click(e: any) {
+    this.displayPosition(e);
   }
 }
