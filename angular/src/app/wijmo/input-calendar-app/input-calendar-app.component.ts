@@ -93,5 +93,13 @@ export class InputCalendarAppComponent
     return 0;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    document.body.addEventListener('click', this.click);
+  }
+
+  click(e: any) {
+    var x = e.x;
+    var y = e.y;
+    console.log(x, y);
+  }
 }
