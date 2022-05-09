@@ -30,19 +30,32 @@ h3::before {
   margin-right: 6px;
 }
 
-.wj-content.wj-dropdown, .wj-content.wj-inputnumber, .wj-content.wj-inputmask, .wj-content.wj-calendar-outer, .wj-content.wj-pager {
+.wj-content.wj-dropdown,
+.wj-content.wj-inputnumber,
+.wj-content.wj-inputmask,
+.wj-content.wj-calendar-outer,
+.wj-content.wj-pager {
   border-radius: 6px !important;
 }
 
-.wj-static-labels .wj-labeled-input :not(.wj-state-focused)+label, .wj-labeled-input .wj-state-focused+label, .wj-labeled-input :not(.wj-state-empty)+label {
+.wj-static-labels .wj-labeled-input :not(.wj-state-focused) + label,
+.wj-labeled-input .wj-state-focused + label,
+.wj-labeled-input :not(.wj-state-empty) + label {
   color: #344558 !important;
   font-weight: 600;
 }
 
-.wj-labeled-input input[type=checkbox]+label:after, .wj-labeled-input input[type=radio]+label:after {
+.wj-labeled-input input[type="checkbox"] + label:after,
+.wj-labeled-input input[type="radio"] + label:after {
   background: #e9eef0 !important;
 }
 
-.wj-labeled-input input[type=radio]:checked+label:after {
+.wj-labeled-input input[type="radio"]:checked + label:after {
   border: 0.45em solid #2c3e51 !important;
+}
+
+.backgroundImage {
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-image: url("../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp");
 }

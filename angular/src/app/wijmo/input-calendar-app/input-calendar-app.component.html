@@ -32,7 +32,7 @@
         MMMM, yyyy")}}</button>
 </div>
 <wj-popup #calendarApp>
-    <app-input-calendar-app-main [styleSelection]="styling()" (selected)="eventSelected($event)">
+    <app-input-calendar-app-main [styleSelection]="styleSelected" (selected)="eventSelected($event)">
     </app-input-calendar-app-main>
 </wj-popup>
 <h3>

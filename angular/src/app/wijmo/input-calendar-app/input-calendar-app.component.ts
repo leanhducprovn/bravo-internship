@@ -57,8 +57,10 @@ export class InputCalendarAppComponent implements OnInit {
     document.head.appendChild(script);
   }
 
+  styleSelected!: any;
+
   setStyle(style: any) {
-    console.log(style);
+    this.styleSelected = style;
   }
 
   styling() {
