@@ -99,6 +99,20 @@ export class InputCalendarAppComponent
 
   ngOnInit(): void {
     document.body.addEventListener('click', this.clicked);
+
+    var vA = 'Hello var';
+    var vB = 4;
+    if (vB > 3) {
+      var vA = 'Say hello var!';
+    }
+    console.log(vA);
+
+    let lA = 'Hello let';
+    let lB = 4;
+    if (lB > 3) {
+      let lA = 'Say hello let!';
+    }
+    console.log(lA);
   }
 
   displayPosition(e: MouseEvent) {
