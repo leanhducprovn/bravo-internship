@@ -8,8 +8,6 @@ import {
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 import * as wijmo from '@grapecity/wijmo';
-
-import { InputCalendarAppMainComponent } from './input-calendar-app-main/input-calendar-app-main.component';
 @Component({
   selector: 'app-input-calendar-app',
   templateUrl: './input-calendar-app.component.html',
