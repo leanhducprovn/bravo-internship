@@ -53,9 +53,3 @@ h3::before {
 .wj-labeled-input input[type="radio"]:checked + label:after {
   border: 0.45em solid #2c3e51 !important;
 }
-
-.backgroundImage {
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-  background-image: url("../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp");
-}

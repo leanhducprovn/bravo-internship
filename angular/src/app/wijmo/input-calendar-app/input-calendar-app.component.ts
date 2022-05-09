@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 import { WjCalendar } from '@grapecity/wijmo.angular2.input';
 import * as wijmo from '@grapecity/wijmo';
@@ -9,14 +15,21 @@ import { InputCalendarAppMainComponent } from './input-calendar-app-main/input-c
   templateUrl: './input-calendar-app.component.html',
   styleUrls: ['./input-calendar-app.component.css'],
 })
-export class InputCalendarAppComponent implements OnInit {
+export class InputCalendarAppComponent
+  implements OnInit, AfterViewInit, DoCheck
+{
   @ViewChild('calendarApp') calendarApp!: WjCalendar;
 
   currentDate = new Date();
 
   dateSelected!: any;
+  styleSelected!: any;
 
   constructor() {}
+
+  ngDoCheck(): void {}
+
+  ngAfterViewInit(): void {}
 
   eventSelected($event: any) {
     this.dateSelected = $event;
@@ -57,19 +70,29 @@ export class InputCalendarAppComponent implements OnInit {
     document.head.appendChild(script);
   }
 
-  styleSelected!: any;
-
   setStyle(style: any) {
     this.styleSelected = style;
   }
 
-  styling() {
-    return {
-      'background-repeat': 'no-repeat, repeat',
-      'background-size': 'cover',
-      'background-image':
-        'url(../../../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp)',
-    };
+  styling(styleSelected: any) {
+    switch (styleSelected) {
+      case 'backgroundImage':
+        return {
+          'background-repeat': 'no-repeat, repeat',
+          'background-size': 'cover',
+          'background-image':
+            'url(../../../../../assets/images/hand-painted-watercolor-pastel-sky-background.webp)',
+        };
+      case 'greenBackground':
+        return {
+          'background-color': '#c7f9cc',
+        };
+      case 'pinkBackground':
+        return {
+          'background-color': '#fde2e4',
+        };
+    }
+    return 0;
   }
 
   ngOnInit(): void {}
