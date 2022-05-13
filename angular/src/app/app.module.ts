@@ -65,6 +65,7 @@ import { InputCalendarAppComponent } from './wijmo/input-calendar-app/input-cale
 import { InputCalendarAppMainComponent } from './wijmo/input-calendar-app/input-calendar-app-main/input-calendar-app-main.component';
 import { InputCalendarAppSelectionComponent } from './wijmo/input-calendar-app/input-calendar-app-selection/input-calendar-app-selection.component';
 import { InputCalendarAppConfirmComponent } from './wijmo/input-calendar-app/input-calendar-app-confirm/input-calendar-app-confirm.component';
+import { CssComponent } from './css/css.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +101,7 @@ import { InputCalendarAppConfirmComponent } from './wijmo/input-calendar-app/inp
     InputCalendarAppMainComponent,
     InputCalendarAppSelectionComponent,
     InputCalendarAppConfirmComponent,
+    CssComponent,
   ],
   imports: [
     BrowserModule,
