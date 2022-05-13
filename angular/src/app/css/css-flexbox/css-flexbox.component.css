@@ -18,6 +18,10 @@
   font-weight: 600;
 }
 
+.fr {
+  float:right
+}
+
 .header {
   background-color: #f1f1f1;
 }
@@ -81,7 +85,7 @@ hr {
   background-color: #f1f1f1;
 }
 
-.sidebar .tools {
+.sidebar .sidebar-tools {
   display: flex;
   justify-content: flex-end;
   padding: 8px;
@@ -91,6 +95,12 @@ hr {
 .sidebar .sidebar-group .sidebar-group-name {
   padding: 5px;
   background-color: #F9F9F9;
+  border: 0.5px solid #ccc;
+}
+
+.sidebar .flex-end {
+  display: flex;
+  align-items: flex-end;
 }
 
 .content {
@@ -104,12 +114,12 @@ hr {
 
 .content-primary {
   height: 45vh;
-  background-color:#bbb;
+  background-color:#fff;
 }
 
 .content-secondary {
   height: 45vh;
-  background-color:#ccc;
+  background-color:#fff;
 }
 
 .row {

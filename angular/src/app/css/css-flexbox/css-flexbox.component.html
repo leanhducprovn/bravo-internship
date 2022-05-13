@@ -32,18 +32,22 @@
 <hr>
 <div class="container">
     <div class="sidebar" [hidden]="sidebar">
-        <div class="tools"><i class="fad fa-thumbtack mr-10"></i><i (click)="sidebar = !sidebar"
+        <div class="sidebar-tools"><i class="fad fa-thumbtack mr-10"></i><i (click)="sidebar = !sidebar"
                 class="fas fa-times"></i></div>
         <div class="sidebar-group">
             <div class="sidebar-group-name fw-600"><span class="ml-5">1. Nhóm dữ liệu</span></div>
             <a style="background-color: #CCE9FF;" routerLink="/css/"><i style="color:#E9C767"
                     class="fad fa-folder-open mr-10"></i>Hoá đơn GTGT</a>
             <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ của tôi</a>
-            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ trong năm</a>
+            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ trong
+                năm</a>
             <a routerLink="/css/"><i style="color:#1A65A5" class="fas fa-trash mr-10"></i>Dữ liệu đã đình chỉ</a>
         </div>
-        <div class="sidebar-group">
-            <div class="sidebar-group-name fw-600"><span class="ml-5">2. Lọc</span></div>
+        <div class="sidebar-group" style="position:absolute;bottom: 0;width: 100%;">
+            <div class="sidebar-group-name fw-600">
+                <span class="ml-5">2. Lọc</span>
+                <i style="color:green" class="fas fa-plus fr"></i>
+            </div>
         </div>
     </div>
     <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
