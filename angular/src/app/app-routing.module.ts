@@ -19,6 +19,8 @@ import { CoreComponent } from './core/core.component';
 import { ContentChildParentComponent } from './core/content-child-parent/content-child-parent.component';
 import { InputCalendarAppComponent } from './wijmo/input-calendar-app/input-calendar-app.component';
 import { CssComponent } from './css/css.component';
+import { CssFlexboxComponent } from './css/css-flexbox/css-flexbox.component';
+import { CssGridComponent } from './css/css-grid/css-grid.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,16 @@ const routes: Routes = [
       {
         path: 'css',
         component: CssComponent,
+        children: [
+          {
+            path: 'css-flexbox',
+            component: CssFlexboxComponent,
+          },
+          {
+            path: 'css-grid',
+            component: CssGridComponent,
+          },
+        ],
       },
       {
         path: 'core',
