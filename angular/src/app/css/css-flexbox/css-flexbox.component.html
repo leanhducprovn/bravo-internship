@@ -1,7 +1,7 @@
 <div class="header header-flex">
     <div class="header-primary">
         <ul class="header-list">
-            <li><i class="border-left-dotted mr-5"></i><i class="fas fa-bars"></i></li>
+            <li (click)="sidebar = !sidebar"><i class="border-left-dotted mr-5"></i><i class="fas fa-bars"></i></li>
             <li>Dữ liệu <i class="fas fa-caret-down"></i></li>
             <li>Tuỳ chọn <i class="fas fa-caret-down"></i></li>
             <li><i class="border-left-dotted mr-5"></i><i class="fad fa-file mr-5"></i><i class="fas fa-caret-down"></i>
@@ -30,17 +30,18 @@
     </div>
 </div>
 
-<div class="sidenav">
-    <p class="ml-5">1. Nhóm dữ liệu</p>
-    <a routerLink="/css/">Hoá đơn GTGT</a>
-    <a routerLink="/css/">Chứng từ của tôi</a>
-    <a routerLink="/css/">Chứng từ trong năm</a>
-</div>
-
-<div class="content">
-    <div class="row">
-        <div class="column" style="background-color:#aaa;"></div>
-        <div class="column" style="background-color:#bbb;"></div>
+<div class="container">
+    <div class="sidebar" [hidden]="sidebar">
+        <p class="ml-5">1. Nhóm dữ liệu</p>
+        <a routerLink="/css/">Hoá đơn GTGT</a>
+        <a routerLink="/css/">Chứng từ của tôi</a>
+        <a routerLink="/css/">Chứng từ trong năm</a>
+    </div>
+    <div class="content">
+        <div class="content-flex">
+            <div class="content-primary">1</div>
+            <div class="content-secondary">2</div>
+        </div>
     </div>
 </div>
 

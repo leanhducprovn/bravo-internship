@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CssFlexboxComponent implements OnInit {
   currentTime = new Date();
+  sidebar = true;
 
   constructor() {}
 
