@@ -37,7 +37,7 @@
         <a routerLink="/css/">Chứng từ của tôi</a>
         <a routerLink="/css/">Chứng từ trong năm</a>
     </div>
-    <div class="content">
+    <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
         <div class="content-flex">
             <div class="content-primary">1</div>
             <div class="content-secondary">2</div>
