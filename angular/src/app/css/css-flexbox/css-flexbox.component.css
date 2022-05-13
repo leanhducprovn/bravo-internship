@@ -121,7 +121,4 @@
     display: flex;
     flex-wrap: wrap
   }
-  .footer .footer-list>li {
-    padding: 5px;
-  }
 }
