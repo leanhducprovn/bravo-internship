@@ -6,10 +6,10 @@
             <li>Tuỳ chọn <i class="fas fa-caret-down"></i></li>
             <li><i class="border-left-dotted mr-5"></i><i class="fad fa-file mr-5"></i><i class="fas fa-caret-down"></i>
             </li>
-            <li><i class="border-left-solid mr-5"></i><i class="fad fa-folder-open"></i></li>
+            <li><i class="border-left-solid mr-5"></i><i style="color:#E9C767" class="fad fa-folder-open"></i></li>
             <li><i class="border-left-solid mr-5"></i><i class="fad fa-save"></i></li>
-            <li><i class="border-left-solid mr-5"></i><i class="fad fa-redo"></i></li>
-            <li><i class="border-left-solid mr-5"></i><i class="fad fa-file-pdf"></i></li>
+            <li><i class="border-left-solid mr-5"></i><i style="color:#1A65A5" class="fad fa-redo"></i></li>
+            <li><i class="border-left-solid mr-5"></i><i style="color:#F85047" class="fad fa-file-pdf"></i></li>
             <li><i class="border-left-solid mr-5"></i><i class="fad fa-sign-out"></i></li>
             <li><i class="border-left-solid mr-5"></i><i class="fad fa-power-off"></i></li>
             <li><i class="border-left-solid mr-5"></i><i class="fad fa-arrow-alt-circle-left"></i></li>
@@ -32,10 +32,17 @@
 
 <div class="container">
     <div class="sidebar" [hidden]="sidebar">
-        <p class="ml-5">1. Nhóm dữ liệu</p>
-        <a routerLink="/css/">Hoá đơn GTGT</a>
-        <a routerLink="/css/">Chứng từ của tôi</a>
-        <a routerLink="/css/">Chứng từ trong năm</a>
+        <div class="sidebar-group">
+            <p class="ml-5 mb-10 fw-600">1. Nhóm dữ liệu</p>
+            <a style="background-color: #CCE9FF;" routerLink="/css/"><i style="color:#E9C767"
+                    class="fad fa-folder-open mr-10"></i>Hoá đơn GTGT</a>
+            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ của tôi</a>
+            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ trong năm</a>
+            <a routerLink="/css/"><i style="color:#1A65A5" class="fas fa-trash mr-10"></i>Dữ liệu đã đình chỉ</a>
+        </div>
+        <div class="sidebar-group">
+            <p class="ml-5 mb-10 fw-600">2. Lọc</p>
+        </div>
     </div>
     <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
         <div class="content-flex">

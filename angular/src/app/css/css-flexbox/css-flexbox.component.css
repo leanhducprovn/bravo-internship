@@ -2,8 +2,20 @@
   margin-right: 5px;
 }
 
+.mr-10 {
+  margin-right: 10px;
+}
+
 .ml-5 {
   margin-left: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fw-600 {
+  font-weight: 600;
 }
 
 .header {
@@ -54,7 +66,7 @@
 
 .sidebar a {
   color: #373737;
-  padding: 16px;
+  padding: 10px;
   text-decoration: none;
   display: block;
   font-size: unset !important
@@ -95,6 +107,7 @@
 .footer .footer-list {
   margin: 0;
   list-style: none;
+  padding-left: 8px;
 }
 
 .footer .footer-list>li {
