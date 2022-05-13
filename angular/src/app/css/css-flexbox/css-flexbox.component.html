@@ -36,5 +36,22 @@
     <div class="column" style="background-color:#ccc;">Column</div>
 </div>
 
-<div class="footer">
+<div class="footer footer-flex">
+    <div class="footer-primary">
+        <ul class="footer-list">
+            <li>Tổng cộng: 24 / 989</li>
+            <li><i class="border-left-solid mr-5"></i>Đã tạo: {{ currentTime | date:'short' }}</li>
+            <li><i class="border-left-solid mr-5"></i>Đã sửa: {{ currentTime | date:'short' }}</li>
+        </ul>
+    </div>
+    <div class="footer-secondary">
+        <ul class="footer-list">
+            <li><i class="fad fa-database mr-5"></i>Default</li>
+            <li><i class="border-left-solid mr-5"></i>Văn phòng Công ty Cổ phần BRAVO
+            </li>
+            <li><i class="border-left-solid mr-5"></i>2027</li>
+            <li><i class="border-left-solid mr-5"></i><i class="fad fa-user mr-5"></i>Admin</li>
+            <li><i class="border-left-solid mr-5"></i><i class="fad fa-bell mr-5"></i>12</li>
+        </ul>
+    </div>
 </div>
