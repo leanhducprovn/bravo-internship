@@ -36,12 +36,35 @@
                 class="fas fa-times"></i></div>
         <div class="sidebar-group">
             <div class="sidebar-group-name fw-600"><span class="ml-5">1. Nhóm dữ liệu</span></div>
-            <a style="background-color: #CCE9FF;" routerLink="/css/"><i style="color:#E9C767"
-                    class="fad fa-folder-open mr-10"></i>Hoá đơn GTGT</a>
-            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ của tôi</a>
-            <a routerLink="/css/"><i style="color:#E9C767" class="fad fa-folder-open mr-10"></i>Chứng từ trong
-                năm</a>
-            <a routerLink="/css/"><i style="color:#1A65A5" class="fas fa-trash mr-10"></i>Dữ liệu đã đình chỉ</a>
+            <ul>
+                <li style="background-color: #CCE9FF;"><i style="color:#E9C767"
+                        class="fad fa-folder-open ml-18 mr-10"></i>Hoá đơn GTGT</li>
+                <li><i style="color:#E9C767" class="fad fa-folder-open ml-18 mr-10"></i>Chứng từ của
+                    tôi</li>
+                <ul class="treeview">
+                    <li (click)="treeview = !treeview"><i
+                            [class]="treeview ? 'fa-solid fa-angle-right' : 'fa-solid fa-angle-down'"></i><i
+                            style="color:#E9C767"
+                            [class]="treeview ? 'fad fa-folder-open ml-10 mr-10' : 'fad fa-folder-open ml-6 mr-10'"></i>Chứng
+                        từ trong năm
+                    </li>
+                    <ul [hidden]="treeview">
+                        <li><input class="ml-10" type="checkbox">Tháng 1</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 2</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 3</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 4</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 5</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 6</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 7</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 8</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 9</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 10</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 11</li>
+                        <li><input class="ml-10" type="checkbox">Tháng 12</li>
+                    </ul>
+                </ul>
+                <li><i style="color:#1A65A5" class="fas fa-trash ml-18 mr-10"></i>Dữ liệu đã đình chỉ</li>
+            </ul>
         </div>
         <div class="sidebar-group" style="position:absolute;bottom: 0;width: 100%;">
             <div class="sidebar-group-name fw-600">
