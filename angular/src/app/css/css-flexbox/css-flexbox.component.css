@@ -6,6 +6,10 @@
   margin-right: 10px;
 }
 
+.mr-15 {
+  margin-right: 15px;
+}
+
 .ml-5 {
   margin-left: 5px;
 }
@@ -19,7 +23,7 @@
 }
 
 .fr {
-  float:right
+  float: right;
 }
 
 .header {
@@ -32,7 +36,7 @@
   list-style: none;
 }
 
-.header .header-list>li {
+.header .header-list > li {
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px;
@@ -54,15 +58,15 @@
 @media (max-width: 1152px) {
   .header-flex {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
-  .header .header-list>li {
+  .header .header-list > li {
     padding: 5px;
   }
 }
 
 hr {
-  border: 1px solid #2391FE;
+  border: 1px solid #2391fe;
   margin: 0 !important;
 }
 
@@ -70,7 +74,7 @@ hr {
   height: 90vh;
   width: 220px;
   position: absolute;
-  background-color:#EAECF5;
+  background-color: #eaecf5;
 }
 
 .sidebar a {
@@ -78,7 +82,7 @@ hr {
   padding: 10px;
   text-decoration: none;
   display: block;
-  font-size: unset !important
+  font-size: unset !important;
 }
 
 .sidebar a:hover {
@@ -94,7 +98,7 @@ hr {
 
 .sidebar .sidebar-group .sidebar-group-name {
   padding: 5px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border: 0.5px solid #ccc;
 }
 
@@ -107,19 +111,24 @@ hr {
   height: 90vh;
 }
 
-.content-flex {
+.content .content-flex {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
-.content-primary {
+.content .content-flex .content-primary {
   height: 45vh;
-  background-color:#fff;
+  background-color: #fff;
 }
 
-.content-secondary {
+.content .content-flex .content-primary .content-noti {
+  padding: 7px;
+  background-color: #f1f1f1;
+}
+
+.content .content-flex .content-secondary {
   height: 45vh;
-  background-color:#fff;
+  background-color: #fff;
 }
 
 .row {
@@ -137,7 +146,7 @@ hr {
   padding-left: 5px;
 }
 
-.footer .footer-list>li {
+.footer .footer-list > li {
   display: inline-block;
   vertical-align: middle;
   padding: 8px;
@@ -159,6 +168,6 @@ hr {
 @media (max-width: 1181px) {
   .footer-flex {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 }
