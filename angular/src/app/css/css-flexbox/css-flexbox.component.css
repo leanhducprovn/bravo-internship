@@ -94,14 +94,13 @@
 
 .footer .footer-list {
   margin: 0;
-  padding: 8px;
   list-style: none;
 }
 
 .footer .footer-list>li {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 8px;
+  padding: 8px;
 }
 
 .footer .footer-list .border-left-dotted {
