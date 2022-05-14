@@ -221,6 +221,11 @@ ul {
   background-color: #f1f1f1;
 }
 
+.content .content-flex .content-secondary .tab-header .header-left {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
 .content .content-flex .content-secondary .tab-header .header-left ul>li {
   display: inline-block;
   vertical-align: middle;
@@ -231,6 +236,10 @@ ul {
 .content .content-flex .content-secondary .tab-header .header-list {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.content .content-flex .content-secondary .tab-header .header-right {
+  white-space: nowrap;
 }
 
 .content .content-flex .content-secondary .tab-header .header-right ul >li {
