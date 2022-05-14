@@ -10,6 +10,7 @@ export class CssFlexboxComponent implements OnInit {
   sidebar = true;
   treeview = true;
   tabGroup = true;
+  tabRight = true;
 
   constructor() {}
 

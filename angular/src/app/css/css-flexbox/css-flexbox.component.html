@@ -85,7 +85,9 @@
                     <div class="header-left">button</div>
                     <div class="header-right">
                         <ul>
-                            <li><i class="fad fa-clone mr-10"></i></li>
+                            <li><i (click)="tabRight = !tabRight"
+                                    [class]="tabRight  ? 'fad fa-clone mr-10' : 'fas fa-clone mr-10'"></i>
+                            </li>
                             <li><i (click)="tabGroup = !tabGroup"
                                     [class]="tabGroup ? 'fas fa-angle-down' : 'fas fa-angle-up'"></i></li>
                         </ul>
@@ -93,10 +95,11 @@
                 </div>
                 <div [hidden]="!tabGroup">
                     <div class="tab-group">
-                        <div class="tab-left">
+                        <div class="tab-left"
+                            [ngStyle]="{'width': !tabRight? '100%' : '', 'height': !tabRight? '100%' : ''}">
                             2
                         </div>
-                        <div class="tab-right">
+                        <div class="tab-right" [hidden]="!tabRight">
                             3
                         </div>
                     </div>
@@ -105,7 +108,6 @@
         </div>
     </div>
 </div>
-
 <div class="footer footer-flex">
     <div class="footer-primary">
         <ul class="footer-list">
