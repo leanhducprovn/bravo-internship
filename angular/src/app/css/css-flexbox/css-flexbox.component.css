@@ -201,14 +201,27 @@ input[type="checkbox"] {
 }
 
 .content .content-flex .content-secondary .tab-header {
+  display: flex;
+  justify-content: space-between;
   padding: 7px;
   background-color: #f1f1f1;
+}
+
+.content .content-flex .content-secondary .tab-header .header-right ul {
+  margin-block-start: unset !important;
+  margin-block-end: unset !important;
+  padding-inline-start: unset !important
+}
+
+.content .content-flex .content-secondary .tab-header .header-right ul >li {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .content .content-flex .content-secondary .tab-group {
   display: flex;
   flex-wrap: wrap;
-  height: calc(45vh - 32.5px);
+  height: calc(45vh - 34px);
 }
 
 .content .content-flex .content-secondary .tab-group .tab-left {
