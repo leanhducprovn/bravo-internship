@@ -27,7 +27,7 @@ body {
   padding: 0.5rem;
   /* max-width: 1080px; */
   margin: auto;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 @media (min-width: 600px) {
   body {
