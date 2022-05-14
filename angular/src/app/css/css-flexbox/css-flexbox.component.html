@@ -76,13 +76,22 @@
     </div>
     <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
         <div class="content-flex">
-            <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 30px)' : ''}">
+            <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 1
             </div>
             <div class="content-secondary">
                 <div class="tab-header">
-                    <div class="header-left">button</div>
+                    <div class="header-left">
+                        <ul class="header-list">
+                            <li class="selected-white">Chi tiết hoá đơn</li>
+                            <li>Thanh toán ứng trước</li>
+                            <li>Công việc</li>
+                            <li>Chiết khấu thương mại</li>
+                            <li>Mẫu in chứng từ</li>
+                            <li>Duyệt chứng từ</li>
+                        </ul>
+                    </div>
                     <div class="header-right">
                         <ul>
                             <li><i (click)="tabRight = !tabRight"
