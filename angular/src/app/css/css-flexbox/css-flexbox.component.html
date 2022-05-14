@@ -1,7 +1,8 @@
 <div class="header header-flex">
     <div class="header-primary">
         <ul class="header-list">
-            <li (click)="sidebar = !sidebar"><i class="border-left-dotted mr-5"></i><i class="fas fa-bars"></i></li>
+            <li (click)="sidebar = !sidebar"><i class="border-left-dotted ml-5 mr-5"></i><i class="fas fa-bars"></i>
+            </li>
             <li>Dữ liệu <i class="fas fa-caret-down"></i></li>
             <li>Tuỳ chọn <i class="fas fa-caret-down"></i></li>
             <li><i class="border-left-dotted mr-5"></i><i class="fad fa-file mr-5"></i><i class="fas fa-caret-down"></i>
@@ -25,7 +26,7 @@
     </div>
     <div class="header-secondary">
         <ul class="header-list">
-            <li>Layout <i class="fas fa-caret-down"></i></li>
+            <li style="margin-right:-9px">Layout<i class="fas fa-caret-down ml-20 mr-10"></i></li>
         </ul>
     </div>
 </div>
@@ -75,7 +76,7 @@
     </div>
     <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
         <div class="content-flex">
-            <div class="content-primary">
+            <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 30px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 1
             </div>
@@ -85,16 +86,19 @@
                     <div class="header-right">
                         <ul>
                             <li><i class="fad fa-clone mr-10"></i></li>
-                            <li><i class="fas fa-angle-down"></i></li>
+                            <li><i (click)="tabGroup = !tabGroup"
+                                    [class]="tabGroup ? 'fas fa-angle-down' : 'fas fa-angle-up'"></i></li>
                         </ul>
                     </div>
                 </div>
-                <div class="tab-group">
-                    <div class="tab-left">
-                        2
-                    </div>
-                    <div class="tab-right">
-                        3
+                <div [hidden]="!tabGroup">
+                    <div class="tab-group">
+                        <div class="tab-left">
+                            2
+                        </div>
+                        <div class="tab-right">
+                            3
+                        </div>
                     </div>
                 </div>
             </div>

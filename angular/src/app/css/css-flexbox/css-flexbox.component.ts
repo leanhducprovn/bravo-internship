@@ -9,6 +9,7 @@ export class CssFlexboxComponent implements OnInit {
   currentTime = new Date();
   sidebar = true;
   treeview = true;
+  tabGroup = true;
 
   constructor() {}
 

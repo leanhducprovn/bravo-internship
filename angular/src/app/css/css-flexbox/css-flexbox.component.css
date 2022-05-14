@@ -172,6 +172,12 @@ input[type="checkbox"] {
   transform: scale(1.2);
 }
 
+ul {
+  margin-block-start: unset !important;
+  margin-block-end: unset !important;
+  padding-inline-start: unset !important
+}
+
 .sidebar .flex-end {
   display: flex;
   align-items: flex-end;
@@ -205,12 +211,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   padding: 7px;
   background-color: #f1f1f1;
-}
-
-.content .content-flex .content-secondary .tab-header .header-right ul {
-  margin-block-start: unset !important;
-  margin-block-end: unset !important;
-  padding-inline-start: unset !important
+  /* border-bottom: 1px solid #ccc; */
 }
 
 .content .content-flex .content-secondary .tab-header .header-right ul >li {
