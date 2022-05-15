@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import product from '../../../assets/data/product.json';
+
 import * as wjcCore from '@grapecity/wijmo';
 
 @Component({
@@ -14,19 +16,9 @@ export class CssFlexboxComponent implements OnInit {
   tabGroup = true;
   tabRight = true;
 
-  dataPrimary!: any;
+  dataPrimary: {}[] = product;
 
-  constructor() {
-    wjcCore.httpRequest(
-      'https://services.odata.org/Northwind/Northwind.svc/Customers?$format=json',
-      {
-        success: (xhr: XMLHttpRequest) => {
-          let response = JSON.parse(xhr.responseText);
-          this.dataPrimary = response.value;
-        },
-      }
-    );
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }

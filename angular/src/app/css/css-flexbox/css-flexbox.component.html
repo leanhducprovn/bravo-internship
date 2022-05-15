@@ -80,25 +80,40 @@
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 <div class="content-table">
                     <wj-flex-grid
-                        [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 58px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
+                        [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 59px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
                         [itemsSource]="dataPrimary" [headersVisibility]="'Column'">
                         <wj-flex-grid-column [visible]="false">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="350">
+                        <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'ContactName'" [header]="'Contact Name'" [width]="150">
+                        <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'ContactTitle'" [header]="'Contact Title'" [width]="200">
+                        <wj-flex-grid-column [binding]="'IsGroup'" [header]="'Is group'" [width]="80">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Address'" [header]="'Address'" [width]="200">
+                        <wj-flex-grid-column [binding]="'Name'" [header]="'Name'" [width]="300">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'City'" [header]="'City'" [width]="100">
+                        <wj-flex-grid-column [binding]="'ItemTypeName'" [header]="'Item type name'" [width]="150">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="100">
+                        <wj-flex-grid-column [binding]="'Code'" [header]="'Code'" [width]="100">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Phone'" [header]="'Phone'" [width]="150">
+                        <wj-flex-grid-column [binding]="'Unit'" [header]="'Unit'" [width]="150">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Fax'" [header]="'Fax'" [width]="150">
+                        <wj-flex-grid-column [binding]="'ItemGroupCode'" [header]="'Item group code'" [width]="150">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'BranchCode'" [header]="'Branch code'" [width]="110">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'IsActive'" [header]="'Is active'" [width]="80">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'CreatedBy'" [header]="'Created by'" [width]="100">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'CreatedAt'" [header]="'Created at'" [width]="220">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'ModifiedBy'" [header]="'Modified by'" [width]="100">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'ModifiedAt'" [header]="'Modified at'" [width]="220">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'"
+                            [width]="150">
                         </wj-flex-grid-column>
                     </wj-flex-grid>
                 </div>
