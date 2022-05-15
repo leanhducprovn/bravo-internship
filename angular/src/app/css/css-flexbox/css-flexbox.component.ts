@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import product from '../../../assets/data/product.json';
 
-import * as wjcCore from '@grapecity/wijmo';
+import * as wjcGrid from '@grapecity/wijmo.grid';
 
 @Component({
   selector: 'app-css-flexbox',
@@ -18,7 +18,13 @@ export class CssFlexboxComponent implements OnInit {
 
   dataPrimary: {}[] = product;
 
+  @ViewChild('tablePrimary', { static: true }) tablePrimary!: wjcGrid.FlexGrid;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tablePrimary.formatItem.addHandler((flex, e) => {
+      console.log(flex, e);
+    });
+  }
 }

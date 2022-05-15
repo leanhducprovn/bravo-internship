@@ -79,7 +79,7 @@
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 <div class="content-table">
-                    <wj-flex-grid
+                    <wj-flex-grid #tablePrimary
                         [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 59px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
                         [itemsSource]="dataPrimary" [headersVisibility]="'Column'" [selectionMode]="'Row'">
                         <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
