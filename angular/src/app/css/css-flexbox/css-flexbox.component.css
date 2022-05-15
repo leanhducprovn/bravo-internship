@@ -212,8 +212,8 @@ ul {
 }
 
 .content .content-flex .content-primary .content-table {
-  white-space: nowrap !important;
-  overflow-x: auto !important;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .content .content-flex .content-secondary {
