@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
+import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 
 import localeVi from '@angular/common/locales/vi';
 import localeEn from '@angular/common/locales/en';
@@ -113,6 +114,7 @@ import { CssGridComponent } from './css/css-grid/css-grid.component';
     FormsModule,
     ReactiveFormsModule,
     WjInputModule,
+    WjGridModule,
     LuxonModule,
   ],
   providers: [],

@@ -78,7 +78,24 @@
         <div class="content-flex">
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
-                1
+                <div>
+                    <wj-flex-grid style="height: calc(45vh - 32.5px);" #flex [headersVisibility]="'Column'"
+                        (initialized)="initializeGrid(flex)">
+                        <wj-flex-grid-column [header]="'Company'" [visible]="false" [width]="'*'" [isReadOnly]="true"
+                            [allowDragging]="false"></wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="'20*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'ContactName'" [header]="'Contact Name'" [width]="'15*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'ContactTitle'" [header]="'Contact Title'" [width]="'20*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Address'" [header]="'Address'" [width]="'20*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'City'" [header]="'City'" [width]="'10*'"></wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="'15*'">
+                        </wj-flex-grid-column>
+                    </wj-flex-grid>
+                </div>
             </div>
             <div class="content-secondary">
                 <div class="tab-header">
