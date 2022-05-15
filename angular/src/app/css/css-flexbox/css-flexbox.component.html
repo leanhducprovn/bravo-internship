@@ -79,8 +79,7 @@
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 <div>
-                    <wj-flex-grid style="height: calc(45vh - 32.5px);" #flex [headersVisibility]="'Column'"
-                        (initialized)="initializeGrid(flex)">
+                    <wj-flex-grid style="height: calc(45vh - 32.5px);" #flex [headersVisibility]="'Column'">
                         <wj-flex-grid-column [header]="'Company'" [visible]="false" [width]="'*'" [isReadOnly]="true"
                             [allowDragging]="false"></wj-flex-grid-column>
                         <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="'20*'">
