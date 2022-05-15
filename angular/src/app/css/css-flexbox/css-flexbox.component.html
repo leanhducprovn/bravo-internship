@@ -78,8 +78,9 @@
         <div class="content-flex">
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
-                <div>
-                    <wj-flex-grid style="height: calc(45vh - 32.5px);" #flex [headersVisibility]="'Column'">
+                <div class="content-table">
+                    <wj-flex-grid [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 58px)' : 'calc(45vh - 32.5px)'}"
+                        [itemsSource]="dataPrimary" [headersVisibility]="'Column'">
                         <wj-flex-grid-column [header]="'Company'" [visible]="false" [width]="'*'" [isReadOnly]="true"
                             [allowDragging]="false"></wj-flex-grid-column>
                         <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="'20*'">
@@ -91,7 +92,11 @@
                         <wj-flex-grid-column [binding]="'Address'" [header]="'Address'" [width]="'20*'">
                         </wj-flex-grid-column>
                         <wj-flex-grid-column [binding]="'City'" [header]="'City'" [width]="'10*'"></wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="'15*'">
+                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="'10*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Phone'" [header]="'Phone'" [width]="'15*'">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Fax'" [header]="'Fax'" [width]="'15*'">
                         </wj-flex-grid-column>
                     </wj-flex-grid>
                 </div>

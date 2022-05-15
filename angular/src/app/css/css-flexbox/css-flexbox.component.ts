@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcCore from '@grapecity/wijmo';
 
 @Component({
@@ -15,7 +14,7 @@ export class CssFlexboxComponent implements OnInit {
   tabGroup = true;
   tabRight = true;
 
-  @ViewChild('flex', { static: true }) flex!: wjcGrid.FlexGrid;
+  dataPrimary!: any;
 
   constructor() {
     wjcCore.httpRequest(
@@ -23,7 +22,7 @@ export class CssFlexboxComponent implements OnInit {
       {
         success: (xhr: XMLHttpRequest) => {
           let response = JSON.parse(xhr.responseText);
-          this.flex.itemsSource = response.value;
+          this.dataPrimary = response.value;
         },
       }
     );
