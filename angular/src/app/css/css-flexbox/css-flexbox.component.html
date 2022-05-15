@@ -82,22 +82,23 @@
                     <wj-flex-grid
                         [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 58px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
                         [itemsSource]="dataPrimary" [headersVisibility]="'Column'">
-                        <wj-flex-grid-column [header]="'Company'" [visible]="false" [width]="'*'" [isReadOnly]="true"
-                            [allowDragging]="false"></wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="'20*'">
+                        <wj-flex-grid-column [visible]="false">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'ContactName'" [header]="'Contact Name'" [width]="'15*'">
+                        <wj-flex-grid-column [binding]="'CompanyName'" [header]="'Company Name'" [width]="350">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'ContactTitle'" [header]="'Contact Title'" [width]="'20*'">
+                        <wj-flex-grid-column [binding]="'ContactName'" [header]="'Contact Name'" [width]="150">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Address'" [header]="'Address'" [width]="'20*'">
+                        <wj-flex-grid-column [binding]="'ContactTitle'" [header]="'Contact Title'" [width]="200">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'City'" [header]="'City'" [width]="'10*'"></wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="'10*'">
+                        <wj-flex-grid-column [binding]="'Address'" [header]="'Address'" [width]="200">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Phone'" [header]="'Phone'" [width]="'15*'">
+                        <wj-flex-grid-column [binding]="'City'" [header]="'City'" [width]="100">
                         </wj-flex-grid-column>
-                        <wj-flex-grid-column [binding]="'Fax'" [header]="'Fax'" [width]="'15*'">
+                        <wj-flex-grid-column [binding]="'Country'" [header]="'Country'" [width]="100">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Phone'" [header]="'Phone'" [width]="150">
+                        </wj-flex-grid-column>
+                        <wj-flex-grid-column [binding]="'Fax'" [header]="'Fax'" [width]="150">
                         </wj-flex-grid-column>
                     </wj-flex-grid>
                 </div>
