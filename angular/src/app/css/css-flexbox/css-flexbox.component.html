@@ -81,7 +81,7 @@
                 <div class="content-table">
                     <wj-flex-grid
                         [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 59px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
-                        [itemsSource]="dataPrimary" [headersVisibility]="'Column'">
+                        [itemsSource]="dataPrimary" [headersVisibility]="'Column'" [selectionMode]="'Row'">
                         <wj-flex-grid-column [visible]="false">
                         </wj-flex-grid-column>
                         <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">

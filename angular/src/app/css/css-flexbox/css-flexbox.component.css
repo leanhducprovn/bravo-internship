@@ -340,6 +340,11 @@ ul {
 }
 
 :host >>> .wj-cells .wj-cell.wj-state-selected {
-  background: #CCE9FF !important;
+  background: #cce9ff !important;
+  color: #333 !important;
+}
+
+:host >>> .wj-cells .wj-cell.wj-state-multi-selected {
+  background: #cce9ff !important;
   color: #333 !important;
 }
