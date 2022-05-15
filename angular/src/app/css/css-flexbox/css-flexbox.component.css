@@ -70,7 +70,7 @@
 }
 
 .opacity-5 {
-  opacity: 0.5
+  opacity: 0.5;
 }
 
 .selected-white {
@@ -184,7 +184,7 @@ input[type="checkbox"] {
 ul {
   margin-block-start: unset !important;
   margin-block-end: unset !important;
-  padding-inline-start: unset !important
+  padding-inline-start: unset !important;
 }
 
 .sidebar .flex-end {
@@ -231,7 +231,7 @@ ul {
   overflow-x: auto;
 }
 
-.content .content-flex .content-secondary .tab-header .header-left ul>li {
+.content .content-flex .content-secondary .tab-header .header-left ul > li {
   display: inline-block;
   vertical-align: middle;
   padding: 3px;
@@ -247,7 +247,7 @@ ul {
   white-space: nowrap;
 }
 
-.content .content-flex .content-secondary .tab-header .header-right ul >li {
+.content .content-flex .content-secondary .tab-header .header-right ul > li {
   display: inline-block;
   vertical-align: middle;
   padding: 3px;
@@ -323,4 +323,23 @@ ul {
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+:host >>> .wj-cell.wj-header {
+  background: #dfe3e8 !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+:host >>> .wj-cell {
+  background: #ffffff !important;
+}
+
+:host >>> .wj-alt {
+  background: #ecf2ff !important;
+}
+
+:host >>> .wj-cells .wj-cell.wj-state-selected {
+  background: #CCE9FF !important;
+  color: #333 !important;
 }

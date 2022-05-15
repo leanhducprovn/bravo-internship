@@ -79,7 +79,8 @@
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 <div class="content-table">
-                    <wj-flex-grid [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 58px)' : 'calc(45vh - 32.5px)'}"
+                    <wj-flex-grid
+                        [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 58px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
                         [itemsSource]="dataPrimary" [headersVisibility]="'Column'">
                         <wj-flex-grid-column [header]="'Company'" [visible]="false" [width]="'*'" [isReadOnly]="true"
                             [allowDragging]="false"></wj-flex-grid-column>
