@@ -24,16 +24,16 @@ h3 {
   font-size: 1.3rem;
 }
 body {
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   /* max-width: 1080px; */
   margin: auto;
   /* margin-bottom: 100px; */
 }
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   body {
     padding: 2rem;
   }
-}
+} */
 body,
 input[text] {
   color: #333;
