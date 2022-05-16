@@ -77,6 +77,8 @@
   background-color: white;
 }
 
+/* header */
+
 .header {
   background-color: #f1f1f1;
 }
@@ -121,6 +123,8 @@ hr {
   border: 1px solid #2391fe;
   margin: 0 !important;
 }
+
+/* sidebar */
 
 .sidebar {
   height: 90vh;
@@ -191,6 +195,8 @@ ul {
   display: flex;
   align-items: flex-end;
 }
+
+/* content */
 
 .content {
   height: 90vh;
@@ -289,6 +295,8 @@ ul {
   flex-wrap: wrap;
 }
 
+/* footer */
+
 .footer {
   background-color: #f1f1f1;
 }
@@ -325,6 +333,8 @@ ul {
   }
 }
 
+/* gird wijmo */
+
 :host >>> .wj-cell.wj-header {
   background: #dfe3e8 !important;
   color: #333 !important;
@@ -347,4 +357,8 @@ ul {
 :host >>> .wj-cells .wj-cell.wj-state-multi-selected {
   background: #cce9ff !important;
   color: #333 !important;
+}
+
+:host >>> .wj-cell.wj-header.wj-header-selected {
+  background-color: #FFD85E !important;
 }
