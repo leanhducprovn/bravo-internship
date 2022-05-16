@@ -133,6 +133,10 @@ Use our JavaScript UI components to build advanced HTML5/JavaScript apps fast wi
 
 ### Input
 
+The [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control displays a one-month calendar by default. It allows users to select any date by day, month or year. The [selectionMode](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#selectionmode) can switch between _Day_ or _Month_ by clicking the "MM, YYYY" in the upper left.
+
+[Learn about Input Controls](https://www.grapecity.com/wijmo/input-controls-javascript) | [Calendar Overview Documentation](https://www.grapecity.com/wijmo/docs/Topics/Input/Calendar/Calendar) | [Calendar API Reference](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html)
+
 #### Calendar
 
 | Options                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -142,3 +146,11 @@ Use our JavaScript UI components to build advanced HTML5/JavaScript apps fast wi
 | **Styling**               | You can style the [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control using CSS, or using the calendar's [formatItem](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#formatitem) event to customize the appearance of specific dates. The calendar in this sample uses a custom style for weekends and holidays.                                                                |
 | **Slack Status Calendar** | This is a Wijmo version of the [Slack status page](https://status.slack.com/calendar). It shows several [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) controls and use the [formatItem](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#formatitem) event to add icons to days where significant events took place. Plain CSS is used to customize the appearance of the Calendar. |
 | **Validation**            | In some cases, not all dates in the range are valid. To handle these situations, the [Calendar](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html) control has an [itemValidator](https://www.grapecity.com/wijmo/api/classes/wijmo_input.calendar.html#itemvalidator) property. This sample uses this property to demonstrate a common use case. It prevents users from selecting dates on weekends and holidays.       |
+
+### Grid
+
+FlexGrid is a fast, flexible and familiar [JavaScript DataGrid](https://www.grapecity.com/wijmo/flexgrid-javascript-data-grid). Our core grid module includes all of the most common features. We also include extensions and a flexible API to customize to grid even further.
+
+This sample shows off many features of [FlexGrid](https://www.grapecity.com/wijmo/api/classes/wijmo_grid.flexgrid.html) including [sorting](https://www.grapecity.com/wijmo/demos/Grid/Sorting/Overview), [grouping](https://www.grapecity.com/wijmo/demos/Grid/Grouping/GroupPanel/purejs), [searching](https://www.grapecity.com/wijmo/demos/Grid/FilteringSearching/FlexGridSearch/purejs), [Excel-like filtering](https://www.grapecity.com/wijmo/demos/Grid/FilteringSearching/Excel-likeFilter/Overview/purejs), [DataMaps](https://www.grapecity.com/wijmo/demos/Grid/Columns/DataMaps/purejs), [custom CellTemplates](https://www.grapecity.com/wijmo/demos/Grid/CustomCells/CellTemplates/Overview/purejs), [sparklines](https://www.grapecity.com/wijmo/demos/Grid/CustomCells/CellMaker/Sparklines/purejs), [rich editing](https://www.grapecity.com/wijmo/demos/Grid/Editing/CustomEditors/purejs), [Excel](https://www.grapecity.com/wijmo/demos/Grid/ImportExportPrint/Excel/Async/purejs) / [PDF export](https://www.grapecity.com/wijmo/demos/Grid/ImportExportPrint/PDF/ExportToFile/purejs), [validation](https://www.grapecity.com/wijmo/demos/Grid/Editing/CollectionViewValidation/purejs), [DetailRows](https://www.grapecity.com/wijmo/demos/Grid/Rows/RowDetail/Overview/purejs), and more.
+
+Try changing the number of data items and notice how the grid remains fast, even with large datasets. FlexGrid achieves this level of performance by automatically virtualizing rows and columns.
