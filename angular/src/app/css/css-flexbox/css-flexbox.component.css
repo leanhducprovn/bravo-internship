@@ -362,3 +362,10 @@ ul {
 :host >>> .wj-cell.wj-header.wj-header-selected {
   background-color: #FFD85E !important;
 }
+
+
+@media (max-width: 1024px) {
+  :host >>> .test {
+    height: 50% !important;
+  }
+}

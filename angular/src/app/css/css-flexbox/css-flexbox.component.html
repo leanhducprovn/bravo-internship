@@ -143,7 +143,8 @@
                     <div class="tab-group">
                         <div class="tab-left"
                             [ngStyle]="{'width': !tabRight? '100%' : '', 'height': !tabRight? '100%' : ''}">
-                            <wj-flex-grid [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#ffffff'}"
+                            <wj-flex-grid [class]="tabRight ? '' : 'test'"
+                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#000000'}"
                                 [itemsSource]="dataSecondaryLeft" [headersVisibility]="'Column'"
                                 [selectionMode]="'Row'">
                                 <wj-flex-grid-column [binding]="'hanghoa'" [header]="'Tên vật tự, hàng hoá'"
