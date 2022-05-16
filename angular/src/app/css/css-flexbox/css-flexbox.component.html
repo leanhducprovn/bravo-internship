@@ -75,11 +75,11 @@
         </div>
     </div>
     <div class="content" [ngStyle]="{'margin-left': !sidebar ? '220px' : '0px'}">
-        <div class="content-flex">
+        <div [class]="tabVertical ? 'content-flex' : 'content-flex-row'">
             <div class="content-primary" [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 26.5px)' : ''}">
                 <div class="content-noti"><i class="fas fa-angle-right ml-5 mr-15"></i>Đã hoàn thiện</div>
                 <div class="content-table">
-                    <wj-flex-grid #tablePrimary
+                    <wj-flex-grid #tablePrimary [class]="!tabVertical ? 'table-height' : ''"
                         [ngStyle]="{'height': !tabGroup ? 'calc(90vh - 59px)' : 'calc(45vh - 32.5px)', 'background-color': '#f1f1f1'}"
                         [itemsSource]="dataPrimary" [headersVisibility]="'Column'" [selectionMode]="'Row'">
                         <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
@@ -131,6 +131,9 @@
                     </div>
                     <div class="header-right">
                         <ul>
+                            <li><i (click)="tabVertical = !tabVertical"
+                                    [class]="tabVertical ? 'bi bi-square-half mr-10' : 'bi bi-square-fill mr-10'"></i>
+                            </li>
                             <li><i (click)="tabRight = !tabRight"
                                     [class]="tabRight  ? 'fad fa-clone mr-10' : 'fas fa-clone mr-10'"></i>
                             </li>

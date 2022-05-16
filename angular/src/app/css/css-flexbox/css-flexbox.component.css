@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+
 .mr-5 {
   margin-right: 5px;
 }
@@ -207,8 +209,19 @@ ul {
   flex-direction: column;
 }
 
+.content .content-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .content .content-flex .content-primary {
   height: 45vh;
+  background-color: #ccc;
+}
+
+.content .content-flex-row .content-primary {
+  width: 50%;
+  height: 90vh;
   background-color: #ccc;
 }
 
@@ -217,9 +230,23 @@ ul {
   background-color: #f1f1f1;
 }
 
+.content .content-flex-row .content-primary .content-noti {
+  padding: 7px;
+  background-color: #f1f1f1;
+}
+
 .content .content-flex .content-primary .content-table {
   white-space: nowrap;
   overflow-x: auto;
+}
+
+.content .content-flex-row .content-primary .content-table {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+:host >>> .content .content-flex-row .content-primary .content-table .table-height {
+  height: calc(90vh - 33px) !important;
 }
 
 .content .content-flex .content-secondary {

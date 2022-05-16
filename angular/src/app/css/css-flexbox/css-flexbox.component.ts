@@ -15,6 +15,7 @@ export class CssFlexboxComponent implements OnInit {
   treeview = true;
   tabGroup = true;
   tabRight = true;
+  tabVertical = true;
 
   dataPrimary: {}[] = product;
 
