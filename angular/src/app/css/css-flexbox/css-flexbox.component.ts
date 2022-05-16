@@ -25,11 +25,19 @@ export class CssFlexboxComponent implements OnInit {
       tkn: '13111',
       tkc: '5111',
       kho: 'KVULA',
-      soluong: '1000',
+      soluong: 1000,
       dongia: '',
       thanhtien: '',
       tuapgia: true,
       null: '',
+    },
+  ];
+
+  dataSecondaryRight = [
+    {
+      soluong: 1000,
+      vitri: 'VTVULA ',
+      tenvitri: 'Vị trí test',
     },
   ];
 

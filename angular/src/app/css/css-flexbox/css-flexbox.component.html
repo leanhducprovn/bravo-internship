@@ -143,8 +143,8 @@
                     <div class="tab-group">
                         <div class="tab-left"
                             [ngStyle]="{'width': !tabRight? '100%' : '', 'height': !tabRight? '100%' : ''}">
-                            <wj-flex-grid [class]="tabRight ? '' : 'test'"
-                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#000000'}"
+                            <wj-flex-grid [class]="tabRight ? 'tab-group-responsive' : ''"
+                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#fff'}"
                                 [itemsSource]="dataSecondaryLeft" [headersVisibility]="'Column'"
                                 [selectionMode]="'Row'">
                                 <wj-flex-grid-column [binding]="'hanghoa'" [header]="'Tên vật tự, hàng hoá'"
@@ -171,7 +171,18 @@
                             </wj-flex-grid>
                         </div>
                         <div class="tab-right" [hidden]="!tabRight">
-                            3
+                            <wj-flex-grid [class]="tabRight ? 'tab-group-responsive' : ''"
+                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#fff'}"
+                                [itemsSource]="dataSecondaryRight" [headersVisibility]="'Column'"
+                                [selectionMode]="'Row'">
+                                <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'soluong'"
+                                    [header]="'Số lượng'" [width]="100">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'vitri'" [header]="'Vị trí'" [width]="200">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'tenvitri'" [header]="'Tên vị trí'" [width]="300">
+                                </wj-flex-grid-column>
+                            </wj-flex-grid>
                         </div>
                     </div>
                 </div>

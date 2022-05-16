@@ -365,7 +365,10 @@ ul {
 
 
 @media (max-width: 1024px) {
-  :host >>> .test {
-    height: 50% !important;
+  .content .content-flex .content-secondary .tab-group .tab-left .tab-group-responsive {
+    height: 100% !important;
+  }
+  .content .content-flex .content-secondary .tab-group .tab-right .tab-group-responsive {
+    height: 100% !important;
   }
 }
