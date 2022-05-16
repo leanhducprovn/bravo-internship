@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
+import { WjGridFilterModule } from '@grapecity/wijmo.angular2.grid.filter';
 
 import localeVi from '@angular/common/locales/vi';
 import localeEn from '@angular/common/locales/en';
@@ -117,6 +118,7 @@ import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
     ReactiveFormsModule,
     WjInputModule,
     WjGridModule,
+    WjGridFilterModule,
     LuxonModule,
   ],
   providers: [],

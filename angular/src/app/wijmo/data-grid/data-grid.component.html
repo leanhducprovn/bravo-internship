@@ -1,1 +1,3 @@
-<p>data-grid works!</p>
+<p>{{itemCount}}</p>
+<wj-flex-grid #flex [itemsSource]="customers" [isReadOnly]="true" (initialized)="flexInitialized(flex)">
+</wj-flex-grid>
