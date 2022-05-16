@@ -175,7 +175,7 @@
                         </div>
                         <div class="tab-right" [hidden]="!tabRight">
                             <wj-flex-grid [class]="tabRight ? 'tab-group-responsive' : ''"
-                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#ddd'}"
+                                [ngStyle]="{'height': tabVertical ? 'calc(45vh - 26.5px)' : 'calc(45vh - 9px)', 'background-color': '#ddd'}"
                                 [itemsSource]="dataSecondaryRight" [headersVisibility]="'Column'"
                                 [selectionMode]="'Row'">
                                 <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'soluong'"
