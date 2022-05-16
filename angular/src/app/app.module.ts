@@ -69,6 +69,7 @@ import { InputCalendarAppConfirmComponent } from './wijmo/input-calendar-app/inp
 import { CssComponent } from './css/css.component';
 import { CssFlexboxComponent } from './css/css-flexbox/css-flexbox.component';
 import { CssGridComponent } from './css/css-grid/css-grid.component';
+import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,6 +108,7 @@ import { CssGridComponent } from './css/css-grid/css-grid.component';
     CssComponent,
     CssFlexboxComponent,
     CssGridComponent,
+    DataGridComponent,
   ],
   imports: [
     BrowserModule,

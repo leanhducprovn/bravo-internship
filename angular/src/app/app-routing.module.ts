@@ -21,6 +21,7 @@ import { InputCalendarAppComponent } from './wijmo/input-calendar-app/input-cale
 import { CssComponent } from './css/css.component';
 import { CssFlexboxComponent } from './css/css-flexbox/css-flexbox.component';
 import { CssGridComponent } from './css/css-grid/css-grid.component';
+import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
           {
             path: 'input-calendar-app',
             component: InputCalendarAppComponent,
+          },
+          {
+            path: 'data-gird',
+            component: DataGridComponent,
           },
         ],
       },
