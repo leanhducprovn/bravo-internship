@@ -147,7 +147,7 @@
                         <div class="tab-left"
                             [ngStyle]="{'width': !tabRight? '100%' : '', 'height': !tabRight? '100%' : ''}">
                             <wj-flex-grid [class]="tabRight ? 'tab-group-responsive' : ''"
-                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#000'}"
+                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#ccc'}"
                                 [itemsSource]="dataSecondaryLeft" [headersVisibility]="'Column'"
                                 [selectionMode]="'Row'">
                                 <wj-flex-grid-column [binding]="'hanghoa'" [header]="'Tên vật tự, hàng hoá'"
@@ -175,7 +175,7 @@
                         </div>
                         <div class="tab-right" [hidden]="!tabRight">
                             <wj-flex-grid [class]="tabRight ? 'tab-group-responsive' : ''"
-                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#000'}"
+                                [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#ddd'}"
                                 [itemsSource]="dataSecondaryRight" [headersVisibility]="'Column'"
                                 [selectionMode]="'Row'">
                                 <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'soluong'"
