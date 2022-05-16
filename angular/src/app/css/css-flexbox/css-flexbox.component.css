@@ -249,6 +249,10 @@ ul {
   height: calc(90vh - 33px) !important;
 }
 
+:host >>> .content .content-flex-row .content-secondary .tab-group .tab-left .table-height {
+  height: calc(90vh - 33px) !important;
+}
+
 .content .content-flex .content-secondary {
   height: calc(45vh - 32.5px);
 }
