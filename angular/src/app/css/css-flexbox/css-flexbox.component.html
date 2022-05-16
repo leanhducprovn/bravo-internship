@@ -143,7 +143,31 @@
                     <div class="tab-group">
                         <div class="tab-left"
                             [ngStyle]="{'width': !tabRight? '100%' : '', 'height': !tabRight? '100%' : ''}">
-                            2
+                            <wj-flex-grid [ngStyle]="{'height': 'calc(45vh - 26.5px)', 'background-color': '#ffffff'}"
+                                [itemsSource]="dataSecondaryLeft" [headersVisibility]="'Column'"
+                                [selectionMode]="'Row'">
+                                <wj-flex-grid-column [binding]="'hanghoa'" [header]="'Tên vật tự, hàng hoá'"
+                                    [width]="300">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'dvt'" [header]="'Đvt'" [width]="50">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'tkn'" [header]="'Tk nợ'" [width]="60">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'tkc'" [header]="'Tk có'" [width]="70">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'kho'" [header]="'Kho'" [width]="80">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'soluong'" [header]="'Số lượng'" [width]="100">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'dongia'" [header]="'Đơn giá'" [width]="120">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'thanhtien'" [header]="'Thành tiền'" [width]="130">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'tuapgia'" [header]="'Tự áp giá'" [width]="120">
+                                </wj-flex-grid-column>
+                                <wj-flex-grid-column [binding]="'null'" [header]="''" [width]="200">
+                                </wj-flex-grid-column>
+                            </wj-flex-grid>
                         </div>
                         <div class="tab-right" [hidden]="!tabRight">
                             3

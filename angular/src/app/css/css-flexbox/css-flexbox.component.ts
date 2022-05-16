@@ -18,6 +18,21 @@ export class CssFlexboxComponent implements OnInit {
 
   dataPrimary: {}[] = product;
 
+  dataSecondaryLeft = [
+    {
+      hanghoa: 'test',
+      dvt: 'Cái',
+      tkn: '13111',
+      tkc: '5111',
+      kho: 'KVULA',
+      soluong: '1000',
+      dongia: '',
+      thanhtien: '',
+      tuapgia: true,
+      null: '',
+    },
+  ];
+
   @ViewChild('tablePrimary', { static: true }) tablePrimary!: wjcGrid.FlexGrid;
 
   constructor() {}
@@ -26,5 +41,6 @@ export class CssFlexboxComponent implements OnInit {
     this.tablePrimary.formatItem.addHandler((flex, e) => {
       console.log(flex, e);
     });
+    console.log(this.dataSecondaryLeft);
   }
 }

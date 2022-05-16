@@ -267,12 +267,12 @@ ul {
 
 .content .content-flex .content-secondary .tab-group .tab-left {
   width: 60%;
-  background-color: #ddd;
+  /* background-color: #ddd; */
 }
 
 .content .content-flex .content-secondary .tab-group .tab-right {
   width: 40%;
-  background-color: #eee;
+  /* background-color: #eee; */
 }
 
 @media (max-width: 1024px) {
