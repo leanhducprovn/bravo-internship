@@ -1,3 +1,4 @@
 <p>{{itemCount}}</p>
 <wj-flex-grid #flex [itemsSource]="customers" [isReadOnly]="true" (initialized)="flexInitialized(flex)">
+    <wj-flex-grid-filter></wj-flex-grid-filter>
 </wj-flex-grid>
