@@ -1,10 +1,53 @@
 .paging {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 :host >>> .wj-flexgrid .wj-marquee,
 .wj-flexgrid .wj-header {
-    transition: all .6s;
+  transition: all 0.6s;
+}
+
+:host >>> .wj-cell.unit-bang {
+  font-weight: bold;
+  color: #e63946;
+  background-color: hsl(337, 100%, 96%);
+}
+
+:host >>> .wj-cell.unit-chiec {
+  font-weight: bold;
+  font-style: italic;
+  color: #ffafcc;
+  background-color: #e63946;
+}
+
+:host >>> .wj-cell.unit-chuyen {
+  font-weight: bold;
+  color: #219ebc;
+}
+
+:host >>> .wj-cell.unit-cai {
+  font-weight: bold;
+  color: #2b9348;
+}
+
+:host >>> .wj-cell.unit-pcs {
+  font-weight: bold;
+  color: #f4a261;
+}
+
+:host >>> .wj-cell.unit-bo {
+  font-weight: bold;
+  color: #264653;
+}
+
+:host >>> .wj-cell.unit-lo {
+  font-weight: bold;
+  color: #06d6a0;
+}
+
+:host >>> .wj-cell.unit-chai {
+  font-weight: bold;
+  color: #e9c46a;
 }
