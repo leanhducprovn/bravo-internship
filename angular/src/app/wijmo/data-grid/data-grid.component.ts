@@ -4,6 +4,7 @@ import product from '../../../assets/data/product.json';
 
 import { CollectionView } from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
+import * as wjcCore from '@grapecity/wijmo';
 
 @Component({
   selector: 'app-data-grid',
@@ -57,8 +58,8 @@ export class DataGridComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.flexGrid.formatItem.addHandler((flex, e) => {
-      console.log(flex, e);
-    });
+    // this.flexGrid.formatItem.addHandler((flex, e) => {
+    //   console.log(flex, e);
+    // });
   }
 }
