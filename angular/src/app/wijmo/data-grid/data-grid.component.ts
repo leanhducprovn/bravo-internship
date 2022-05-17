@@ -24,6 +24,14 @@ export class DataGridComponent implements OnInit {
     });
   }
 
+  gridInitialized(flexGrid: wjcGrid.FlexGrid) {
+    flexGrid.formatItem.addHandler((flex, e) => {
+      if (e.panel.cellType == wjcGrid.CellType.RowHeader) {
+        e.cell.textContent = (e.row + 1).toString();
+      }
+    });
+  }
+
   ngOnInit(): void {
     this.flexGrid.formatItem.addHandler((flex, e) => {
       console.log(flex, e);
