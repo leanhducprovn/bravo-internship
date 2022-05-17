@@ -1,7 +1,8 @@
 <div class="container">
     <div class="menu">
         <div class="selecting">
-            <wj-combo-box #countriesCombo></wj-combo-box>
+            <wj-combo-box #unitsCombo [itemsSource]="units" (selectedIndexChanged)="onUnitsSelectedIndexChanged()">
+            </wj-combo-box>
         </div>
         <div class="paging">
             <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
@@ -10,7 +11,7 @@
         </div>
     </div>
     <div class="gird">
-        <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="true"
+        <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="detailView" [isReadOnly]="true"
             (initialized)="gridInitialized(flexGrid)" [autoSearch]="true" [showSelectedHeaders]="'All'"
             [showMarquee]="true" (loadedRows)="onloadedRows(flexGrid)">
             <wj-flex-grid-column [cssClass]="'cell-id'" [binding]="'Id'" [header]="'ID'" [width]="100">

@@ -5,28 +5,65 @@ import product from '../../../assets/data/product.json';
 import { CollectionView } from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcCore from '@grapecity/wijmo';
-
+import * as wjInput from '@grapecity/wijmo.input';
+class DataItem {
+  Id!: any;
+  ParentId!: any;
+  IsGroup!: any;
+  Name!: any;
+  ItemTypeName!: any;
+  Code!: any;
+  Unit!: any;
+  ItemGroupCode!: any;
+  BranchCode!: any;
+  IsActive!: any;
+  CreatedBy!: any;
+  CreatedAt!: any;
+  ModifiedBy!: any;
+  ModifiedAt!: any;
+  _SelectKey__wibkaw!: any;
+}
 @Component({
   selector: 'app-data-grid',
   templateUrl: './data-grid.component.html',
   styleUrls: ['./data-grid.component.css'],
 })
 export class DataGridComponent implements OnInit, AfterViewInit {
-  data = this.getData();
+  data!: DataItem[];
 
   @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
+  @ViewChild('unitsCombo', { static: true }) unitsCombo!: wjInput.ComboBox;
 
-  constructor() {}
+  units!: string[];
+  detailView!: wjcCore.CollectionView;
+
+  constructor() {
+    this.units =
+      'Bảng,Chiếc,Chuyến,Cái,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
+        ','
+      );
+    this.data = this.getData();
+  }
 
   ngAfterViewInit() {
     this.flexGrid.autoRowHeights = true;
+    // selecting
+    this.detailView = new wjcCore.CollectionView(this.data, {
+      filter: (item: DataItem) => {
+        return item.Unit === this.unitsCombo.text;
+      },
+    });
+  }
+
+  onUnitsSelectedIndexChanged() {
+    this.detailView.refresh();
   }
 
   private getData() {
-    let data = product;
-    return new CollectionView(data, {
-      pageSize: 10,
-    });
+    return product;
+    // return new CollectionView(data, {
+    //   pageSize: 10,
+    // });
   }
 
   gridInitialized(flexGrid: wjcGrid.FlexGrid) {
