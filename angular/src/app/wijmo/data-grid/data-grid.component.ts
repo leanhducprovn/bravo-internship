@@ -42,7 +42,7 @@ export class DataGridComponent implements OnInit, AfterViewInit {
       'Bảng,Chiếc,Chuyến,Cái,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
         ','
       );
-    this.data = this.getData();
+    this.data = product;
   }
 
   ngAfterViewInit() {
@@ -50,7 +50,7 @@ export class DataGridComponent implements OnInit, AfterViewInit {
     // selecting
     this.detailView = new wjcCore.CollectionView(this.data, {
       filter: (item: DataItem) => {
-        return item.Unit === this.unitsCombo.text;
+        return item.Unit == this.unitsCombo.text;
       },
     });
   }
@@ -60,10 +60,13 @@ export class DataGridComponent implements OnInit, AfterViewInit {
   }
 
   private getData() {
-    return product;
+    // let data = product;
     // return new CollectionView(data, {
     //   pageSize: 10,
     // });
+    return new CollectionView(this.detailView, {
+      pageSize: 10,
+    });
   }
 
   gridInitialized(flexGrid: wjcGrid.FlexGrid) {
