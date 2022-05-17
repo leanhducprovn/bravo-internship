@@ -69,3 +69,7 @@
 :host >>> .gird .wj-flexgrid .wj-cell {
   padding: 9px;
 }
+
+:host >>> .cell-id:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background-color: hsl(197, 19%, 93%);
+}
