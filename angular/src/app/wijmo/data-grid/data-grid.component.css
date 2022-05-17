@@ -60,8 +60,12 @@
 }
 
 
-:host >>> #hoverCell .wj-cells .wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected):hover {
+:host >>> .gird .wj-cells .wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected):hover {
   background-color: hsl(210, 50%, 30%);
-  transition: all 0.5s;
+  transition: all 0.6s;
   color: #f1f1f1;
+}
+
+:host >>> .gird .wj-flexgrid .wj-cell {
+  padding: 9px;
 }

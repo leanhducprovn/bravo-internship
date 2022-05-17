@@ -4,7 +4,7 @@
             [cv]="data">
         </wj-collection-view-navigator>
     </div>
-    <div class="gird" id="hoverCell">
+    <div class="gird">
         <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="true"
             (initialized)="gridInitialized(flexGrid)" [autoSearch]="true" [showSelectedHeaders]="'All'"
             [showMarquee]="true" (loadedRows)="onloadedRows(flexGrid)">
@@ -12,7 +12,7 @@
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">
             </wj-flex-grid-column>
-            <wj-flex-grid-column [binding]="'IsGroup'" [header]="'Is group'" [width]="80">
+            <wj-flex-grid-column [binding]="'IsGroup'" [header]="'Is group'" [width]="100">
             </wj-flex-grid-column>
             <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'Name'" [header]="'Name'"
                 [width]="300">
@@ -25,9 +25,9 @@
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'ItemGroupCode'" [header]="'Item group code'" [width]="150">
             </wj-flex-grid-column>
-            <wj-flex-grid-column [binding]="'BranchCode'" [header]="'Branch code'" [width]="110">
+            <wj-flex-grid-column [binding]="'BranchCode'" [header]="'Branch code'" [width]="120">
             </wj-flex-grid-column>
-            <wj-flex-grid-column [binding]="'IsActive'" [header]="'Is active'" [width]="80">
+            <wj-flex-grid-column [binding]="'IsActive'" [header]="'Is active'" [width]="100">
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'CreatedBy'" [header]="'Created by'" [width]="100">
             </wj-flex-grid-column>
@@ -37,7 +37,7 @@
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'ModifiedAt'" [header]="'Modified at'" [width]="220">
             </wj-flex-grid-column>
-            <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'" [width]="150">
+            <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'" [width]="170">
             </wj-flex-grid-column>
         </wj-flex-grid>
     </div>

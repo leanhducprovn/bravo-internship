@@ -21,7 +21,7 @@ export class DataGridComponent implements OnInit {
   private getData() {
     let data = product;
     return new CollectionView(data, {
-      pageSize: 20,
+      pageSize: 10,
     });
   }
 
