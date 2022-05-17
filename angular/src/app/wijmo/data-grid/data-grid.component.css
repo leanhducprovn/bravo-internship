@@ -17,9 +17,7 @@
 
 :host >>> .wj-cell.unit-chiec {
   font-weight: bold;
-  font-style: italic;
   color: #ffafcc;
-  background-color: #e63946;
 }
 
 :host >>> .wj-cell.unit-chuyen {
@@ -31,24 +29,29 @@
 :host >>> .wj-cell.unit-cai {
   font-weight: bold;
   color: #2b9348;
+  background-color: hsl(120, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-pcs {
   font-weight: bold;
   color: #f4a261;
+  background-color: hsl(40, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-bo {
   font-weight: bold;
   color: #264653;
+  background-color: hsl(198, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-lo {
   font-weight: bold;
   color: #06d6a0;
+  background-color: hsl(184, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-chai {
   font-weight: bold;
   color: #e9c46a;
+  background-color: hsl(48, 100%, 97%);
 }
