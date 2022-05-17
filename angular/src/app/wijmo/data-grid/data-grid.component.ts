@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import product from '../../../assets/data/product.json';
 
 import { CollectionView } from '@grapecity/wijmo';
+import * as wjcGrid from '@grapecity/wijmo.grid';
 
 @Component({
   selector: 'app-data-grid',
@@ -11,6 +12,8 @@ import { CollectionView } from '@grapecity/wijmo';
 })
 export class DataGridComponent implements OnInit {
   data = this.getData();
+
+  @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
 
   constructor() {}
 
@@ -21,5 +24,9 @@ export class DataGridComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.flexGrid.formatItem.addHandler((flex, e) => {
+      console.log(flex, e);
+    });
+  }
 }

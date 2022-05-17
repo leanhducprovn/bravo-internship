@@ -46,10 +46,5 @@ export class CssFlexboxComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.tablePrimary.formatItem.addHandler((flex, e) => {
-      console.log(flex, e);
-    });
-    console.log(this.dataSecondaryLeft);
-  }
+  ngOnInit(): void {}
 }
