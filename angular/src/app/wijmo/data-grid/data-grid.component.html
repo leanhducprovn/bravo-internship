@@ -4,7 +4,7 @@
             [cv]="data">
         </wj-collection-view-navigator>
     </div>
-    <div class="gird">
+    <div class="gird" id="hoverCell">
         <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="true"
             (initialized)="gridInitialized(flexGrid)" [autoSearch]="true" [showSelectedHeaders]="'All'"
             [showMarquee]="true" (loadedRows)="onloadedRows(flexGrid)">

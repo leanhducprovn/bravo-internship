@@ -7,6 +7,8 @@
 :host >>> .wj-flexgrid .wj-marquee,
 .wj-flexgrid .wj-header {
   transition: all 0.6s;
+  background-color: hsl(210, 50%, 30%, 0.2);
+  z-index: 0;
 }
 
 :host >>> .wj-cell.unit-bang {
@@ -54,4 +56,11 @@
   font-weight: bold;
   color: #e9c46a;
   background-color: hsl(48, 100%, 97%);
+}
+
+
+:host >>> #hoverCell .wj-cells .wj-cell:not(.wj-state-selected):not(.wj-state-multi-selected):hover {
+  background-color: hsl(210, 50%, 30%);
+  transition: all 0.5s;
+  color: #f1f1f1;
 }
