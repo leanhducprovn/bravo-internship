@@ -1,32 +1,42 @@
-<wj-flex-grid #flex [itemsSource]="dataTable" [isReadOnly]="false">
-    <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'IsGroup'" [header]="'Is group'" [width]="80">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'Name'" [header]="'Name'" [width]="300">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'ItemTypeName'" [header]="'Item type name'" [width]="150">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'Code'" [header]="'Code'" [width]="100">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'Unit'" [header]="'Unit'" [width]="150">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'ItemGroupCode'" [header]="'Item group code'" [width]="150">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'BranchCode'" [header]="'Branch code'" [width]="110">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'IsActive'" [header]="'Is active'" [width]="80">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'CreatedBy'" [header]="'Created by'" [width]="100">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'CreatedAt'" [header]="'Created at'" [width]="220">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'ModifiedBy'" [header]="'Modified by'" [width]="100">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'ModifiedAt'" [header]="'Modified at'" [width]="220">
-    </wj-flex-grid-column>
-    <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'" [width]="150">
-    </wj-flex-grid-column>
-</wj-flex-grid>
+<div class="container">
+    <div class="paging">
+        <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
+            [cv]="data">
+        </wj-collection-view-navigator>
+    </div>
+    <div class="gird">
+        <wj-flex-grid #flex [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="false">
+            <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'IsGroup'" [header]="'Is group'" [width]="80">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [cssClassAll]="'wj-header-selected'" [binding]="'Name'" [header]="'Name'"
+                [width]="300">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'ItemTypeName'" [header]="'Item type name'" [width]="150">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'Code'" [header]="'Code'" [width]="100">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'Unit'" [header]="'Unit'" [width]="150">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'ItemGroupCode'" [header]="'Item group code'" [width]="150">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'BranchCode'" [header]="'Branch code'" [width]="110">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'IsActive'" [header]="'Is active'" [width]="80">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'CreatedBy'" [header]="'Created by'" [width]="100">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'CreatedAt'" [header]="'Created at'" [width]="220">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'ModifiedBy'" [header]="'Modified by'" [width]="110">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'ModifiedAt'" [header]="'Modified at'" [width]="220">
+            </wj-flex-grid-column>
+            <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'" [width]="150">
+            </wj-flex-grid-column>
+        </wj-flex-grid>
+    </div>
+</div>
