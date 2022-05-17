@@ -19,7 +19,8 @@
 
 :host >>> .wj-cell.unit-chiec {
   font-weight: bold;
-  color: #ffafcc;
+  color: #b86ee7;
+  background-color: hsl(277, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-chuyen {
