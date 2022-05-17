@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import product from '../../../assets/data/product.json';
 
@@ -11,12 +11,16 @@ import * as wjcCore from '@grapecity/wijmo';
   templateUrl: './data-grid.component.html',
   styleUrls: ['./data-grid.component.css'],
 })
-export class DataGridComponent implements OnInit {
+export class DataGridComponent implements OnInit, AfterViewInit {
   data = this.getData();
 
   @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
 
   constructor() {}
+
+  ngAfterViewInit() {
+    this.flexGrid.autoRowHeights = true;
+  }
 
   private getData() {
     let data = product;
