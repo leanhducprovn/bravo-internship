@@ -6,7 +6,8 @@
     </div>
     <div class="gird">
         <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="true"
-            (initialized)="gridInitialized(flexGrid)" [selectionMode]="'ListBox'" [autoSearch]="true">
+            (initialized)="gridInitialized(flexGrid)" [selectionMode]="''" [autoSearch]="true"
+            [showSelectedHeaders]="'All'" [showMarquee]="true">
             <wj-flex-grid-column [binding]="'Id'" [header]="'ID'" [width]="100">
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">

@@ -3,3 +3,8 @@
     justify-content: flex-end;
     margin-bottom: 10px;
 }
+
+:host >>> .wj-flexgrid .wj-marquee,
+.wj-flexgrid .wj-header {
+    transition: all .6s;
+}
