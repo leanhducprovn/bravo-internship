@@ -25,6 +25,7 @@
 :host >>> .wj-cell.unit-chuyen {
   font-weight: bold;
   color: #219ebc;
+  background-color: hsl(191, 100%, 97%);
 }
 
 :host >>> .wj-cell.unit-cai {
