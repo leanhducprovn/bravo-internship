@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ODataCollectionView } from '@grapecity/wijmo.odata';
-import * as wjcGrid from '@grapecity/wijmo.grid';
+import product from '../../../assets/data/product.json';
 
 @Component({
   selector: 'app-data-grid',
@@ -9,22 +8,9 @@ import * as wjcGrid from '@grapecity/wijmo.grid';
   styleUrls: ['./data-grid.component.css'],
 })
 export class DataGridComponent implements OnInit {
-  customers: ODataCollectionView;
-  itemCount!: string;
+  dataTable: {}[] = product;
 
-  constructor() {
-    let url = 'https://services.odata.org/Northwind/Northwind.svc';
-    this.customers = new ODataCollectionView(url, 'Customers', {
-      sortOnServer: true,
-      filterOnServer: true,
-    });
-  }
-
-  flexInitialized(flexgrid: wjcGrid.FlexGrid) {
-    flexgrid.loadedRows.addHandler(() => {
-      this.itemCount = flexgrid.rows.length + ' items';
-    });
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }
