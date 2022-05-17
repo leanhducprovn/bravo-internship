@@ -1,8 +1,13 @@
 <div class="container">
-    <div class="paging">
-        <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
-            [cv]="data">
-        </wj-collection-view-navigator>
+    <div class="menu">
+        <div class="selecting">
+            <wj-combo-box #countriesCombo></wj-combo-box>
+        </div>
+        <div class="paging">
+            <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
+                [cv]="data">
+            </wj-collection-view-navigator>
+        </div>
     </div>
     <div class="gird">
         <wj-flex-grid #flexGrid [alternatingRowStep]="0" [itemsSource]="data" [isReadOnly]="true"

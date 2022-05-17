@@ -1,6 +1,14 @@
-.paging {
+.menu {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.selecting {
+  margin-bottom: 10px;
+}
+
+.paging {
   margin-bottom: 10px;
 }
 
