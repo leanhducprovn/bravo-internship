@@ -65,7 +65,7 @@ export class DataGridComponent implements OnInit, AfterViewInit {
     //   pageSize: 10,
     // });
     return new CollectionView(this.detailView, {
-      pageSize: 10,
+      pageSize: 11,
     });
   }
 
