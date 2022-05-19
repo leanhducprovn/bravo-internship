@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 import product from '../../../assets/data/product.json';
 
@@ -6,31 +12,14 @@ import { CollectionView } from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjInput from '@grapecity/wijmo.input';
-class DataItem {
-  Id!: any;
-  ParentId!: any;
-  IsGroup!: any;
-  Name!: any;
-  ItemTypeName!: any;
-  Code!: any;
-  Unit!: any;
-  ItemGroupCode!: any;
-  BranchCode!: any;
-  IsActive!: any;
-  CreatedBy!: any;
-  CreatedAt!: any;
-  ModifiedBy!: any;
-  ModifiedAt!: any;
-  _SelectKey__wibkaw!: any;
-}
 @Component({
   selector: 'app-data-grid',
   templateUrl: './data-grid.component.html',
   styleUrls: ['./data-grid.component.css'],
 })
-export class DataGridComponent implements OnInit, AfterViewInit {
-  data!: DataItem[];
-
+export class DataGridComponent
+  implements OnInit, AfterViewInit, AfterViewChecked
+{
   @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
   @ViewChild('unitsCombo', { static: true }) unitsCombo!: wjInput.ComboBox;
 
@@ -39,35 +28,20 @@ export class DataGridComponent implements OnInit, AfterViewInit {
 
   constructor() {
     this.units =
-      'Bảng,Chiếc,Chuyến,Cái,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
+      'Cái,Chiếc,Chuyến,Bảng,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
         ','
       );
-    this.data = product;
   }
 
-  ngAfterViewInit() {
-    this.flexGrid.autoRowHeights = true;
-    // selecting
-    this.detailView = new wjcCore.CollectionView(this.data, {
-      filter: (item: DataItem) => {
-        return item.Unit == this.unitsCombo.text;
-      },
-    });
-  }
+  ngAfterViewInit(): void {}
+
+  ngAfterViewChecked() {}
 
   onUnitsSelectedIndexChanged() {
     this.detailView.refresh();
   }
 
-  private getData() {
-    // let data = product;
-    // return new CollectionView(data, {
-    //   pageSize: 10,
-    // });
-    return new CollectionView(this.detailView, {
-      pageSize: 10,
-    });
-  }
+  private getData() {}
 
   gridInitialized(flexGrid: wjcGrid.FlexGrid) {
     flexGrid.formatItem.addHandler((flex, e) => {
@@ -102,8 +76,13 @@ export class DataGridComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // this.flexGrid.formatItem.addHandler((flex, e) => {
-    //   console.log(flex, e);
-    // });
+    this.flexGrid.autoRowHeights = true;
+    // selecting
+    this.detailView = new CollectionView(product, {
+      pageSize: 10,
+      filter: (item: { Unit: string | null }) => {
+        return item.Unit == this.unitsCombo.text;
+      },
+    });
   }
 }
