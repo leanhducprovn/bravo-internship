@@ -14,6 +14,7 @@
 
 .gird .gird-height {
   height: calc(100vh - 345px);
+  border-radius: 4px;
 }
 
 :host >>> .wj-flexgrid .wj-marquee,
@@ -84,4 +85,12 @@
 
 :host >>> .cell-id:not(.wj-state-selected):not(.wj-state-multi-selected) {
   background-color: hsl(197, 19%, 93%);
+}
+
+.wj-content.wj-dropdown,
+.wj-content.wj-inputnumber,
+.wj-content.wj-inputmask,
+.wj-content.wj-calendar-outer,
+.wj-content.wj-pager {
+  border-radius: 4px;
 }

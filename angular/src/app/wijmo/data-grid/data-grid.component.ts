@@ -26,12 +26,7 @@ export class DataGridComponent
   units!: string[];
   detailView!: wjcCore.CollectionView;
 
-  constructor() {
-    this.units =
-      'Cái,Chiếc,Chuyến,Bảng,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
-        ','
-      );
-  }
+  constructor() {}
 
   ngAfterViewInit(): void {}
 
@@ -78,6 +73,10 @@ export class DataGridComponent
   ngOnInit(): void {
     this.flexGrid.autoRowHeights = true;
     // selecting
+    this.units =
+      'Cái,Chiếc,Chuyến,Bảng,Bộ,Lọ,PCS,Chai,Quả,Vỉ,Gram,Lon,Lốc,Gói,Túi,Hộp,Con,Hũ,Thùng,Tuýp,Cây,Thỏi,Miếng'.split(
+        ','
+      );
     this.detailView = new CollectionView(product, {
       pageSize: 10,
       filter: (item: { Unit: string | null }) => {
