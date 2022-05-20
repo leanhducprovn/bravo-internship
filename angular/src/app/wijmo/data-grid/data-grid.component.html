@@ -1,13 +1,21 @@
 <div class="container">
     <div class="menu">
-        <div class="selecting">
-            <wj-combo-box #unitsCombo [itemsSource]="units" (selectedIndexChanged)="onUnitsSelectedIndexChanged()">
-            </wj-combo-box>
+        <div class="left">
+            <div class="selecting mb-10 mr-10">
+                <wj-combo-box #unitsCombo [itemsSource]="units" (selectedIndexChanged)="onUnitsSelectedIndexChanged()">
+                </wj-combo-box>
+            </div>
+            <div class="searching mb-10 mr-10">
+                <wj-flex-grid-search [placeholder]="'FlexGridSearch'" [grid]="flexGrid">
+                </wj-flex-grid-search>
+            </div>
         </div>
-        <div class="paging">
-            <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
-                [cv]="detailView">
-            </wj-collection-view-navigator>
+        <div class="right">
+            <div class="paging mb-10">
+                <wj-collection-view-navigator headerFormat="Page {currentPage:n0} of {pageCount:n0}" [byPage]="true"
+                    [cv]="detailView">
+                </wj-collection-view-navigator>
+            </div>
         </div>
     </div>
     <div class="gird">

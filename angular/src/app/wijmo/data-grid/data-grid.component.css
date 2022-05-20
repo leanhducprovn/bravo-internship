@@ -1,15 +1,24 @@
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 .menu {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.selecting {
-  margin-bottom: 10px;
-}
-
-.paging {
-  margin-bottom: 10px;
+.menu .left {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .gird .gird-height {
@@ -103,5 +112,9 @@
 .wj-content.wj-inputmask,
 .wj-content.wj-calendar-outer,
 .wj-content.wj-pager {
+  border-radius: 4px;
+}
+
+.wj-content.wj-flexgridsearch {
   border-radius: 4px;
 }
