@@ -96,6 +96,5 @@ export class DataGridComponent
         return item.Unit == this.unitsCombo.text;
       },
     });
-    this.flexGrid.showSort = false;
   }
 }
