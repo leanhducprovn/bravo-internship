@@ -24,14 +24,14 @@ h3 {
   font-size: 1.3rem;
 }
 body {
-  padding: 0.5rem;
-  /* max-width: 1080px; */
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin: auto;
-  /* margin-bottom: 100px; */
 }
 @media (min-width: 600px) {
   body {
-    padding: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 body,

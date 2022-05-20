@@ -73,6 +73,14 @@ export class DataGridComponent
     }
   }
 
+  // filter by name
+  filter(e: any) {
+    let filter = (<HTMLInputElement>e.target).value.toLowerCase();
+    this.flexGrid.collectionView.filter = (item: any) => {
+      return filter.length == 0 || item.Name.toLowerCase().indexOf(filter) > -1;
+    };
+  }
+
   ngOnInit(): void {
     this.flexGrid.autoRowHeights = true;
     // selecting
