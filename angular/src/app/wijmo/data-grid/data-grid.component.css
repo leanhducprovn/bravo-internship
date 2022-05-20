@@ -134,3 +134,7 @@
 .wj-content.wj-flexgridsearch {
   border-radius: 4px;
 }
+
+:host >>> .wj-cell.wj-header .wj-sort-index {
+  display: none !important;
+}
