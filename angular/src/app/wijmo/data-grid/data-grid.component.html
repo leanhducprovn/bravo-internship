@@ -1,7 +1,6 @@
 <div class="container">
-    <div class="input-group mb-10">
-        <div class="input-group-addon"><i class="fas fa-search"></i></div>
-        <input (input)="filter($event)" class="form-control" placeholder="Country Filter">
+    <div class="search">
+        <input (input)="filter($event)" class="form-control" placeholder="Search by name...">
     </div>
     <div class="menu">
         <div class="left">
@@ -10,7 +9,7 @@
                 </wj-combo-box>
             </div>
             <div class="searching mb-10 mr-10">
-                <wj-flex-grid-search [placeholder]="'Search...'" [grid]="flexGrid">
+                <wj-flex-grid-search [placeholder]="'Search by group...'" [grid]="flexGrid">
                 </wj-flex-grid-search>
             </div>
         </div>
