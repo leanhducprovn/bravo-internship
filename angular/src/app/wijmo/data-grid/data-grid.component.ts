@@ -12,6 +12,7 @@ import { CollectionView } from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjInput from '@grapecity/wijmo.input';
+import { EditHighlighter } from './edit-highlighter';
 @Component({
   selector: 'app-data-grid',
   templateUrl: './data-grid.component.html',
@@ -44,6 +45,8 @@ export class DataGridComponent
         e.cell.textContent = (e.row + 1).toString();
       }
     });
+    // edit highlighter
+    new EditHighlighter(flexGrid, 'cell-changed');
   }
 
   onloadedRows(flexGrid: wjcGrid.FlexGrid) {
