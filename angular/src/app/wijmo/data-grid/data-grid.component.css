@@ -93,6 +93,11 @@
   color: #e63946;
 }
 
+:host >>> .cell-id:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background: hsl(211, 9%, 51%, 0.1);
+  color: #2c3e51;
+}
+
 .wj-content.wj-dropdown,
 .wj-content.wj-inputnumber,
 .wj-content.wj-inputmask,

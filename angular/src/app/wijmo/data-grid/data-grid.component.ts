@@ -81,6 +81,8 @@ export class DataGridComponent
         ','
       );
     this.detailView = new CollectionView(product, {
+      sortDescriptions: ['Unit', 'ItemGroupCode'],
+      groupDescriptions: ['Unit', 'ItemGroupCode'],
       pageSize: 10,
       filter: (item: { Unit: string | null }) => {
         return item.Unit == this.unitsCombo.text;
