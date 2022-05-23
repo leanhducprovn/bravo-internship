@@ -40,7 +40,7 @@
 }
 
 .gird .gird-height {
-  height: calc(100vh - 345px - 70px);
+  height: calc(100vh - 370px);
   border-radius: 4px;
 }
 
