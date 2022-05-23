@@ -31,7 +31,6 @@ export class DataGridComponent
 
   rxSearch!: any;
   rxHighlight!: any;
-  toSearch!: any;
 
   constructor() {}
 
@@ -118,16 +117,10 @@ export class DataGridComponent
     ) as HTMLElement | null;
     if (search) {
       search.addEventListener('input', (e) => {
-        if (this.toSearch) {
-          clearTimeout(this.toSearch);
+        if (e.target) {
+          const target = e.target as HTMLTextAreaElement;
+          this.applySearch(this.flexGrid, target.value);
         }
-        this.toSearch = setTimeout(() => {
-          this.toSearch = null;
-          if (e.target) {
-            const target = e.target as HTMLTextAreaElement;
-            this.applySearch(this.flexGrid, target.value);
-          }
-        }, 900);
       });
     }
   }
