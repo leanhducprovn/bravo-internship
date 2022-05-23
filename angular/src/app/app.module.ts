@@ -5,6 +5,7 @@ import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { WjGridFilterModule } from '@grapecity/wijmo.angular2.grid.filter';
 import { WjGridSearchModule } from '@grapecity/wijmo.angular2.grid.search';
+import { WjGridGrouppanelModule } from '@grapecity/wijmo.angular2.grid.grouppanel';
 
 import localeVi from '@angular/common/locales/vi';
 import localeEn from '@angular/common/locales/en';
@@ -121,6 +122,7 @@ import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
     WjGridModule,
     WjGridFilterModule,
     WjGridSearchModule,
+    WjGridGrouppanelModule,
     LuxonModule,
   ],
   providers: [],

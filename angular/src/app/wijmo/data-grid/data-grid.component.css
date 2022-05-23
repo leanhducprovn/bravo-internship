@@ -40,7 +40,7 @@
 }
 
 .gird .gird-height {
-  height: calc(100vh - 345px);
+  height: calc(100vh - 345px - 70px);
   border-radius: 4px;
 }
 
@@ -146,4 +146,12 @@
   background-clip: text;
   color: transparent;
   font-weight: bold;
+}
+
+:host >>> .grouping .wj-grouppanel {
+  border-radius: 4px !important;
+}
+
+:host >>> .grouping .wj-grouppanel .wj-groupmarker {
+  border-radius: 4px;
 }
