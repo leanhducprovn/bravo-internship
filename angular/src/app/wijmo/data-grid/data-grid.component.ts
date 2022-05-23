@@ -101,6 +101,9 @@ export class DataGridComponent
         return item.Unit == this.unitsCombo.text;
       },
     });
+    this.detailView.groupDescriptions.push(
+      new wjcCore.PropertyGroupDescription('Name')
+    );
 
     // search highlight
     this.flexGrid.formatItem.addHandler((s, e) => {
