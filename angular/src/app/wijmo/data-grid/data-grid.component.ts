@@ -26,6 +26,8 @@ export class DataGridComponent
   @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
   @ViewChild('unitsCombo', { static: true }) unitsCombo!: wjInput.ComboBox;
 
+  @ViewChild('test', { static: true }) test!: wjcGrid.FlexGrid;
+
   units!: string[];
   detailView!: wjcCore.CollectionView;
 
