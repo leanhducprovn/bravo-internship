@@ -43,8 +43,6 @@ export class DataGridComponent
     this.detailView.refresh();
   }
 
-  private getData() {}
-
   gridInitialized(flexGrid: wjcGrid.FlexGrid) {
     flexGrid.formatItem.addHandler((flex, e) => {
       if (e.panel.cellType == wjcGrid.CellType.RowHeader) {
