@@ -11,6 +11,8 @@
 }
 
 .search {
+  display: flex;
+  flex-wrap: nowrap;
   margin-bottom: -5px;
 }
 
@@ -18,7 +20,7 @@
   display: table-cell;
   padding: 4px 8px;
   border: 0;
-  width: calc(100% - 16px);
+  width: 100%;
   height: 100%;
   color: inherit;
   min-height: 2em;
@@ -137,4 +139,11 @@
 
 :host >>> .wj-cell.wj-header .wj-sort-index {
   display: none !important;
+}
+
+:host >>> .gird .wj-flexgrid .search-highlight {
+  background: linear-gradient(to right,#12c2e9, #c471ed,#f64f59);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }

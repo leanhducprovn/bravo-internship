@@ -13,6 +13,8 @@ import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjInput from '@grapecity/wijmo.input';
 import { EditHighlighter } from './edit-highlighter';
+import { Globalize } from '@grapecity/wijmo';
+
 @Component({
   selector: 'app-data-grid',
   templateUrl: './data-grid.component.html',
@@ -26,6 +28,10 @@ export class DataGridComponent
 
   units!: string[];
   detailView!: wjcCore.CollectionView;
+
+  rxSearch!: any;
+  rxHighlight!: any;
+  toSearch!: any;
 
   constructor() {}
 
@@ -96,5 +102,70 @@ export class DataGridComponent
         return item.Unit == this.unitsCombo.text;
       },
     });
+
+    // search highlight
+    this.flexGrid.formatItem.addHandler((s, e) => {
+      if (this.rxHighlight) {
+        if (e.panel == s.cells && e.cell.children.length == 0) {
+          e.cell.innerHTML = e.cell.innerHTML.replace(
+            this.rxHighlight,
+            '<span class="search-highlight">$1</span>'
+          );
+        }
+      }
+    });
+
+    let search = document.getElementById(
+      'search-highlight'
+    ) as HTMLElement | null;
+    if (search) {
+      search.addEventListener('input', (e) => {
+        if (this.toSearch) {
+          clearTimeout(this.toSearch);
+        }
+        this.toSearch = setTimeout(() => {
+          this.toSearch = null;
+          if (e.target) {
+            const target = e.target as HTMLTextAreaElement;
+            this.applySearch(this.flexGrid, target.value);
+          }
+        }, 900);
+      });
+    }
+  }
+
+  applySearch(grid: wjcGrid.FlexGrid, text: any) {
+    this.rxSearch = this.rxHighlight = null;
+    text = text.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
+    let terms = text.split(' ').filter((x: any) => x);
+    if (terms.length) {
+      this.rxSearch = new RegExp('(?=.*' + terms.join(')(?=.*') + ')', 'gi');
+      this.rxHighlight = new RegExp('(' + terms.join('|') + ')', 'gi');
+    }
+    // update filter
+    grid.collectionView.filter = (item: any) => {
+      if (this.rxSearch) {
+        let itemText = this.getItemText(this.flexGrid, item);
+        return itemText.match(this.rxSearch) != null;
+      }
+      return true;
+    };
+  }
+
+  getItemText(grid: { columns: any[] }, item: any) {
+    let vals: any[] = [];
+    grid.columns.forEach((col) => {
+      let binding = col._binding;
+      if (binding) {
+        let val = binding.getValue(item);
+        if (col.dataMap) {
+          val = col.dataMap.getDisplayValue(val);
+        } else {
+          val = Globalize.format(val, col.format);
+        }
+        vals.push(val);
+      }
+    });
+    return vals.join(' ');
   }
 }
