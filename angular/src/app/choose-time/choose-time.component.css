@@ -4,4 +4,14 @@
     margin-bottom: 20px;
     height: calc(100vh - 100px - 20px);
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .controls {
+    background-color: #266EB3;
+    border-radius: 4px;
+    height: 50%;
+    width: 50%;
 }
