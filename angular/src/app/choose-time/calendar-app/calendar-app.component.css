@@ -5,16 +5,17 @@
     flex-direction: row;
 }
 
-.calendar .left {
+.calendar .group {
     margin: 10px;
     height: calc(100% - 20px);
     width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
 }
 
-.calendar .right {
-    margin: 10px;
-    height: calc(100% - 20px);
-    width: calc(50% - 20px);
+.calendar .group .label {
+    font-size: 25px;
+    color: #f1f1f1;
 }
 
 @media (max-width: 1024px) {
@@ -23,12 +24,7 @@
         flex-direction: column;
     }
 
-    .calendar .left {
-        height: calc(50% - 20px);
-        width: calc(100% - 20px);
-    }
-
-    .calendar .right {
+    .calendar .group {
         height: calc(50% - 20px);
         width: calc(100% - 20px);
     }
