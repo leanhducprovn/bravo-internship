@@ -74,6 +74,7 @@ import { CssFlexboxComponent } from './css/css-flexbox/css-flexbox.component';
 import { CssGridComponent } from './css/css-grid/css-grid.component';
 import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 import { ChooseTimeComponent } from './choose-time/choose-time.component';
+import { CalendarAppComponent } from './choose-time/calendar-app/calendar-app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,6 +115,7 @@ import { ChooseTimeComponent } from './choose-time/choose-time.component';
     CssGridComponent,
     DataGridComponent,
     ChooseTimeComponent,
+    CalendarAppComponent,
   ],
   imports: [
     BrowserModule,
