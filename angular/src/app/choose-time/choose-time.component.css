@@ -31,7 +31,7 @@
     height: 60%;
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .container .content .controls .primary .left {
@@ -44,6 +44,23 @@
     margin: 10px;
     height: calc(100% - 20px);
     width: calc(50% - 20px);
+}
+
+@media (max-width: 1024px) {
+    .container .content .controls .primary {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .content .controls .primary .left {
+        height: calc(50% - 20px);
+        width: calc(100% - 20px);
+    }
+
+    .container .content .controls .primary .right {
+        height: calc(50% - 20px);
+        width: calc(100% - 20px);
+    }
 }
 
 .container .content .controls .secondary {
