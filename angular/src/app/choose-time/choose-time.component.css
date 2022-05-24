@@ -30,11 +30,11 @@
 .container .content .controls .primary {
     height: 60%;
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
 }
 
-.container .content .controls .primary .left {
+/* .container .content .controls .primary .left {
     margin: 10px;
     height: calc(100% - 20px);
     width: calc(50% - 20px);
@@ -61,7 +61,7 @@
         height: calc(50% - 20px);
         width: calc(100% - 20px);
     }
-}
+} */
 
 .container .content .controls .secondary {
     height: 40%;
@@ -72,4 +72,7 @@
     margin: 10px;
     height: calc(100% - 20px);
     width: calc(100% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
