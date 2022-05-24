@@ -23,12 +23,36 @@
     height: calc(100% - 42px);
     width: calc(100% - 42px);
     box-shadow: 2px 2px 4px #215A9D;
+    display: flex;
+    flex-direction: column;
 }
 
 .container .content .controls .primary {
     height: 60%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container .content .controls .primary .left {
+    margin: 10px;
+    height: calc(100% - 20px);
+    width: calc(50% - 20px);
+}
+
+.container .content .controls .primary .right {
+    margin: 10px;
+    height: calc(100% - 20px);
+    width: calc(50% - 20px);
 }
 
 .container .content .controls .secondary {
     height: 40%;
+    width: 100%;
+}
+
+.container .content .controls .secondary .range-slider {
+    margin: 10px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
 }
