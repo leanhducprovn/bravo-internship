@@ -22,5 +22,5 @@
     border: 1px solid #215B9C;
     height: calc(100% - 42px);
     width: calc(100% - 42px);
-    box-shadow: 1px 1px 1px #215A9D;
+    box-shadow: 2px 2px 4px #215A9D;
 }
