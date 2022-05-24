@@ -6,6 +6,7 @@ import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { WjGridFilterModule } from '@grapecity/wijmo.angular2.grid.filter';
 import { WjGridSearchModule } from '@grapecity/wijmo.angular2.grid.search';
 import { WjGridGrouppanelModule } from '@grapecity/wijmo.angular2.grid.grouppanel';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import localeVi from '@angular/common/locales/vi';
 import localeEn from '@angular/common/locales/en';
@@ -128,6 +129,7 @@ import { CalendarAppComponent } from './choose-time/calendar-app/calendar-app.co
     WjGridSearchModule,
     WjGridGrouppanelModule,
     LuxonModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
