@@ -24,3 +24,11 @@
     width: calc(100% - 42px);
     box-shadow: 2px 2px 4px #215A9D;
 }
+
+.container .content .controls .primary {
+    height: 60%;
+}
+
+.container .content .controls .secondary {
+    height: 40%;
+}
