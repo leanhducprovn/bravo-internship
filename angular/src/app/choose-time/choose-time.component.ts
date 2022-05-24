@@ -9,11 +9,14 @@ import { Options } from '@angular-slider/ngx-slider';
 export class ChooseTimeComponent implements OnInit {
   constructor() {}
 
-  value: number = 40;
-  highValue: number = 60;
+  minValue: number = 0;
+  maxValue: number = 100;
   options: Options = {
     floor: 0,
     ceil: 100,
+    step: 1,
+    minRange: 0,
+    maxRange: 100,
   };
 
   ngOnInit(): void {}
