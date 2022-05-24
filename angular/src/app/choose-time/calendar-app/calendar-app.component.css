@@ -31,6 +31,10 @@
     border-radius: 4px;
 }
 
+:host >>> .calendar .group .date .wj-control .wj-input-group .wj-form-control {
+    font-size: 20px;
+}
+
 @media (max-width: 1024px) {
     .calendar {
         display: flex;
@@ -40,5 +44,13 @@
     .calendar .group {
         height: calc(50% - 20px);
         width: calc(100% - 20px);
+    }
+
+    .calendar .group .label {
+        font-size: 20px;
+    }
+
+    :host >>> .calendar .group .date .wj-control .wj-input-group .wj-form-control {
+        font-size: 15px;
     }
 }
