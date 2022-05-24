@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'calendar-app',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar-app.component.css'],
 })
 export class CalendarAppComponent implements OnInit {
+  @Input() zLowerLabelText!: string;
+  @Input() zUpperLabelText!: string;
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -11,8 +11,14 @@
 .container .content {
     background-color: #2066A7;
     border-radius: 4px;
-    height: 50%;
+    height: 35%;
     width: 50%;
+}
+
+@media (max-width: 1024px) {
+    .container .content {
+        height: 50%;
+    }
 }
 
 .container .content .controls {
@@ -30,38 +36,7 @@
 .container .content .controls .primary {
     height: 60%;
     width: 100%;
-    /* display: flex;
-    flex-direction: row; */
 }
-
-/* .container .content .controls .primary .left {
-    margin: 10px;
-    height: calc(100% - 20px);
-    width: calc(50% - 20px);
-}
-
-.container .content .controls .primary .right {
-    margin: 10px;
-    height: calc(100% - 20px);
-    width: calc(50% - 20px);
-}
-
-@media (max-width: 1024px) {
-    .container .content .controls .primary {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .container .content .controls .primary .left {
-        height: calc(50% - 20px);
-        width: calc(100% - 20px);
-    }
-
-    .container .content .controls .primary .right {
-        height: calc(50% - 20px);
-        width: calc(100% - 20px);
-    }
-} */
 
 .container .content .controls .secondary {
     height: 40%;
