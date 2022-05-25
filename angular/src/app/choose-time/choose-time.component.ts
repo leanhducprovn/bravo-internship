@@ -19,5 +19,7 @@ export class ChooseTimeComponent implements OnInit {
     maxRange: 100,
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Hello');
+  }
 }
