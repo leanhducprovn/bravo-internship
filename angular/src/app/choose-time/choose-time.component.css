@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container .content {
@@ -15,9 +16,29 @@
     width: 50%;
 }
 
+.container .event {
+    margin-top: 20px;
+    height: 35%;
+    width: 50%;
+}
+
+.container .event textarea {
+    height: 100%;
+    width: calc(100% - 6px);
+    border-radius: 4px;
+    background-color: #2066A7;
+    color: #f1f1f1;
+    font-size: 20px;
+}
+
 @media (max-width: 1024px) {
     .container .content {
-        height: 50%;
+        height: 45%;
+        width: calc(100% - 60px);
+    }
+
+    .container .event {
+        height: 45%;
         width: calc(100% - 60px);
     }
 }
