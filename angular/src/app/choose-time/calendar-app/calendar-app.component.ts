@@ -17,6 +17,7 @@ import { InputDateTime } from '@grapecity/wijmo.input';
 })
 export class CalendarAppComponent implements OnInit, AfterViewInit {
   @ViewChild('lowerDate') lowerDate!: WjInputDate;
+  @ViewChild('upperDate') upperDate!: WjInputDate;
 
   @Input() zLowerLabelText!: string;
   @Input() zUpperLabelText!: string;

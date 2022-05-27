@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import {
   ChangeContext,
   Options,
@@ -6,42 +12,50 @@ import {
 } from '@angular-slider/ngx-slider';
 
 import { FormBuilder } from '@angular/forms';
+import { formatDate } from '@angular/common';
 
 import { CalendarAppComponent } from './calendar-app/calendar-app.component';
+
 @Component({
   selector: 'app-choose-time',
   templateUrl: './choose-time.component.html',
   styleUrls: ['./choose-time.component.css'],
 })
-export class ChooseTimeComponent implements OnInit, AfterViewInit {
+export class ChooseTimeComponent implements OnInit, AfterViewInit, DoCheck {
   @ViewChild(CalendarAppComponent) calendarApp!: CalendarAppComponent;
-
-  dateEvent = this.fb.group({
-    lowerDate: [''],
-    upperDate: [''],
-  });
 
   constructor(private fb: FormBuilder) {}
 
+  ngDoCheck(): void {}
+
   ngAfterViewInit(): void {
     // set ngày bắt đầu
-    let dataLowerDate = new Date();
-    dataLowerDate.setFullYear(2022, 3, 1);
-    this.calendarApp.lowerDate.value = dataLowerDate;
+    this.calendarApp.lowerDate.value = this.dateEvent.value.startDate;
     // set ngày kết thúc
+    this.calendarApp.upperDate.value = this.dateEvent.value.endDate;
   }
 
-  minValue: number = 0;
-  maxValue: number = 100;
-  options: Options = {
-    floor: 0,
-    ceil: 100,
-    step: 1,
-    minRange: 0,
-    maxRange: 100,
-  };
+  ngOnInit(): void {
+    this.slider();
+    this.onDateEvent();
+  }
 
+  minValue!: any;
+  maxValue!: any;
+  options!: any;
   sliderEvent: string = '';
+
+  slider() {
+    this.minValue = 0;
+    this.maxValue = 100;
+    this.options = {
+      floor: 0,
+      ceil: 100,
+      step: 1,
+      minRange: 0,
+      maxRange: 100,
+    };
+  }
 
   onUserChangeStart(changeContext: ChangeContext): void {
     this.sliderEvent += `onUserChangeStart(${this.getChangeContextString(
@@ -71,7 +85,14 @@ export class ChooseTimeComponent implements OnInit, AfterViewInit {
     );
   }
 
-  ngOnInit(): void {
-    console.log(this.dateEvent.value.lowerDate.value);
+  dateEvent!: any;
+  startDate = '2022-04-01';
+  endDate = '2022-04-30';
+
+  onDateEvent() {
+    this.dateEvent = this.fb.group({
+      startDate: [formatDate(new Date(this.startDate), 'yyyy-MM-dd', 'en')],
+      endDate: [formatDate(new Date(this.endDate), 'yyyy-MM-dd', 'en')],
+    });
   }
 }

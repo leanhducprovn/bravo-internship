@@ -20,15 +20,15 @@
         <div class="date-event mt-20">
             <form class="form" [formGroup]="dateEvent">
                 <div class="group">
-                    <div class="label">Từ ngày</div>
+                    <div class="label">Bắt đầu</div>
                     <div class="date">
-                        <input type="date" formControlName="lowerDate">
+                        <input type="date" formControlName="startDate">
                     </div>
                 </div>
                 <div class="group">
-                    <div class="label">Đến ngày</div>
+                    <div class="label">Kết thúc</div>
                     <div class="date">
-                        <input type="date" formControlName="upperDate">
+                        <input type="date" formControlName="endDate">
                     </div>
                 </div>
             </form>
