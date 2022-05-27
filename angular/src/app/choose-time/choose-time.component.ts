@@ -23,22 +23,22 @@ export class ChooseTimeComponent implements OnInit {
     maxRange: 100,
   };
 
-  logText: string = '';
+  sliderEvent: string = '';
 
   onUserChangeStart(changeContext: ChangeContext): void {
-    this.logText += `onUserChangeStart(${this.getChangeContextString(
+    this.sliderEvent += `onUserChangeStart(${this.getChangeContextString(
       changeContext
     )})\n`;
   }
 
   onUserChange(changeContext: ChangeContext): void {
-    this.logText += `onUserChange(${this.getChangeContextString(
+    this.sliderEvent += `onUserChange(${this.getChangeContextString(
       changeContext
     )})\n`;
   }
 
   onUserChangeEnd(changeContext: ChangeContext): void {
-    this.logText += `onUserChangeEnd(${this.getChangeContextString(
+    this.sliderEvent += `onUserChangeEnd(${this.getChangeContextString(
       changeContext
     )})\n`;
   }
