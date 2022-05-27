@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Options } from '@angular-slider/ngx-slider';
+import {
+  ChangeContext,
+  Options,
+  PointerType,
+} from '@angular-slider/ngx-slider';
 
 @Component({
   selector: 'app-choose-time',
@@ -18,6 +22,36 @@ export class ChooseTimeComponent implements OnInit {
     minRange: 0,
     maxRange: 100,
   };
+
+  logText: string = '';
+
+  onUserChangeStart(changeContext: ChangeContext): void {
+    this.logText += `onUserChangeStart(${this.getChangeContextString(
+      changeContext
+    )})\n`;
+  }
+
+  onUserChange(changeContext: ChangeContext): void {
+    this.logText += `onUserChange(${this.getChangeContextString(
+      changeContext
+    )})\n`;
+  }
+
+  onUserChangeEnd(changeContext: ChangeContext): void {
+    this.logText += `onUserChangeEnd(${this.getChangeContextString(
+      changeContext
+    )})\n`;
+  }
+
+  getChangeContextString(changeContext: ChangeContext): string {
+    return (
+      `{pointerType: ${
+        changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'
+      }, ` +
+      `value: ${changeContext.value}, ` +
+      `highValue: ${changeContext.highValue}}`
+    );
+  }
 
   ngOnInit(): void {}
 }
