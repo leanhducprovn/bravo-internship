@@ -1,17 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import {
   ChangeContext,
   Options,
   PointerType,
 } from '@angular-slider/ngx-slider';
 
+import { CalendarAppComponent } from './calendar-app/calendar-app.component';
 @Component({
   selector: 'app-choose-time',
   templateUrl: './choose-time.component.html',
   styleUrls: ['./choose-time.component.css'],
 })
-export class ChooseTimeComponent implements OnInit {
+export class ChooseTimeComponent implements OnInit, AfterViewInit {
+  @ViewChild(CalendarAppComponent) calendarApp!: CalendarAppComponent;
+
   constructor() {}
+
+  ngAfterViewInit(): void {
+    // set ngày bắt đầu
+    let dataLowerDate = new Date();
+    dataLowerDate.setFullYear(2022, 3, 1);
+    this.calendarApp.lowerDate.value = dataLowerDate;
+    // set ngày kết thúc
+  }
 
   minValue: number = 0;
   maxValue: number = 100;

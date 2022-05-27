@@ -2,13 +2,13 @@
     <div class="group">
         <div class="label">{{ zLowerLabelText }}</div>
         <div class="date">
-            <wj-input-date></wj-input-date>
+            <wj-input-date #lowerDate [format]="'dd/MM/yy'"></wj-input-date>
         </div>
     </div>
     <div class="group">
         <div class="label">{{ zUpperLabelText }}</div>
         <div class="date">
-            <wj-input-date></wj-input-date>
+            <wj-input-date #upperDate [format]="'dd/MM/yy'"></wj-input-date>
         </div>
     </div>
 </div>
