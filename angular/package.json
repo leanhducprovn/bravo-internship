@@ -22,6 +22,8 @@
     "@grapecity/wijmo.angular2.all": "^5.20221.842",
     "luxon": "^2.3.2",
     "luxon-angular": "^5.0.0",
+    "moment": "^2.29.3",
+    "ngx-moment": "^6.0.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "wijmo": "^5.20221.842",

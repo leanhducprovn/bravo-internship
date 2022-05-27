@@ -5,16 +5,13 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import {
-  ChangeContext,
-  Options,
-  PointerType,
-} from '@angular-slider/ngx-slider';
+import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
 
 import { FormBuilder } from '@angular/forms';
 import { formatDate } from '@angular/common';
 
 import { CalendarAppComponent } from './calendar-app/calendar-app.component';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-choose-time',
@@ -36,21 +33,23 @@ export class ChooseTimeComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   ngOnInit(): void {
+    this.ceil = this.endDate.diff(this.startDate, 'days');
     this.slider();
     this.onDateEvent();
   }
 
-  minValue!: any;
-  maxValue!: any;
+  minValue!: number;
+  maxValue!: number;
   options!: any;
   sliderEvent: string = '';
+  ceil!: number;
 
   slider() {
     this.minValue = 0;
     this.maxValue = 100;
     this.options = {
       floor: 0,
-      ceil: 100,
+      ceil: this.ceil,
       step: 1,
       minRange: 0,
       maxRange: 100,
@@ -86,13 +85,13 @@ export class ChooseTimeComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   dateEvent!: any;
-  startDate = '2022-04-01';
-  endDate = '2022-04-30';
+  startDate = moment('2022-04-01');
+  endDate = moment('2022-04-30');
 
   onDateEvent() {
     this.dateEvent = this.fb.group({
-      startDate: [formatDate(new Date(this.startDate), 'yyyy-MM-dd', 'en')],
-      endDate: [formatDate(new Date(this.endDate), 'yyyy-MM-dd', 'en')],
+      startDate: [formatDate(this.startDate.format(), 'yyyy-MM-dd', 'en')],
+      endDate: [formatDate(this.endDate.format(), 'yyyy-MM-dd', 'en')],
     });
   }
 }
