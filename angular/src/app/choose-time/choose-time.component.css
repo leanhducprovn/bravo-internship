@@ -1,3 +1,15 @@
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
 .container {
     background-color: #f1f1f1;
     border-radius: 4px;
@@ -17,9 +29,10 @@
 }
 
 .container .event {
-    margin-top: 20px;
     height: 35%;
     width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
 .container .event textarea {
@@ -28,7 +41,6 @@
     border-radius: 4px;
     background-color: #2066A7;
     color: #f1f1f1;
-    font-size: 18px;
 }
 
 @media (max-width: 1024px) {
@@ -40,6 +52,7 @@
     .container .event {
         height: 45%;
         width: calc(100% - 60px);
+        flex-direction: column;
     }
 }
 
