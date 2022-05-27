@@ -14,7 +14,24 @@
         </div>
     </div>
     <div class="event">
-        <textarea type="text" class="mt-20 mr-20">{{ sliderEvent }}</textarea>
-        <textarea type="text" class="mt-20"></textarea>
+        <div class="slider-event mt-20 mr-20">
+            <div class="log-event">{{ sliderEvent }}</div>
+        </div>
+        <div class="date-event mt-20">
+            <form class="form" [formGroup]="dateEvent">
+                <div class="group">
+                    <div class="label">Từ ngày</div>
+                    <div class="date">
+                        <input type="date" formControlName="lowerDate">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="label">Đến ngày</div>
+                    <div class="date">
+                        <input type="date" formControlName="upperDate">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

@@ -5,6 +5,8 @@ import {
   PointerType,
 } from '@angular-slider/ngx-slider';
 
+import { FormBuilder } from '@angular/forms';
+
 import { CalendarAppComponent } from './calendar-app/calendar-app.component';
 @Component({
   selector: 'app-choose-time',
@@ -14,7 +16,12 @@ import { CalendarAppComponent } from './calendar-app/calendar-app.component';
 export class ChooseTimeComponent implements OnInit, AfterViewInit {
   @ViewChild(CalendarAppComponent) calendarApp!: CalendarAppComponent;
 
-  constructor() {}
+  dateEvent = this.fb.group({
+    lowerDate: [''],
+    upperDate: [''],
+  });
+
+  constructor(private fb: FormBuilder) {}
 
   ngAfterViewInit(): void {
     // set ngày bắt đầu
