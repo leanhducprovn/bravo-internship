@@ -71,5 +71,7 @@ export class ChooseTimeComponent implements OnInit, AfterViewInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.dateEvent.value.lowerDate.value);
+  }
 }
