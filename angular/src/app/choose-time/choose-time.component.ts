@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   AfterViewInit,
   Component,
   DoCheck,
@@ -18,10 +19,23 @@ import * as moment from 'moment';
   templateUrl: './choose-time.component.html',
   styleUrls: ['./choose-time.component.css'],
 })
-export class ChooseTimeComponent implements OnInit, AfterViewInit, DoCheck {
+export class ChooseTimeComponent
+  implements OnInit, AfterViewInit, DoCheck, AfterViewChecked
+{
   @ViewChild(CalendarAppComponent) calendarApp!: CalendarAppComponent;
 
   constructor(private fb: FormBuilder) {}
+
+  ngAfterViewChecked(): void {
+    // console.log(this.minSlider);
+    // if (this.calendarApp.lowerDate.value) {
+    //   console.log(
+    //     'H',
+    //     this.calendarApp.lowerDate.value.getDate() + this.minSlider
+    //   );
+    //   this.calendarApp.lowerDate.value.setDate(20);
+    // }
+  }
 
   ngDoCheck(): void {}
 
@@ -51,36 +65,44 @@ export class ChooseTimeComponent implements OnInit, AfterViewInit, DoCheck {
       floor: 0,
       ceil: this.ceil,
       step: 1,
-      minRange: 0,
-      maxRange: 100,
     };
   }
 
   onUserChangeStart(changeContext: ChangeContext): void {
-    this.sliderEvent += `onUserChangeStart(${this.getChangeContextString(
+    this.sliderEvent += `start(${this.getChangeContextString(
       changeContext
     )})\n`;
   }
 
   onUserChange(changeContext: ChangeContext): void {
-    this.sliderEvent += `onUserChange(${this.getChangeContextString(
+    this.sliderEvent += `change(${this.getChangeContextString(
       changeContext
     )})\n`;
   }
 
   onUserChangeEnd(changeContext: ChangeContext): void {
-    this.sliderEvent += `onUserChangeEnd(${this.getChangeContextString(
-      changeContext
-    )})\n`;
+    this.sliderEvent += `end(${this.getChangeContextString(changeContext)})\n`;
   }
 
+  minSlider!: number;
+  maxSlider!: number | undefined;
+
   getChangeContextString(changeContext: ChangeContext): string {
+    if (changeContext.pointerType == 0) {
+      this.minSlider = changeContext.value;
+      this.maxSlider = changeContext.highValue;
+      console.log('min', this.minSlider, this.maxSlider);
+    } else if (changeContext.pointerType == 1) {
+      this.minSlider = changeContext.value;
+      this.maxSlider = changeContext.highValue;
+      console.log('max', this.minSlider, this.maxSlider);
+    }
     return (
-      `{pointerType: ${
-        changeContext.pointerType === PointerType.Min ? 'Min' : 'Max'
+      `{type: ${
+        changeContext.pointerType === PointerType.Min ? 'min' : 'max'
       }, ` +
-      `value: ${changeContext.value}, ` +
-      `highValue: ${changeContext.highValue}}`
+      `min: ${changeContext.value}, ` +
+      `max: ${changeContext.highValue}}`
     );
   }
 
