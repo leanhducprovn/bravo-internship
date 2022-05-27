@@ -27,7 +27,6 @@ export class ChooseTimeComponent
   constructor(private fb: FormBuilder) {}
 
   ngAfterViewChecked(): void {
-    // console.log(this.minSlider);
     // if (this.calendarApp.lowerDate.value) {
     //   console.log(
     //     'H',
@@ -35,15 +34,19 @@ export class ChooseTimeComponent
     //   );
     //   this.calendarApp.lowerDate.value.setDate(20);
     // }
+    // console.log(this.test.setDate(23));
   }
 
   ngDoCheck(): void {}
+
+  test!: any;
 
   ngAfterViewInit(): void {
     // set ngày bắt đầu
     this.calendarApp.lowerDate.value = this.dateEvent.value.startDate;
     // set ngày kết thúc
     this.calendarApp.upperDate.value = this.dateEvent.value.endDate;
+    this.test = this.calendarApp.lowerDate.value;
   }
 
   ngOnInit(): void {
