@@ -111,7 +111,7 @@ export class ChooseTimeComponent
 
   dateEvent!: any;
   startDate = moment('2022-04-01');
-  endDate = moment('2022-04-30');
+  endDate = moment('2022-05-30');
 
   onDateEvent() {
     this.dateEvent = this.fb.group({
