@@ -2,7 +2,9 @@ import {
   AfterViewInit,
   Component,
   Input,
+  OnChanges,
   OnInit,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 
@@ -15,14 +17,20 @@ import { InputDateTime } from '@grapecity/wijmo.input';
   templateUrl: './calendar-app.component.html',
   styleUrls: ['./calendar-app.component.css'],
 })
-export class CalendarAppComponent implements OnInit, AfterViewInit {
+export class CalendarAppComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('lowerDate') lowerDate!: WjInputDate;
   @ViewChild('upperDate') upperDate!: WjInputDate;
 
   @Input() zLowerLabelText!: string;
   @Input() zUpperLabelText!: string;
+  @Input() min!: number | undefined;
+  @Input() max!: number | undefined;
 
   constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.min, this.max);
+  }
 
   ngAfterViewInit(): void {}
 

@@ -46,7 +46,6 @@ export class ChooseTimeComponent
     this.calendarApp.lowerDate.value = this.dateEvent.value.startDate;
     // set ngày kết thúc
     this.calendarApp.upperDate.value = this.dateEvent.value.endDate;
-    this.test = this.calendarApp.lowerDate.value;
   }
 
   ngOnInit(): void {
@@ -94,11 +93,17 @@ export class ChooseTimeComponent
     if (changeContext.pointerType == 0) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
-      console.log('min', this.minSlider, this.maxSlider);
+      // this.calendarApp.lowerDate.value = new Date(moment(
+      //   this.calendarApp.lowerDate.value
+      // ).add('days', this.minSlider));
+      console.log(
+        moment(this.calendarApp.lowerDate.value).add('days', this.minSlider)
+      );
+      // console.log('min', this.minSlider, this.maxSlider);
     } else if (changeContext.pointerType == 1) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
-      console.log('max', this.minSlider, this.maxSlider);
+      // console.log('max', this.minSlider, this.maxSlider);
     }
     return (
       `{type: ${
@@ -111,7 +116,7 @@ export class ChooseTimeComponent
 
   dateEvent!: any;
   startDate = moment('2022-04-01');
-  endDate = moment('2022-05-30');
+  endDate = moment('2022-04-30');
 
   onDateEvent() {
     this.dateEvent = this.fb.group({
