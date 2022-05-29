@@ -26,16 +26,7 @@ export class ChooseTimeComponent
 
   constructor(private fb: FormBuilder) {}
 
-  ngAfterViewChecked(): void {
-    // if (this.calendarApp.lowerDate.value) {
-    //   console.log(
-    //     'H',
-    //     this.calendarApp.lowerDate.value.getDate() + this.minSlider
-    //   );
-    //   this.calendarApp.lowerDate.value.setDate(20);
-    // }
-    // console.log(this.test.setDate(23));
-  }
+  ngAfterViewChecked(): void {}
 
   ngDoCheck(): void {}
 
@@ -93,12 +84,6 @@ export class ChooseTimeComponent
     if (changeContext.pointerType == 0) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
-      // this.calendarApp.lowerDate.value = new Date(moment(
-      //   this.calendarApp.lowerDate.value
-      // ).add('days', this.minSlider));
-      console.log(
-        moment(this.calendarApp.lowerDate.value).add('days', this.minSlider)
-      );
       // console.log('min', this.minSlider, this.maxSlider);
     } else if (changeContext.pointerType == 1) {
       this.minSlider = changeContext.value;
