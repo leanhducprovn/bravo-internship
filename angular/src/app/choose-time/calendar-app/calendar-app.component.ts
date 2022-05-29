@@ -23,13 +23,13 @@ export class CalendarAppComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() zLowerLabelText!: string;
   @Input() zUpperLabelText!: string;
-  @Input() min!: number | undefined;
-  @Input() max!: number | undefined;
+  @Input() startDate: any;
+  @Input() endDate: any;
 
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.min, this.max);
+    // console.log(this.startDate, this.endDate);
   }
 
   ngAfterViewInit(): void {}

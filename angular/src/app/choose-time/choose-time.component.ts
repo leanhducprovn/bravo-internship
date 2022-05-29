@@ -30,14 +30,7 @@ export class ChooseTimeComponent
 
   ngDoCheck(): void {}
 
-  test!: any;
-
-  ngAfterViewInit(): void {
-    // set ngày bắt đầu
-    this.calendarApp.lowerDate.value = this.dateEvent.value.startDate;
-    // set ngày kết thúc
-    this.calendarApp.upperDate.value = this.dateEvent.value.endDate;
-  }
+  ngAfterViewInit(): void {}
 
   ngOnInit(): void {
     this.ceil = this.endDate.diff(this.startDate, 'days');
@@ -53,7 +46,7 @@ export class ChooseTimeComponent
 
   slider() {
     this.minValue = 0;
-    this.maxValue = 100;
+    this.maxValue = this.ceil;
     this.options = {
       floor: 0,
       ceil: this.ceil,
@@ -81,14 +74,30 @@ export class ChooseTimeComponent
   maxSlider!: number | undefined;
 
   getChangeContextString(changeContext: ChangeContext): string {
+    this.startDate = moment('2022-04-01');
+    this.endDate = moment('2022-06-1');
     if (changeContext.pointerType == 0) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
       // console.log('min', this.minSlider, this.maxSlider);
+      // set ngày theo slider
+      this.startDate = moment(this.startDate).add('days', this.minSlider);
+      // set lại ngày form group
+      this.dateEvent
+        .get('startDate')
+        .setValue(moment(this.startDate).format('YYYY-MM-DD'));
     } else if (changeContext.pointerType == 1) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
       // console.log('max', this.minSlider, this.maxSlider);
+      // set ngày theo slider
+      if (this.maxSlider) {
+        this.endDate = moment(this.startDate).add('days', this.maxSlider);
+      }
+      // set lại ngày form group
+      this.dateEvent
+        .get('endDate')
+        .setValue(moment(this.endDate).format('YYYY-MM-DD'));
     }
     return (
       `{type: ${
@@ -101,7 +110,7 @@ export class ChooseTimeComponent
 
   dateEvent!: any;
   startDate = moment('2022-04-01');
-  endDate = moment('2022-04-30');
+  endDate = moment('2022-06-1');
 
   onDateEvent() {
     this.dateEvent = this.fb.group({

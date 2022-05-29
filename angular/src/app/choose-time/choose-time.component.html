@@ -2,8 +2,8 @@
     <div class="content">
         <div class="controls">
             <div class="primary">
-                <calendar-app [min]="minSlider" [max]="maxSlider" [zLowerLabelText]="'Từ ngày'"
-                    [zUpperLabelText]="'Đến ngày'">
+                <calendar-app [zLowerLabelText]="'Từ ngày'" [zUpperLabelText]="'Đến ngày'" [startDate]="startDate"
+                    [endDate]="endDate">
                 </calendar-app>
             </div>
             <div class="secondary">
@@ -24,13 +24,15 @@
                 <div class="group">
                     <div class="label">Bắt đầu</div>
                     <div class="date">
-                        <input type="date" formControlName="startDate">
+                        <input type="date" formControlName="startDate"
+                            (ngModelChange)="startDate = dateEvent.value.startDate">
                     </div>
                 </div>
                 <div class="group">
                     <div class="label">Kết thúc</div>
                     <div class="date">
-                        <input type="date" formControlName="endDate">
+                        <input type="date" formControlName="endDate"
+                            (ngModelChange)="endDate = dateEvent.value.endDate">
                     </div>
                 </div>
             </form>
