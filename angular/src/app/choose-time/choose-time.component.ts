@@ -59,6 +59,7 @@ export class ChooseTimeComponent
       floor: 0,
       ceil: ceil,
       step: step,
+      noSwitching: true,
     };
   }
 
