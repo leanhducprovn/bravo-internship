@@ -128,7 +128,7 @@ export class ChooseTimeComponent
     });
   }
 
-  step!: number;
+  step = 1;
 
   menuItemClicked(menu: input.Menu) {
     if (menu.text == 'Ngày') {
@@ -136,6 +136,5 @@ export class ChooseTimeComponent
     } else if (menu.text == 'Tuần') {
       this.step = 7;
     }
-    console.log(this.step);
   }
 }
