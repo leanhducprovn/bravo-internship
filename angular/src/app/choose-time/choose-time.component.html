@@ -1,4 +1,12 @@
 <div class="container">
+    <div class="step mb-20">
+        <wj-menu #menuStep [(value)]="step" [header]="'Theo'" (itemClicked)="menuItemClicked(menuStep)">
+            <wj-menu-item>Ngày</wj-menu-item>
+            <wj-menu-item>Tuần</wj-menu-item>
+            <wj-menu-item>Tháng</wj-menu-item>
+            <wj-menu-item>Năm</wj-menu-item>
+        </wj-menu>
+    </div>
     <div class="content">
         <div class="controls">
             <div class="primary">

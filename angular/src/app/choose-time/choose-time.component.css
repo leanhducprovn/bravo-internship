@@ -10,6 +10,10 @@
     margin-top: 20px;
 }
 
+.mb-20 {
+    margin-bottom: 20px
+}
+
 .container {
     background-color: #f1f1f1;
     border-radius: 4px;
@@ -19,6 +23,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.container .step .wj-control {
+    background-color: #246eb3;
+    color: #f1f1f1;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+:host >>> .container .step .wj-control .wj-input-group-btn>.wj-btn.wj-btn-default:hover {
+    background-color: #f1f1f1;
 }
 
 .container .content {

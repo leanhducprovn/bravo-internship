@@ -3,7 +3,10 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  Input,
+  OnChanges,
   OnInit,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
@@ -14,17 +17,22 @@ import { formatDate } from '@angular/common';
 import { CalendarAppComponent } from './calendar-app/calendar-app.component';
 import * as moment from 'moment';
 
+import * as input from '@grapecity/wijmo.input';
+
 @Component({
   selector: 'app-choose-time',
   templateUrl: './choose-time.component.html',
   styleUrls: ['./choose-time.component.css'],
 })
 export class ChooseTimeComponent
-  implements OnInit, AfterViewInit, DoCheck, AfterViewChecked
+  implements OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnChanges
 {
   @ViewChild(CalendarAppComponent) calendarApp!: CalendarAppComponent;
+  @ViewChild('menuStep', { static: true }) menuStep!: input.Menu;
 
   constructor(private fb: FormBuilder) {}
+
+  ngOnChanges(changes: SimpleChanges): void {}
 
   ngAfterViewChecked(): void {}
 
@@ -34,7 +42,7 @@ export class ChooseTimeComponent
 
   ngOnInit(): void {
     this.ceil = this.endDate.diff(this.startDate, 'days');
-    this.slider();
+    this.slider(this.ceil, this.step);
     this.onDateEvent();
   }
 
@@ -44,13 +52,13 @@ export class ChooseTimeComponent
   sliderEvent: string = '';
   ceil!: number;
 
-  slider() {
+  slider(ceil: number, step: number) {
     this.minValue = 0;
     this.maxValue = this.ceil;
     this.options = {
       floor: 0,
-      ceil: this.ceil,
-      step: 1,
+      ceil: ceil,
+      step: step,
     };
   }
 
@@ -76,6 +84,7 @@ export class ChooseTimeComponent
   getChangeContextString(changeContext: ChangeContext): string {
     this.startDate = moment('2022-04-01');
     this.endDate = moment('2022-06-1');
+    this.slider(this.ceil, this.step);
     if (changeContext.pointerType == 0) {
       this.minSlider = changeContext.value;
       this.maxSlider = changeContext.highValue;
@@ -117,5 +126,16 @@ export class ChooseTimeComponent
       startDate: [formatDate(this.startDate.format(), 'yyyy-MM-dd', 'en')],
       endDate: [formatDate(this.endDate.format(), 'yyyy-MM-dd', 'en')],
     });
+  }
+
+  step!: number;
+
+  menuItemClicked(menu: input.Menu) {
+    if (menu.text == 'Ngày') {
+      this.step = 1;
+    } else if (menu.text == 'Tuần') {
+      this.step = 7;
+    }
+    console.log(this.step);
   }
 }
