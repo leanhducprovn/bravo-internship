@@ -44,7 +44,6 @@ export class ChooseTimeComponent
     this.ceil = this.endDate.diff(this.startDate, 'days');
     this.slider(this.ceil, this.step);
     this.onDateEvent();
-    console.log('test');
   }
 
   minValue!: number;
