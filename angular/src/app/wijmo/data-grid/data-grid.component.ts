@@ -2,7 +2,10 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  DoCheck,
+  OnChanges,
   OnInit,
+  SimpleChanges,
   ViewChild,
 } from '@angular/core';
 
@@ -21,7 +24,7 @@ import { Globalize } from '@grapecity/wijmo';
   styleUrls: ['./data-grid.component.css'],
 })
 export class DataGridComponent
-  implements OnInit, AfterViewInit, AfterViewChecked
+  implements OnInit, AfterViewInit, AfterViewChecked, DoCheck, OnChanges
 {
   @ViewChild('flexGrid', { static: true }) flexGrid!: wjcGrid.FlexGrid;
   @ViewChild('unitsCombo', { static: true }) unitsCombo!: wjInput.ComboBox;
@@ -34,11 +37,19 @@ export class DataGridComponent
   rxSearch!: any;
   rxHighlight!: any;
 
+  groupName!: any;
+
   constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.groupName);
+  }
+
+  ngDoCheck(): void {}
 
   ngAfterViewInit(): void {}
 
-  ngAfterViewChecked() {}
+  ngAfterViewChecked(): void {}
 
   onUnitsSelectedIndexChanged() {
     this.detailView.refresh();
@@ -101,8 +112,10 @@ export class DataGridComponent
         return item.Unit == this.unitsCombo.text;
       },
     });
+
+    // Add thêm group
     this.detailView.groupDescriptions.push(
-      new wjcCore.PropertyGroupDescription('Name')
+      new wjcCore.PropertyGroupDescription(this.groupName)
     );
 
     // search highlight

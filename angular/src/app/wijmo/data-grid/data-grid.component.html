@@ -1,7 +1,8 @@
 <div class="container">
     <div class="search">
         <input (input)="filter($event)" class="mr-10" placeholder="Search by name...">
-        <input id="search-highlight" placeholder="Search has more effects..." />
+        <input id="search-highlight" class="mr-10" placeholder="Search has more effects..." />
+        <input [(ngModel)]="groupName" id="create-group" placeholder="Enter column name here to create group..." />
     </div>
     <div class="menu">
         <div class="left">
@@ -30,7 +31,7 @@
         <wj-flex-grid class="gird-height" #flexGrid [alternatingRowStep]="0" [itemsSource]="detailView"
             [isReadOnly]="false" (initialized)="gridInitialized(flexGrid)" [autoSearch]="true"
             [showSelectedHeaders]="'All'" [showMarquee]="true" (loadedRows)="onloadedRows(flexGrid)">
-            <!-- <wj-flex-grid-column [cssClass]="'cell-id'" [binding]="'Id'" [header]="'ID'" [width]="100">
+            <wj-flex-grid-column [cssClass]="'cell-id'" [binding]="'Id'" [header]="'ID'" [width]="100">
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'ParentId'" [header]="'Parent ID'" [width]="100">
             </wj-flex-grid-column>
@@ -59,7 +60,7 @@
             <wj-flex-grid-column [binding]="'ModifiedAt'" [header]="'Modified at'" [width]="220">
             </wj-flex-grid-column>
             <wj-flex-grid-column [binding]="'_SelectKey__wibkaw'" [header]="'Select key wibkaw'" [width]="170">
-            </wj-flex-grid-column> -->
+            </wj-flex-grid-column>
         </wj-flex-grid>
     </div>
 </div>
