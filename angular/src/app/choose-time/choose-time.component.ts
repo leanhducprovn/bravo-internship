@@ -3,7 +3,6 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
-  Input,
   OnChanges,
   OnInit,
   SimpleChanges,
