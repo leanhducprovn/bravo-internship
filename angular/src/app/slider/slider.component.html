@@ -22,7 +22,7 @@
         </div>
         <div class="slider mb-20">
             <ngx-slider [(value)]="start" [(highValue)]="end"
-                [options]="{ floor: min ? min : 0, ceil: max ? max : 250, step: 1} ">
+                [options]="{ floor: min ? min : 0, ceil: max ? max : 250, step: 1, noSwitching: true } ">
             </ngx-slider>
         </div>
         <div class="event">
