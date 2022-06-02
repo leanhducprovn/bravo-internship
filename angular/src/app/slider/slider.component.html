@@ -1,20 +1,20 @@
 <div class="container">
     <div class="content">
         <div class="input mb-20">
-            <form class="form" [formGroup]="event">
-                <input formControlName="min" class="mr-10" type="text">
-                <input formControlName="start" class="mr-10" type="text">
-                <input formControlName="end" class="mr-10" type="text">
-                <input formControlName="max" class="" type="text">
+            <form class="form" [formGroup]="form">
+                <input [(ngModel)]="min" formControlName="min" class="mr-10" type="number">
+                <input [(ngModel)]="start" formControlName="start" class="mr-10" type="number">
+                <input [(ngModel)]="end" formControlName="end" class="mr-10" type="number">
+                <input [(ngModel)]="max" formControlName="max" class="" type="number">
             </form>
         </div>
         <div class="slider mb-20">
-            <ngx-slider [(value)]="start" [(highValue)]="end" [options]="options"></ngx-slider>
+            <ngx-slider [(value)]="start" [(highValue)]="end"
+                [options]="{ floor: min ? min : 0, ceil: max ? max : 250, step: 1} ">
+            </ngx-slider>
         </div>
         <div class="event">
             <button (click)="onReset()">Reset</button>
-            <button (click)="onClick1()">Event 1</button>
-            <button (click)="onClick2()">Event 2</button>
         </div>
     </div>
 </div>

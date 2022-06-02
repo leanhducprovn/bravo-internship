@@ -11,6 +11,7 @@ input {
     border: none;
     border-radius: 4px;
     font-size: 16px;
+    width: 50%;
 }
 
 .mr-10 {
