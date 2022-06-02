@@ -28,10 +28,10 @@ export class SliderComponent
   ngOnInit(): void {}
 
   form = this.fb.group({
-    min: '',
-    start: '',
-    end: '',
-    max: '',
+    min: ['', { updateOn: 'blur' }],
+    start: ['', { updateOn: 'blur' }],
+    end: ['', { updateOn: 'blur' }],
+    max: ['', { updateOn: 'blur' }],
   });
 
   min = 0;
@@ -44,5 +44,16 @@ export class SliderComponent
     this.start = 50;
     this.end = 200;
     this.max = 250;
+  }
+
+  getRandom(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  onEvent() {
+    this.min = this.getRandom(1, 100);
+    this.start = this.getRandom(100, 200);
+    this.end = this.getRandom(200, 900);
+    this.max = this.getRandom(900, 1000);
   }
 }

@@ -52,3 +52,8 @@ input {
     display: flex;
     flex-direction: row;
 }
+
+.container .content .input .form .form-group {
+    display: flex;
+    flex-direction: column;
+}

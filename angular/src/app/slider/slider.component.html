@@ -2,10 +2,22 @@
     <div class="content">
         <div class="input mb-20">
             <form class="form" [formGroup]="form">
-                <input [(ngModel)]="min" formControlName="min" class="mr-10" type="number">
-                <input [(ngModel)]="start" formControlName="start" class="mr-10" type="number">
-                <input [(ngModel)]="end" formControlName="end" class="mr-10" type="number">
-                <input [(ngModel)]="max" formControlName="max" class="" type="number">
+                <div class="form-group">
+                    <label for="min">Min</label>
+                    <input [(ngModel)]="min" formControlName="min" class="mr-10" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="start">Start</label>
+                    <input [(ngModel)]="start" formControlName="start" class="mr-10" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="end">End</label>
+                    <input [(ngModel)]="end" formControlName="end" class="mr-10" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="max">Max</label>
+                    <input [(ngModel)]="max" formControlName="max" class="" type="number">
+                </div>
             </form>
         </div>
         <div class="slider mb-20">
@@ -15,6 +27,7 @@
         </div>
         <div class="event">
             <button (click)="onReset()">Reset</button>
+            <button (click)="onEvent()">Random event</button>
         </div>
     </div>
 </div>
