@@ -2,12 +2,14 @@
     <div class="content">
         <div class="date mb-20">
             <div class="date-group mr-10">
-                <label class="mb-10" for="lowerDate">Từ ngày</label>
-                <wj-input-date #lowerDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+                <label class="mb-10" for="lowerDate">{{ zLowerLabelText }}</label>
+                <wj-input-date #theLowerDate [value]="lowerDate" [format]="'dd/MM/yy'"></wj-input-date>
+                <p>{{ theLowerDate.value | date:'fullDate' }}</p>
             </div>
             <div class="date-group">
-                <label class="mb-10" for="upperDate">Đến ngày</label>
-                <wj-input-date #upperDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+                <label class="mb-10" for="upperDate">{{ zUpperLabelText }}</label>
+                <wj-input-date #theUpperDate [value]="upperDate" [format]="'dd/MM/yy'"></wj-input-date>
+                <p>{{ theUpperDate.value | date:'fullDate' }}</p>
             </div>
         </div>
         <div class="input mb-20">

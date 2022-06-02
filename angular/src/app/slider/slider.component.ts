@@ -24,7 +24,14 @@ export class SliderComponent
 
   ngOnChanges(changes: SimpleChanges): void {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.slider(
+      0,
+      0,
+      this.countDay(this.lowerDate, this.upperDate),
+      this.countDay(this.lowerDate, this.upperDate)
+    );
+  }
 
   form = this.fb.group({
     min: ['', { updateOn: 'blur' }],
@@ -35,14 +42,21 @@ export class SliderComponent
 
   min = 0;
   start = 0;
-  end = 250;
-  max = 250;
+  end = 0;
+  max = 0;
+
+  slider(min: number, start: number, end: number, max: number) {
+    this.min = min;
+    this.start = start;
+    this.end = end;
+    this.max = max;
+  }
 
   onReset() {
     this.min = 0;
     this.start = 0;
-    this.end = 250;
-    this.max = 250;
+    this.end = this.countDay(this.lowerDate, this.upperDate);
+    this.max = this.countDay(this.lowerDate, this.upperDate);
   }
 
   onRandom() {
@@ -54,5 +68,17 @@ export class SliderComponent
 
   getRandom(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  zLowerLabelText = 'Từ ngày';
+  zUpperLabelText = 'Đến ngày';
+
+  lowerDate = new Date('2022-1-1');
+  upperDate = new Date('2022-6-1');
+
+  countDay(date1: Date, date2: Date) {
+    let ms1 = date1.getTime();
+    let ms2 = date2.getTime();
+    return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
   }
 }
