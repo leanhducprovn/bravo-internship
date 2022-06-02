@@ -31,7 +31,6 @@ export class SliderComponent
   ngOnInit(): void {
     this.slider();
     this.onEvent();
-    console.log(new Date());
   }
 
   start!: number;
@@ -39,7 +38,6 @@ export class SliderComponent
   options!: Options;
 
   slider() {
-    console.log('slider', this.setMin, this.setStart, this.setEnd, this.setMax);
     this.start = this.setStart ? this.setStart : 0;
     this.end = this.setEnd ? this.setEnd : 100;
     this.options = {
@@ -48,7 +46,6 @@ export class SliderComponent
       step: 10,
       showTicks: true,
     };
-    console.log(this.options, this.start, this.end);
   }
 
   setStart!: number;
@@ -90,6 +87,5 @@ export class SliderComponent
     this.setStart = this.event.value.start;
     this.setEnd = this.event.value.end;
     this.setMax = this.event.value.max;
-    console.log(this.setMin, this.setStart, this.setEnd, this.setMax);
   }
 }
