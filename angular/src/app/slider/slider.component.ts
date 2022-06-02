@@ -34,14 +34,14 @@ export class SliderComponent
   });
 
   min = 0;
-  start = 50;
-  end = 200;
+  start = 0;
+  end = 250;
   max = 250;
 
   onReset() {
     this.min = 0;
-    this.start = 50;
-    this.end = 200;
+    this.start = 0;
+    this.end = 250;
     this.max = 250;
   }
 

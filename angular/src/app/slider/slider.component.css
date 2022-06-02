@@ -17,6 +17,10 @@ input {
     margin-right: 10px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+
 .mb-20 {
     margin-bottom: 20px;
 }
@@ -45,6 +49,28 @@ input {
     .container .content {
         width: calc(100% - 60px);
     }
+}
+
+.container .content .date {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .content .date .date-group {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .date .date-group .wj-content.wj-dropdown {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+:host >>> .container .content .date .date-group .wj-control .wj-input-group .wj-form-control {
+    padding: 14px;
 }
 
 .container .content .input {

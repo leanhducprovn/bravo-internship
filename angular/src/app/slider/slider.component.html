@@ -1,5 +1,15 @@
 <div class="container">
     <div class="content">
+        <div class="date mb-20">
+            <div class="date-group mr-10">
+                <label class="mb-10" for="lowerDate">Từ ngày</label>
+                <wj-input-date #lowerDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+            </div>
+            <div class="date-group">
+                <label class="mb-10" for="upperDate">Đến ngày</label>
+                <wj-input-date #upperDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+            </div>
+        </div>
         <div class="input mb-20">
             <form class="form" [formGroup]="form">
                 <div class="form-group">
