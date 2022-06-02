@@ -9,8 +9,6 @@ import {
 } from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
-import { WjCalendar } from '@grapecity/wijmo.angular2.input';
-import { InputDateTime } from '@grapecity/wijmo.input';
 
 @Component({
   selector: 'calendar-app',

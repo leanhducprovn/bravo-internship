@@ -3,7 +3,6 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
-  Input,
   OnChanges,
   OnInit,
   SimpleChanges,
@@ -111,11 +110,9 @@ export class ChooseTimeComponent
         .setValue(moment(this.endDate).format('YYYY-MM-DD'));
     }
     return (
-      `{type: ${
-        changeContext.pointerType === PointerType.Min ? 'min' : 'max'
-      }, ` +
-      `min: ${changeContext.value}, ` +
-      `max: ${changeContext.highValue}}`
+      `${changeContext.pointerType === PointerType.Min ? 'min' : 'max'}, ` +
+      `${changeContext.value}, ` +
+      `${changeContext.highValue}`
     );
   }
 
