@@ -76,7 +76,7 @@ export class SliderComponent
   lowerDate = new Date('2022-1-1');
   upperDate = new Date('2022-6-1');
 
-  countDay(date1: Date, date2: Date) {
+  countDay(date1: any, date2: any) {
     let ms1 = date1.getTime();
     let ms2 = date2.getTime();
     return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));

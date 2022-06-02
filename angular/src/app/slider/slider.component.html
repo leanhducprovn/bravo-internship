@@ -20,11 +20,14 @@
                 </div>
                 <div class="form-group">
                     <label for="start">Start</label>
-                    <input [(ngModel)]="start" formControlName="start" class="mr-10" type="number">
+                    <input [ngModel]="start ? start : countDay(lowerDate, theLowerDate.value)" formControlName="start"
+                        class="mr-10" type="number">
                 </div>
                 <div class="form-group">
                     <label for="end">End</label>
-                    <input [(ngModel)]="end" formControlName="end" class="mr-10" type="number">
+                    <input
+                        [ngModel]="countDay(lowerDate, theUpperDate.value) ? countDay(lowerDate, theUpperDate.value) : end"
+                        formControlName="end" class="mr-10" type="number">
                 </div>
                 <div class="form-group">
                     <label for="max">Max</label>
@@ -33,7 +36,8 @@
             </form>
         </div>
         <div class="slider mb-20">
-            <ngx-slider [(value)]="start" [(highValue)]="end"
+            <ngx-slider [value]="start ? start : countDay(lowerDate, theLowerDate.value)"
+                [highValue]="countDay(lowerDate, theUpperDate.value) ? countDay(lowerDate, theUpperDate.value) : end"
                 [options]="{ floor: min ? min : 0, ceil: max ? max : 250, step: 1, noSwitching: true } ">
             </ngx-slider>
         </div>
