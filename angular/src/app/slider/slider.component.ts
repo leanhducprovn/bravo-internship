@@ -47,8 +47,8 @@ export class SliderComponent
 
   onRandom() {
     this.min = this.getRandom(1, 100);
-    this.start = this.getRandom(100, 200);
-    this.end = this.getRandom(200, 900);
+    this.start = this.getRandom(100, 500);
+    this.end = this.getRandom(500, 900);
     this.max = this.getRandom(900, 1000);
   }
 
