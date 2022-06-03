@@ -53,6 +53,6 @@
     padding: 14px;
 }
 
-:host>>>.content .input .group .number .wj-control .wj-input-group .wj-form-control {
+:host >>> .content .input .group .number .wj-control .wj-input-group .wj-form-control {
     padding: 14px;
 }

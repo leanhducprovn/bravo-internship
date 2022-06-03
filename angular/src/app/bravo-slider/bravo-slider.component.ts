@@ -12,6 +12,9 @@ export class BravoSliderComponent implements OnInit {
   @Input() max!: number;
   @Input() step!: number;
   @Input() ticks!: boolean;
+  @Input() tickStep!: number;
+  @Input() ticksValues!: boolean;
+  @Input() selectionBar!: boolean;
   @Input() pointerColor!: string;
   @Input() pointerSize!: number;
   @Input() pointerTop!: number;
@@ -33,6 +36,7 @@ export class BravoSliderComponent implements OnInit {
     );
     this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
+    this.tick();
   }
 
   bubble(boolean: boolean) {
@@ -86,6 +90,19 @@ export class BravoSliderComponent implements OnInit {
     selection.forEach((element) => {
       element.style.background = color;
       element.style.height = size + 'px';
+    });
+  }
+
+  tick() {
+    const tick = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-ticks'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    console.log(tick);
+    tick.forEach((element) => {
+      element.style.maxWidth = '1px';
+      element.style.maxHeight = '10px';
     });
   }
 }
