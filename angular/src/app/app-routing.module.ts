@@ -24,6 +24,7 @@ import { CssGridComponent } from './css/css-grid/css-grid.component';
 import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 import { ChooseTimeComponent } from './choose-time/choose-time.component';
 import { SliderComponent } from './slider/slider.component';
+import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.component';
 
 const routes: Routes = [
   {
@@ -74,6 +75,10 @@ const routes: Routes = [
         path: 'wijmo',
         component: WijmoComponent,
         children: [
+          {
+            path: 'input-date-app',
+            component: InputDateAppComponent,
+          },
           {
             path: 'input-calendar',
             component: InputCalendarComponent,
