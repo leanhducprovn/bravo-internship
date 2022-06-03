@@ -77,6 +77,8 @@ import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 import { ChooseTimeComponent } from './choose-time/choose-time.component';
 import { CalendarAppComponent } from './choose-time/calendar-app/calendar-app.component';
 import { SliderComponent } from './slider/slider.component';
+import { BravoSliderComponent } from './bravo-slider/bravo-slider.component';
+import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,6 +121,8 @@ import { SliderComponent } from './slider/slider.component';
     ChooseTimeComponent,
     CalendarAppComponent,
     SliderComponent,
+    BravoSliderComponent,
+    InputDateAppComponent,
   ],
   imports: [
     BrowserModule,
