@@ -18,6 +18,7 @@ export class BravoSliderComponent implements OnInit {
   @Input() pointerBorder!: string;
   @Input() isBubble!: boolean;
   @Input() selectionColor!: string;
+  @Input() barColor!: string;
   @Input() barSize!: number;
 
   constructor() {}
@@ -30,8 +31,8 @@ export class BravoSliderComponent implements OnInit {
       this.pointerTop,
       this.pointerBorder
     );
+    this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
-    this.bar(this.barSize);
   }
 
   bubble(boolean: boolean) {
@@ -57,8 +58,8 @@ export class BravoSliderComponent implements OnInit {
     );
     pointer.forEach((element) => {
       element.style.background = color;
-      element.style.width = size + 'px';
-      element.style.height = size + 'px';
+      element.style.maxWidth = size + 'px';
+      element.style.maxHeight = size + 'px';
       element.style.border = border;
       element.style.borderRadius = '100%';
       element.style.top = top + 'px';
@@ -76,13 +77,14 @@ export class BravoSliderComponent implements OnInit {
     });
   }
 
-  bar(size: number) {
+  bar(color: string, size: number) {
     const selection = Array.from(
       document.getElementsByClassName(
         'ngx-slider-bar'
       ) as HTMLCollectionOf<HTMLElement>
     );
     selection.forEach((element) => {
+      element.style.background = color;
       element.style.height = size + 'px';
     });
   }
