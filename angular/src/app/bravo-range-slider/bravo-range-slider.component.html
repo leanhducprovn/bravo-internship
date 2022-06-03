@@ -1,1 +1,18 @@
-<p>bravo-range-slider works!</p>
+<div class="content">
+    <div class="date">
+        <div class="group mr-20">
+            <label class="mb-10" for="lowerDate">Từ ngày</label>
+            <wj-input-date #theLowerDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+        </div>
+        <div class="group">
+            <label class="mb-10" for="upperDate">Đến ngày</label>
+            <wj-input-date #theUpperDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+        </div>
+    </div>
+    <div class="slider">
+        <bravo-slider [pointerSize]="20" [pointerTop]="-13" [pointerBorder]="'4px solid #fff'"
+            [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
+            [min]="0" [start]="10" [end]="50" [max]="60" [step]="1" [ticks]="false">
+        </bravo-slider>
+    </div>
+</div>

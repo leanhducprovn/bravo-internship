@@ -1,0 +1,33 @@
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .date {
+    display: flex;
+    flex-direction: row;
+}
+
+.content .date .group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+:host >>> .content .slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+}
