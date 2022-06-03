@@ -25,6 +25,7 @@ import { DataGridComponent } from './wijmo/data-grid/data-grid.component';
 import { ChooseTimeComponent } from './choose-time/choose-time.component';
 import { SliderComponent } from './slider/slider.component';
 import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.component';
+import { BravoComponent } from './bravo/bravo.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'bravo',
+        component: BravoComponent,
+      },
       {
         path: 'slider',
         component: SliderComponent,

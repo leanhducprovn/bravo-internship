@@ -79,6 +79,7 @@ import { CalendarAppComponent } from './choose-time/calendar-app/calendar-app.co
 import { SliderComponent } from './slider/slider.component';
 import { BravoSliderComponent } from './bravo-slider/bravo-slider.component';
 import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.component';
+import { BravoComponent } from './bravo/bravo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -123,6 +124,7 @@ import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.com
     SliderComponent,
     BravoSliderComponent,
     InputDateAppComponent,
+    BravoComponent,
   ],
   imports: [
     BrowserModule,
