@@ -56,3 +56,7 @@
 :host >>> .container .content .date .group .wj-control .wj-input-group .wj-form-control {
     padding: 14px;
 }
+
+:host >>> .container .content .slider .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+    background-color: #fff;
+}

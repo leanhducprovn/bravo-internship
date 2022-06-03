@@ -10,7 +10,9 @@ export class InputDateAppComponent implements OnInit {
 
   ngOnInit(): void {
     this.bubble(false);
-    this.pointer('#2066a7', 18);
+    this.pointer('#2066a7');
+    this.selection('#2066a7');
+    this.bar(6);
   }
 
   zLowerLabelText = 'Từ ngày';
@@ -31,7 +33,7 @@ export class InputDateAppComponent implements OnInit {
     });
   }
 
-  pointer(color: string, size: number) {
+  pointer(color: string) {
     const pointer = Array.from(
       document.getElementsByClassName(
         'ngx-slider-pointer'
@@ -39,10 +41,28 @@ export class InputDateAppComponent implements OnInit {
     );
     pointer.forEach((element) => {
       element.style.background = color;
+    });
+  }
+
+  selection(color: string) {
+    const selection = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-selection'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    selection.forEach((element) => {
+      element.style.background = color;
+    });
+  }
+
+  bar(size: number) {
+    const selection = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-bar'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    selection.forEach((element) => {
       element.style.height = size + 'px';
-      element.style.width = size + 'px';
-      element.style.border = '4px solid #fff';
-      element.style.borderRadius = '100%';
     });
   }
 }
