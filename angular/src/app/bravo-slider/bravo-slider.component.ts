@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-bravo-slider',
+  selector: 'bravo-slider',
   templateUrl: './bravo-slider.component.html',
-  styleUrls: ['./bravo-slider.component.css']
+  styleUrls: ['./bravo-slider.component.css'],
 })
 export class BravoSliderComponent implements OnInit {
+  @Input() min!: number;
+  @Input() start!: number;
+  @Input() end!: number;
+  @Input() max!: number;
+  @Input() step!: number;
+  @Input() ticks!: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

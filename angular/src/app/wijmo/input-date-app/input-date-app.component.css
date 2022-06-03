@@ -1,0 +1,58 @@
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    height: calc(100vh - 200px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .content {
+    padding: 20px;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .container .content {
+        width: calc(100% - 60px);
+    }
+}
+
+.container .content .date {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .content .date .group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container .content .date .group .wj-content.wj-dropdown {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+:host >>> .container .content .date .group .wj-control .wj-input-group .wj-form-control {
+    padding: 14px;
+}

@@ -1,1 +1,19 @@
-<p>input-date-app works!</p>
+<div class="container">
+    <div class="content">
+        <div class="date">
+            <div class="group mr-20">
+                <label class="mb-10" for="lowerDate">{{ zLowerLabelText }}</label>
+                <wj-input-date #theLowerDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+                <p>{{ theLowerDate.value | date:'fullDate' }}</p>
+            </div>
+            <div class="group">
+                <label class="mb-10" for="upperDate">{{ zUpperLabelText }}</label>
+                <wj-input-date #theUpperDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+                <p>{{ theUpperDate.value | date:'fullDate' }}</p>
+            </div>
+        </div>
+        <div class="slider">
+            <bravo-slider [min]="0" [start]="10" [end]="50" [max]="60" [step]="10" [ticks]="true"></bravo-slider>
+        </div>
+    </div>
+</div>
