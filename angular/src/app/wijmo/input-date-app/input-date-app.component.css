@@ -57,6 +57,6 @@
     padding: 14px;
 }
 
-:host >>> .container .content .slider .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
-    background-color: #fff;
+:host >>> .container .content .slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
 }

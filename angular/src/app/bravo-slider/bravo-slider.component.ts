@@ -12,8 +12,78 @@ export class BravoSliderComponent implements OnInit {
   @Input() max!: number;
   @Input() step!: number;
   @Input() ticks!: boolean;
+  @Input() pointerColor!: string;
+  @Input() pointerSize!: number;
+  @Input() pointerTop!: number;
+  @Input() pointerBorder!: string;
+  @Input() isBubble!: boolean;
+  @Input() selectionColor!: string;
+  @Input() barSize!: number;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bubble(this.isBubble);
+    this.pointer(
+      this.pointerColor,
+      this.pointerSize,
+      this.pointerTop,
+      this.pointerBorder
+    );
+    this.selection(this.selectionColor);
+    this.bar(this.barSize);
+  }
+
+  bubble(boolean: boolean) {
+    const bubble = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-bubble'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    bubble.forEach((element) => {
+      if (boolean) {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    });
+  }
+
+  pointer(color: string, size: number, top: number, border: string) {
+    const pointer = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-pointer'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    pointer.forEach((element) => {
+      element.style.background = color;
+      element.style.width = size + 'px';
+      element.style.height = size + 'px';
+      element.style.border = border;
+      element.style.borderRadius = '100%';
+      element.style.top = top + 'px';
+    });
+  }
+
+  selection(color: string) {
+    const selection = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-selection'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    selection.forEach((element) => {
+      element.style.background = color;
+    });
+  }
+
+  bar(size: number) {
+    const selection = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-bar'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    selection.forEach((element) => {
+      element.style.height = size + 'px';
+    });
+  }
 }
