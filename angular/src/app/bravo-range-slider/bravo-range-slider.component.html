@@ -1,12 +1,22 @@
 <div class="content">
-    <div class="date">
+    <div class="input">
         <div class="group mr-20">
-            <label class="mb-10" for="lowerDate">Từ ngày</label>
-            <wj-input-date #theLowerDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+            <label class="mb-10">{{ lowerLabel }}</label>
+            <div class="date" *ngIf="typeDate">
+                <wj-input-date #theLowerDate [value]="" [format]="format"></wj-input-date>
+            </div>
+            <div class="number" *ngIf="typeNumber">
+                <wj-input-number [value]="" [format]="format"></wj-input-number>
+            </div>
         </div>
         <div class="group">
-            <label class="mb-10" for="upperDate">Đến ngày</label>
-            <wj-input-date #theUpperDate [value]="" [format]="'dd/MM/yy'"></wj-input-date>
+            <label class="mb-10">{{ upperLabel }}</label>
+            <div class="date" *ngIf="typeDate">
+                <wj-input-date #theUpperDate [value]="" [format]="format"></wj-input-date>
+            </div>
+            <div class="number" *ngIf="typeNumber">
+                <wj-input-number [value]="" [format]="format"></wj-input-number>
+            </div>
         </div>
     </div>
     <div class="slider">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'bravo-range-slider',
@@ -6,7 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bravo-range-slider.component.css'],
 })
 export class BravoRangeSliderComponent implements OnInit {
+  @Input() lowerLabel!: string;
+  @Input() upperLabel!: string;
+  @Input() type!: string;
+  @Input() format!: string;
+
+  typeDate = false;
+  typeNumber = false;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkType();
+  }
+
+  checkType() {
+    if (this.type == 'date') {
+      this.typeDate = true;
+    } else if (this.type == 'number') {
+      this.typeNumber = true;
+    }
+  }
 }
