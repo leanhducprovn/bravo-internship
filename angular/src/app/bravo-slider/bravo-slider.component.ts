@@ -99,7 +99,7 @@ export class BravoSliderComponent implements OnInit {
         'ngx-slider-ticks'
       ) as HTMLCollectionOf<HTMLElement>
     );
-    console.log(tick);
+    // console.log(tick);
     tick.forEach((element) => {
       element.style.maxWidth = '1px';
       element.style.maxHeight = '10px';
