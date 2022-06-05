@@ -23,6 +23,9 @@ export class BravoSliderComponent implements OnInit {
   @Input() selectionColor!: string;
   @Input() barColor!: string;
   @Input() barSize!: number;
+  @Input() tickType!: string;
+  @Input() tickColor!: string;
+  @Input() tickBackground!: string;
 
   constructor() {}
 
@@ -36,7 +39,9 @@ export class BravoSliderComponent implements OnInit {
     );
     this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
-    this.tick();
+    setTimeout(() => {
+      this.tick(this.tickType, this.tickColor, this.tickBackground);
+    });
   }
 
   bubble(boolean: boolean) {
@@ -93,16 +98,26 @@ export class BravoSliderComponent implements OnInit {
     });
   }
 
-  tick() {
+  tick(type: string, color: string, background: string) {
     const tick = Array.from(
       document.getElementsByClassName(
-        'ngx-slider-ticks'
+        'ngx-slider-tick'
       ) as HTMLCollectionOf<HTMLElement>
     );
-    // console.log(tick);
     tick.forEach((element) => {
-      element.style.maxWidth = '1px';
-      element.style.maxHeight = '10px';
+      if (type == 'vertical') {
+        element.style.width = '1px';
+        element.style.height = '10px';
+        element.style.background = background;
+        element.style.color = color;
+      } else if (type == 'circle') {
+        element.style.width = '15px';
+        element.style.height = '15px';
+        element.style.top = '-3px';
+        element.style.borderRadius = '100%';
+        element.style.background = background;
+        element.style.color = color;
+      }
     });
   }
 }
