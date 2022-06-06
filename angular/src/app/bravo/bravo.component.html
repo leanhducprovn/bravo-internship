@@ -1,11 +1,12 @@
 <div class="container">
     <div class="content">
         <div class="range-slider mb-100">
-            <bravo-range-slider type="date" format="dd/MM/yy" lowerLabel="Từ ngày" upperLabel="Đến ngày">
+            <bravo-range-slider [minValue]="minTime" [maxValue]="maxTime" type="date" format="dd/MM/yy"
+                lowerLabel="Từ ngày" upperLabel="Đến ngày">
             </bravo-range-slider>
         </div>
         <div class="range-time">
-            <bravo-range-time></bravo-range-time>
+            <bravo-range-time (timeEvent)="timeEvent($event.minTime, $event.maxTime)"></bravo-range-time>
         </div>
     </div>
 </div>

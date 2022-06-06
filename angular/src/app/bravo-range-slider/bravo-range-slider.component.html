@@ -3,19 +3,19 @@
         <div class="group mr-20">
             <label class="mb-10">{{ lowerLabel }}</label>
             <div class="date" *ngIf="typeDate">
-                <wj-input-date #theLowerDate [value]="" [format]="format"></wj-input-date>
+                <wj-input-date #theLowerDate [value]="minValue ? minValue : today" [format]="format"></wj-input-date>
             </div>
             <div class="number" *ngIf="typeNumber">
-                <wj-input-number [value]="" [format]="format"></wj-input-number>
+                <wj-input-number [value]="minValue" [format]="format"></wj-input-number>
             </div>
         </div>
         <div class="group">
             <label class="mb-10">{{ upperLabel }}</label>
             <div class="date" *ngIf="typeDate">
-                <wj-input-date #theUpperDate [value]="" [format]="format"></wj-input-date>
+                <wj-input-date #theUpperDate [value]="maxValue ? maxValue : today" [format]="format"></wj-input-date>
             </div>
             <div class="number" *ngIf="typeNumber">
-                <wj-input-number [value]="" [format]="format"></wj-input-number>
+                <wj-input-number [value]="maxValue" [format]="format"></wj-input-number>
             </div>
         </div>
     </div>

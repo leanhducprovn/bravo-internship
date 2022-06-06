@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'bravo-range-time',
@@ -12,6 +12,8 @@ export class BravoRangeTimeComponent implements OnInit {
   time = new Date();
   min!: Date;
   max!: Date;
+
+  @Output() timeEvent = new EventEmitter<any>();
 
   constructor() {}
 
@@ -61,6 +63,7 @@ export class BravoRangeTimeComponent implements OnInit {
       event.target.value - 1,
       this.getDayOfMonth(this.time.getFullYear(), event.target.value)
     );
+    this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
     console.log(this.min, '=>', this.max);
   }
 
@@ -75,6 +78,7 @@ export class BravoRangeTimeComponent implements OnInit {
         2,
         this.getDayOfMonth(this.time.getFullYear(), 3)
       );
+      this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
       console.log(this.min, '=>', this.max);
     } else if (quarter == 'II') {
       this.min.setFullYear(this.time.getFullYear(), 3, 1);
@@ -83,6 +87,7 @@ export class BravoRangeTimeComponent implements OnInit {
         5,
         this.getDayOfMonth(this.time.getFullYear(), 6)
       );
+      this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
       console.log(this.min, '=>', this.max);
     } else if (quarter == 'III') {
       this.min.setFullYear(this.time.getFullYear(), 6, 1);
@@ -91,6 +96,7 @@ export class BravoRangeTimeComponent implements OnInit {
         8,
         this.getDayOfMonth(this.time.getFullYear(), 9)
       );
+      this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
       console.log(this.min, '=>', this.max);
     } else if (quarter == 'IV') {
       this.min.setFullYear(this.time.getFullYear(), 9, 1);
@@ -99,6 +105,7 @@ export class BravoRangeTimeComponent implements OnInit {
         11,
         this.getDayOfMonth(this.time.getFullYear(), 12)
       );
+      this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
       console.log(this.min, '=>', this.max);
     }
   }
@@ -108,6 +115,7 @@ export class BravoRangeTimeComponent implements OnInit {
     this.max = new Date();
     this.min.setFullYear(event.target.value, 0, 1);
     this.max.setFullYear(event.target.value, 11, 31);
+    this.timeEvent.emit({ minTime: this.min, maxTime: this.max });
     console.log(this.min, '=>', this.max);
   }
 

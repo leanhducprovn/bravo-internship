@@ -10,6 +10,10 @@ export class BravoRangeSliderComponent implements OnInit {
   @Input() upperLabel!: string;
   @Input() type!: string;
   @Input() format!: string;
+  @Input() minValue!: Date | number;
+  @Input() maxValue!: Date | number;
+
+  today = new Date();
 
   typeDate = false;
   typeNumber = false;
