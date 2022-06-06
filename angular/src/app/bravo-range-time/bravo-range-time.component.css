@@ -29,7 +29,7 @@
 }
 
 .content .select select {
-    font-size: 20px;
+    font-size: 16px;
     border-width: 0px;
     padding: 5px 0px 5px 0px;
     background: unset;
@@ -50,12 +50,11 @@
 }
 
 .content .selected ul li {
-    font-size: 20px;
     padding: 5px 10px 5px 10px;
 }
 
 .content .selected ul li:hover {
-    background-color: #eee;
+    background-color: #fff;
     border-radius: 4px;
 }
 
@@ -64,13 +63,9 @@
     flex-direction: row;
 }
 
-.event .group .label {
-    font-size: 20px;
-}
-
 .event .group .date .wj-content.wj-dropdown {
     width: 100%;
     border-radius: 4px;
     padding: 7.5px;
-    background: #eee;
+    background: #fff;
 }
