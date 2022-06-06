@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bravo-range-time',
   templateUrl: './bravo-range-time.component.html',
-  styleUrls: ['./bravo-range-time.component.css']
+  styleUrls: ['./bravo-range-time.component.css'],
 })
 export class BravoRangeTimeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  selectRange(event: any) {
+    console.log(event.target.value);
   }
-
 }

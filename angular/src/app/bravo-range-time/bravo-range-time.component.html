@@ -1,1 +1,40 @@
-<p>bravo-range-time works!</p>
+<div class="content">
+    <div class="select mr-20">
+        <select id="select-range" (change)="selectRange($event)">
+            <option>Tháng</option>
+            <option>Quý</option>
+            <option>Năm</option>
+        </select>
+    </div>
+    <div class="selected">
+        <div class="month">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+            </ul>
+        </div>
+        <div class="quarter" [hidden]="true">
+            <ul>
+                <li>I</li>
+                <li>II</li>
+                <li>III</li>
+                <li>IV</li>
+            </ul>
+        </div>
+        <div class="year" [hidden]="true">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+</div>
