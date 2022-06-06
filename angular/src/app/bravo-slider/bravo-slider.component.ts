@@ -26,6 +26,7 @@ export class BravoSliderComponent implements OnInit {
   @Input() tickType!: string;
   @Input() tickColor!: string;
   @Input() tickBackground!: string;
+  @Input() tickTop!: number;
 
   constructor() {}
 
@@ -40,7 +41,12 @@ export class BravoSliderComponent implements OnInit {
     this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
     setTimeout(() => {
-      this.tick(this.tickType, this.tickColor, this.tickBackground);
+      this.tick(
+        this.tickType,
+        this.tickColor,
+        this.tickBackground,
+        this.tickTop
+      );
     });
   }
 
@@ -98,7 +104,7 @@ export class BravoSliderComponent implements OnInit {
     });
   }
 
-  tick(type: string, color: string, background: string) {
+  tick(type: string, color: string, background: string, top: number) {
     const tick = Array.from(
       document.getElementsByClassName(
         'ngx-slider-tick'
@@ -107,9 +113,11 @@ export class BravoSliderComponent implements OnInit {
     tick.forEach((element) => {
       if (type == 'vertical') {
         element.style.width = '1px';
-        element.style.height = '10px';
+        element.style.height = '5px';
         element.style.background = background;
         element.style.color = color;
+        element.style.borderRadius = 'unset';
+        element.style.top = top + 'px';
       } else if (type == 'circle') {
         element.style.width = '15px';
         element.style.height = '15px';
@@ -117,6 +125,7 @@ export class BravoSliderComponent implements OnInit {
         element.style.borderRadius = '100%';
         element.style.background = background;
         element.style.color = color;
+        element.style.top = top + 'px';
       }
     });
   }
