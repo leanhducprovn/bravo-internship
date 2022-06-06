@@ -26,6 +26,7 @@ import { ChooseTimeComponent } from './choose-time/choose-time.component';
 import { SliderComponent } from './slider/slider.component';
 import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.component';
 import { BravoComponent } from './bravo/bravo.component';
+import { BravoRangeTimeComponent } from './bravo-range-time/bravo-range-time.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'bravo-range-time',
+        component: BravoRangeTimeComponent,
+      },
       {
         path: 'bravo',
         component: BravoComponent,
