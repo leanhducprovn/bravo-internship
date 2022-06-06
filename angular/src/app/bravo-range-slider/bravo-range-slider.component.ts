@@ -31,4 +31,10 @@ export class BravoRangeSliderComponent implements OnInit {
       this.typeNumber = true;
     }
   }
+
+  countDays(min: any, max: any) {
+    let ms1 = min.getTime();
+    let ms2 = max.getTime();
+    return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
+  }
 }

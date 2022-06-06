@@ -22,10 +22,11 @@
     <div class="slider">
         <bravo-slider [pointerSize]="20" [pointerTop]="-13" [pointerBorder]="'4px solid #fff'"
             [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
-            [min]="0" [start]="10" [end]="50" [max]="60" [step]="1" [ticks]="false">
+            [min]="0" [start]="0" [end]="countDays(minValue ? minValue : today, maxValue ? maxValue : today)"
+            [max]="countDays(minValue ? minValue : today, maxValue ? maxValue : today)" [step]="1" [ticks]="false">
         </bravo-slider>
         <bravo-slider [pointerSize]="20" [pointerTop]="-13" [pointerBorder]="'4px solid #fff'"
-            [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
+            [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="true" [barColor]="'#fff'" [barSize]="4"
             [min]="0" [start]="10" [max]="10" [step]="1" [ticks]="true" [tickType]="'vertical'" [tickColor]="'black'"
             [tickBackground]="'#0db9f0'" [tickTop]="6" [ticksValues]="true" [tickStep]="1" [selectionBar]="true">
         </bravo-slider>

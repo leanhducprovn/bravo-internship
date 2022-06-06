@@ -59,7 +59,7 @@ export class BravoSliderComponent implements OnInit {
     bubble.forEach((element) => {
       if (boolean) {
         element.style.display = 'block';
-      } else {
+      } else if (!boolean) {
         element.style.display = 'none';
       }
     });
