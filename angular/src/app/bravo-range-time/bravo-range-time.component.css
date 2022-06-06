@@ -18,6 +18,10 @@
     margin-bottom: 20px;
 }
 
+.mb-30 {
+    margin-bottom: 30px;
+}
+
 .content {
     display: flex;
     flex-direction: row;
@@ -53,4 +57,20 @@
 .content .selected ul li:hover {
     background-color: #eee;
     border-radius: 4px;
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+}
+
+.event .group .label {
+    font-size: 20px;
+}
+
+.event .group .date .wj-content.wj-dropdown {
+    width: 100%;
+    border-radius: 4px;
+    padding: 7.5px;
+    background: #eee;
 }

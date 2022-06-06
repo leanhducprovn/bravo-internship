@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content mb-30">
     <div class="select mr-20">
         <select id="select-range" value="Tháng" (change)="onSelectRange($event)">
             <option>Tháng</option>
@@ -24,6 +24,21 @@
             <ul (click)="onClickYear($event)">
                 <li *ngFor="let year of listYear()" [value]="year">{{ year }}</li>
             </ul>
+        </div>
+    </div>
+</div>
+<!-- event -->
+<div class="event">
+    <div class="group mr-30">
+        <div class="label mb-10">Từ ngày</div>
+        <div class="date">
+            <wj-input-date [value]="min ? min : time" [format]="'dd/MM/yy'"></wj-input-date>
+        </div>
+    </div>
+    <div class="group">
+        <div class="label mb-10">Đến ngày</div>
+        <div class="date">
+            <wj-input-date [value]="max ? max : time" [format]="'dd/MM/yy'"></wj-input-date>
         </div>
     </div>
 </div>

@@ -9,6 +9,9 @@ export class BravoRangeTimeComponent implements OnInit {
   month = true;
   quarter = false;
   year = false;
+  time = new Date();
+  min!: Date;
+  max!: Date;
 
   constructor() {}
 
@@ -23,9 +26,9 @@ export class BravoRangeTimeComponent implements OnInit {
   }
 
   listYear() {
-    let listYear: any = [];
+    let listYear: any = [new Date().getFullYear()];
     let currentYear = new Date().getFullYear();
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 9; i++) {
       currentYear++;
       listYear.push(currentYear);
     }
@@ -54,6 +57,10 @@ export class BravoRangeTimeComponent implements OnInit {
   }
 
   onClickYear(event: any) {
-    console.log(event.target.value);
+    this.min = new Date();
+    this.max = new Date();
+    this.min.setFullYear(event.target.value, 0, 1);
+    this.max.setFullYear(event.target.value, 11, 31);
+    console.log(this.min, '=>', this.max);
   }
 }
