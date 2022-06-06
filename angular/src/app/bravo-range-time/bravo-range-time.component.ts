@@ -53,7 +53,54 @@ export class BravoRangeTimeComponent implements OnInit {
   }
 
   onClickMonth(event: any) {
-    console.log(event.target.value);
+    this.min = new Date();
+    this.max = new Date();
+    this.min.setFullYear(this.time.getFullYear(), event.target.value - 1, 1);
+    this.max.setFullYear(
+      this.time.getFullYear(),
+      event.target.value - 1,
+      this.getDayOfMonth(this.time.getFullYear(), event.target.value)
+    );
+    console.log(this.min, '=>', this.max);
+  }
+
+  onClickQuarter(event: any) {
+    this.min = new Date();
+    this.max = new Date();
+    let quarter = event.target.textContent;
+    if (quarter == 'I') {
+      this.min.setFullYear(this.time.getFullYear(), 0, 1);
+      this.max.setFullYear(
+        this.time.getFullYear(),
+        2,
+        this.getDayOfMonth(this.time.getFullYear(), 3)
+      );
+      console.log(this.min, '=>', this.max);
+    } else if (quarter == 'II') {
+      this.min.setFullYear(this.time.getFullYear(), 3, 1);
+      this.max.setFullYear(
+        this.time.getFullYear(),
+        5,
+        this.getDayOfMonth(this.time.getFullYear(), 6)
+      );
+      console.log(this.min, '=>', this.max);
+    } else if (quarter == 'III') {
+      this.min.setFullYear(this.time.getFullYear(), 6, 1);
+      this.max.setFullYear(
+        this.time.getFullYear(),
+        8,
+        this.getDayOfMonth(this.time.getFullYear(), 9)
+      );
+      console.log(this.min, '=>', this.max);
+    } else if (quarter == 'IV') {
+      this.min.setFullYear(this.time.getFullYear(), 9, 1);
+      this.max.setFullYear(
+        this.time.getFullYear(),
+        11,
+        this.getDayOfMonth(this.time.getFullYear(), 12)
+      );
+      console.log(this.min, '=>', this.max);
+    }
   }
 
   onClickYear(event: any) {
@@ -63,4 +110,8 @@ export class BravoRangeTimeComponent implements OnInit {
     this.max.setFullYear(event.target.value, 11, 31);
     console.log(this.min, '=>', this.max);
   }
+
+  getDayOfMonth = (year: number, month: number) => {
+    return new Date(year, month, 0).getDate();
+  };
 }
