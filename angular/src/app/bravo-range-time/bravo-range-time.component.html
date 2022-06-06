@@ -1,29 +1,18 @@
 <div class="content">
     <div class="select mr-20">
-        <select id="select-range" (change)="selectRange($event)">
+        <select id="select-range" value="Tháng" (change)="onSelectRange($event)">
             <option>Tháng</option>
             <option>Quý</option>
             <option>Năm</option>
         </select>
     </div>
     <div class="selected">
-        <div class="month">
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
+        <div class="month" *ngIf="month">
+            <ul (click)="onClickMonth($event)">
+                <li *ngFor="let month of listMonth()" [value]="month">{{ month }}</li>
             </ul>
         </div>
-        <div class="quarter" [hidden]="true">
+        <div class="quarter" *ngIf="quarter">
             <ul>
                 <li>I</li>
                 <li>II</li>
@@ -31,9 +20,9 @@
                 <li>IV</li>
             </ul>
         </div>
-        <div class="year" [hidden]="true">
-            <ul>
-
+        <div class="year" *ngIf="year">
+            <ul (click)="onClickYear($event)">
+                <li *ngFor="let year of listYear()" [value]="year">{{ year }}</li>
             </ul>
         </div>
     </div>

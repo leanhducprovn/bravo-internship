@@ -27,6 +27,8 @@
 .content .select select {
     font-size: 20px;
     border-width: 0px;
+    padding: 5px 0px 5px 0px;
+    background: unset;
 }
 
 .content .selected {
@@ -44,6 +46,11 @@
 }
 
 .content .selected ul li {
-    margin-right: 20px;
     font-size: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+.content .selected ul li:hover {
+    background-color: #eee;
+    border-radius: 4px;
 }
