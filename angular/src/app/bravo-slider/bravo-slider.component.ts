@@ -1,12 +1,20 @@
 import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
+import * as wjc from '@grapecity/wijmo';
 
 @Component({
   selector: 'bravo-slider',
   templateUrl: './bravo-slider.component.html',
   styleUrls: ['./bravo-slider.component.css'],
 })
-export class BravoSliderComponent implements OnInit {
+export class BravoSliderComponent extends wjc.Control implements OnInit {
   @Input() min!: number;
   @Input() start!: any;
   @Input() end!: number;
@@ -32,7 +40,9 @@ export class BravoSliderComponent implements OnInit {
   @Output() startEvent = new EventEmitter<any>();
   @Output() endEvent = new EventEmitter<any>();
 
-  constructor() {}
+  constructor(elementRef: ElementRef) {
+    super(elementRef.nativeElement);
+  }
 
   ngOnInit(): void {
     this.bubble(this.isBubble);
