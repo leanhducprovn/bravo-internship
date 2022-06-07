@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BravoSliderComponent implements OnInit {
   @Input() min!: number;
-  @Input() start!: number;
+  @Input() start!: any;
   @Input() end!: number;
   @Input() max!: number;
   @Input() step!: number;

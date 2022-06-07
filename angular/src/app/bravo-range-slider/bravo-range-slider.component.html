@@ -3,7 +3,8 @@
         <div class="group mr-20">
             <label class="mb-10">{{ lowerLabel }}</label>
             <div class="date" *ngIf="typeDate">
-                <wj-input-date #theLowerDate [value]="minValue ? minValue : today" [format]="format"></wj-input-date>
+                <wj-input-date #theLowerDate (valueChanged)="onChooseTimeMin(theLowerDate)"
+                    [value]="minValue ? minValue : today" [format]="format"></wj-input-date>
             </div>
             <div class="number" *ngIf="typeNumber">
                 <wj-input-number [value]="minValue" [format]="format"></wj-input-number>
@@ -12,7 +13,8 @@
         <div class="group">
             <label class="mb-10">{{ upperLabel }}</label>
             <div class="date" *ngIf="typeDate">
-                <wj-input-date #theUpperDate [value]="maxValue ? maxValue : today" [format]="format"></wj-input-date>
+                <wj-input-date #theUpperDate (valueChanged)="onChooseTimeMax(theUpperDate)"
+                    [value]="maxValue ? maxValue : today" [format]="format"></wj-input-date>
             </div>
             <div class="number" *ngIf="typeNumber">
                 <wj-input-number [value]="maxValue" [format]="format"></wj-input-number>
@@ -22,7 +24,8 @@
     <div class="slider">
         <bravo-slider [pointerSize]="20" [pointerTop]="-13" [pointerBorder]="'4px solid #fff'"
             [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
-            [min]="0" [start]="0" [end]="countDays(minValue ? minValue : today, maxValue ? maxValue : today)"
+            [min]="0" [start]="countDays(minValue ? minValue : today, min ? min : today)"
+            [end]="countDays(minValue ? minValue : today, max ? max : today)"
             [max]="countDays(minValue ? minValue : today, maxValue ? maxValue : today)" [step]="1" [ticks]="false">
         </bravo-slider>
         <bravo-slider [pointerSize]="20" [pointerTop]="-13" [pointerBorder]="'4px solid #fff'"

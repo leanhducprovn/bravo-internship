@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import * as wjcCore from 'wijmo/wijmo';
+import * as wjcInput from 'wijmo/wijmo.input';
 
 @Component({
   selector: 'bravo-range-slider',
@@ -13,8 +16,10 @@ export class BravoRangeSliderComponent implements OnInit {
   @Input() minValue!: Date | number;
   @Input() maxValue!: Date | number;
 
-  today = new Date();
+  min!: Date | number;
+  max!: Date | number;
 
+  today = new Date();
   typeDate = false;
   typeNumber = false;
 
@@ -22,6 +27,14 @@ export class BravoRangeSliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkType();
+  }
+
+  onChooseTimeMin(dateInput: any) {
+    this.min = dateInput.value;
+  }
+
+  onChooseTimeMax(dateInput: any) {
+    this.max = dateInput.value;
   }
 
   checkType() {
