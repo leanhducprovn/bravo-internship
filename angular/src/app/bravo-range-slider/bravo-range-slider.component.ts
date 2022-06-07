@@ -1,7 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 
-import * as wjcCore from 'wijmo/wijmo';
-import * as wjcInput from 'wijmo/wijmo.input';
+import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
 @Component({
   selector: 'bravo-range-slider',
@@ -9,6 +15,8 @@ import * as wjcInput from 'wijmo/wijmo.input';
   styleUrls: ['./bravo-range-slider.component.css'],
 })
 export class BravoRangeSliderComponent implements OnInit {
+  @ViewChild('theLowerDate') theLowerDate!: WjInputDate;
+
   @Input() lowerLabel!: string;
   @Input() upperLabel!: string;
   @Input() type!: string;
@@ -31,10 +39,17 @@ export class BravoRangeSliderComponent implements OnInit {
 
   startEvent(event: any) {
     console.log(event);
+    this.onStart(event);
   }
 
   endEvent(event: any) {
     console.log(event);
+  }
+
+  currentTimeMin!: any;
+
+  onStart(event: any) {
+    console.log(this.theLowerDate.value?.getDate() + event);
   }
 
   onChooseTimeMin(dateInput: any) {
