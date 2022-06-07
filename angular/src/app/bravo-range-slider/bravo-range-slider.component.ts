@@ -29,6 +29,14 @@ export class BravoRangeSliderComponent implements OnInit {
     this.checkType();
   }
 
+  startEvent(event: any) {
+    console.log(event);
+  }
+
+  endEvent(event: any) {
+    console.log(event);
+  }
+
   onChooseTimeMin(dateInput: any) {
     this.min = dateInput.value;
   }

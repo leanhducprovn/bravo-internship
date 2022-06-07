@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'bravo-slider',
@@ -27,6 +28,9 @@ export class BravoSliderComponent implements OnInit {
   @Input() tickColor!: string;
   @Input() tickBackground!: string;
   @Input() tickTop!: number;
+
+  @Output() startEvent = new EventEmitter<any>();
+  @Output() endEvent = new EventEmitter<any>();
 
   constructor() {}
 
@@ -128,5 +132,31 @@ export class BravoSliderComponent implements OnInit {
         element.style.top = top + 'px';
       }
     });
+  }
+
+  // event
+  onUserChangeStart(changeContext: ChangeContext): void {
+    console.log(`start(${this.getChangeContextString(changeContext)})\n`);
+  }
+
+  onUserChange(changeContext: ChangeContext): void {
+    console.log(`change(${this.getChangeContextString(changeContext)})`);
+  }
+
+  onUserChangeEnd(changeContext: ChangeContext): void {
+    console.log(`end(${this.getChangeContextString(changeContext)})\n`);
+  }
+
+  getChangeContextString(changeContext: ChangeContext): string {
+    if (changeContext.pointerType == 0) {
+      this.startEvent.emit(changeContext.value);
+    } else if (changeContext.pointerType == 1) {
+      this.endEvent.emit(changeContext.highValue);
+    }
+    return (
+      `${changeContext.pointerType === PointerType.Min ? 'min' : 'max'}, ` +
+      `${changeContext.value}, ` +
+      `${changeContext.highValue}`
+    );
   }
 }
