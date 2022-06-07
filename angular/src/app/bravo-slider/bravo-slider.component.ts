@@ -1,4 +1,5 @@
 import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
+// import { SliderComponent } from '@angular-slider/ngx-slider/slider.component';
 import {
   Component,
   ElementRef,
@@ -6,6 +7,7 @@ import {
   Input,
   OnInit,
   Output,
+  ViewChild,
 } from '@angular/core';
 import * as wjc from '@grapecity/wijmo';
 
@@ -15,6 +17,8 @@ import * as wjc from '@grapecity/wijmo';
   styleUrls: ['./bravo-slider.component.css'],
 })
 export class BravoSliderComponent extends wjc.Control implements OnInit {
+  // @ViewChild(SliderComponent) slider!: SliderComponent;
+
   @Input() min!: number;
   @Input() start!: any;
   @Input() end!: number;
@@ -24,11 +28,12 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   @Input() tickStep!: number;
   @Input() ticksValues!: boolean;
   @Input() selectionBar!: boolean;
-  @Input() pointerColor!: string;
-  @Input() pointerSize!: number;
-  @Input() pointerTop!: number;
-  @Input() pointerBorder!: string;
-  @Input() isBubble!: boolean;
+
+  // @Input() pointerColor!: string;
+  // @Input() pointerSize!: number;
+  // @Input() pointerTop!: number;
+  // @Input() pointerBorder!: string;
+  // @Input() isBubble!: boolean;
   @Input() selectionColor!: string;
   @Input() barColor!: string;
   @Input() barSize!: number;
@@ -40,18 +45,79 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   @Output() startEvent = new EventEmitter<any>();
   @Output() endEvent = new EventEmitter<any>();
 
+  private _isBubble!: boolean;
+  private _pointerColor!: string;
+  private _pointerSize!: number;
+  private _pointerBorder!: string;
+
+  @Input()
+  public get isBubble(): boolean {
+    return this._isBubble;
+  }
+  public set isBubble(v: boolean) {
+    if (this._isBubble == v) {
+      return;
+    }
+    this._isBubble = v;
+    this.invalidate();
+  }
+
+  @Input()
+  public get pointerColor(): string {
+    return this._pointerColor;
+  }
+  public set pointerColor(v: string) {
+    if (this._pointerColor == v) {
+      return;
+    }
+    this._pointerColor = v;
+    this.invalidate();
+  }
+
+  @Input()
+  public get pointerSize(): number {
+    return this._pointerSize;
+  }
+  public set pointerSize(v: number) {
+    if (this._pointerSize == v) {
+      return;
+    }
+    this._pointerSize = v;
+    this.invalidate();
+  }
+
+  @Input()
+  public get pointerBorder(): string {
+    return this._pointerBorder;
+  }
+  public set pointerBorder(v: string) {
+    if (this._pointerBorder == v) {
+      return;
+    }
+    this._pointerBorder = v;
+    this.invalidate();
+  }
+
   constructor(elementRef: ElementRef) {
     super(elementRef.nativeElement);
   }
 
-  ngOnInit(): void {
+  override refresh(fullUpdate?: boolean): void {
     this.bubble(this.isBubble);
-    this.pointer(
-      this.pointerColor,
-      this.pointerSize,
-      this.pointerTop,
-      this.pointerBorder
-    );
+    this.pointer(this.pointerColor, this.pointerSize, this.pointerBorder);
+  }
+
+  ngOnInit(): void {
+    // this.bubble(this.isBubble);
+    // this.pointer(
+    //   this.pointerColor,
+    //   this.pointerSize,
+    //   this.pointerTop,
+    //   this.pointerBorder
+    // );
+    // this.slider.minPointerStyle['width'] = '50px';
+    // console.log(this.slider);
+
     this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
     setTimeout(() => {
@@ -79,7 +145,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     });
   }
 
-  pointer(color: string, size: number, top: number, border: string) {
+  pointer(color: string, size: number, border: string) {
     const pointer = Array.from(
       document.getElementsByClassName(
         'ngx-slider-pointer'
@@ -91,7 +157,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
       element.style.maxHeight = size + 'px';
       element.style.border = border;
       element.style.borderRadius = '100%';
-      element.style.top = top + 'px';
+      element.style.top = -((size - 32) / 2 + 14 + 4) + 'px';
     });
   }
 
