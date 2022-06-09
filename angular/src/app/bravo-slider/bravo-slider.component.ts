@@ -211,16 +211,8 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   }
 
   // event
-  onUserChangeStart(changeContext: ChangeContext): void {
-    console.log(`start(${this.getChangeContextString(changeContext)})\n`);
-  }
-
   onUserChange(changeContext: ChangeContext): void {
-    console.log(`change(${this.getChangeContextString(changeContext)})`);
-  }
-
-  onUserChangeEnd(changeContext: ChangeContext): void {
-    console.log(`end(${this.getChangeContextString(changeContext)})\n`);
+    this.getChangeContextString(changeContext);
   }
 
   getChangeContextString(changeContext: ChangeContext): string {

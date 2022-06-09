@@ -40,20 +40,10 @@ export class BravoRangeSliderComponent implements OnInit {
 
   startEvent(event: any) {
     console.log(event);
-    this.onStart(event);
   }
 
   endEvent(event: any) {
     console.log(event);
-    this.onEnd(event);
-  }
-
-  onStart(event: any) {
-    console.warn(this.theLowerDate.value?.getDate() + event);
-  }
-
-  onEnd(event: any) {
-    console.warn(this.theUpperDate.value?.getDate() + event);
   }
 
   onChooseTimeMin(dateInput: any) {
