@@ -7,6 +7,7 @@ import {
   Input,
   OnInit,
   Output,
+  ViewChild,
 } from '@angular/core';
 import * as wjc from '@grapecity/wijmo';
 
