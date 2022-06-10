@@ -19,17 +19,14 @@ import * as wjc from '@grapecity/wijmo';
   styleUrls: ['./bravo-slider.component.css'],
 })
 export class BravoSliderComponent extends wjc.Control implements OnInit {
-  @Input() min!: number;
-  @Input() start!: any;
-  @Input() end!: number;
-  @Input() max!: number;
-  @Input() step!: number;
-  @Input() ticks!: boolean;
-  @Input() tickStep!: number;
-  @Input() ticksValues!: boolean;
-  @Input() selectionBar!: boolean;
+  @Input()
+  public start!: number;
 
-  @Input() public options: Options = new Options();
+  @Input()
+  public end!: number;
+
+  @Input()
+  public options: Options = new Options();
 
   private _isBubble!: boolean;
   @Input()
@@ -238,19 +235,6 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     });
   }
 
-  selection(color: string) {
-    const selection = Array.from(
-      document.getElementsByClassName(
-        'ngx-slider-selection'
-      ) as HTMLCollectionOf<HTMLElement>
-    );
-    selection.forEach((element) => {
-      wjc.setCss(element, {
-        backgroundColor: color,
-      });
-    });
-  }
-
   bar(color: string, size: number) {
     const selection = Array.from(
       document.getElementsByClassName(
@@ -261,6 +245,19 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
       wjc.setCss(element, {
         backgroundColor: color,
         height: size + 'px',
+      });
+    });
+  }
+
+  selection(color: string) {
+    const selection = Array.from(
+      document.getElementsByClassName(
+        'ngx-slider-selection'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    selection.forEach((element) => {
+      wjc.setCss(element, {
+        backgroundColor: color,
       });
     });
   }
