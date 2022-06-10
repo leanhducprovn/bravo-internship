@@ -57,6 +57,7 @@ export class FormComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    console.warn(this.checkLogin.valueChanges);
     console.warn(this.username);
     console.warn(this.password);
   }
