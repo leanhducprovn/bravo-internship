@@ -6,7 +6,6 @@ import {
   Input,
   OnInit,
   Output,
-  ViewChild,
 } from '@angular/core';
 import * as wjc from '@grapecity/wijmo';
 
@@ -26,29 +25,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   @Input() ticksValues!: boolean;
   @Input() selectionBar!: boolean;
 
-  // @Input() pointerColor!: string;
-  // @Input() pointerSize!: number;
-  // @Input() pointerTop!: number;
-  // @Input() pointerBorder!: string;
-  // @Input() isBubble!: boolean;
-  @Input() selectionColor!: string;
-  @Input() barColor!: string;
-  @Input() barSize!: number;
-  @Input() tickType!: string;
-  @Input() tickColor!: string;
-  @Input() tickBackground!: string;
-  @Input() tickTop!: number;
-
-  @Output() startEvent = new EventEmitter<any>();
-  @Output() endEvent = new EventEmitter<any>();
-  @Output() minEvent = new EventEmitter<any>();
-  @Output() maxEvent = new EventEmitter<any>();
-
   private _isBubble!: boolean;
-  private _pointerColor!: string;
-  private _pointerSize!: number;
-  private _pointerBorder!: string;
-
   @Input()
   public get isBubble(): boolean {
     return this._isBubble;
@@ -61,6 +38,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     this.invalidate();
   }
 
+  private _pointerColor!: string;
   @Input()
   public get pointerColor(): string {
     return this._pointerColor;
@@ -73,6 +51,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     this.invalidate();
   }
 
+  private _pointerSize!: number;
   @Input()
   public get pointerSize(): number {
     return this._pointerSize;
@@ -85,6 +64,20 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     this.invalidate();
   }
 
+  private _pointerTop!: number;
+  @Input()
+  public get pointerTop(): number {
+    return this._pointerTop;
+  }
+  public set pointerTop(v: number) {
+    if (this._pointerTop == v) {
+      return;
+    }
+    this._pointerTop = v;
+    this.invalidate();
+  }
+
+  private _pointerBorder!: string;
   @Input()
   public get pointerBorder(): string {
     return this._pointerBorder;
@@ -97,36 +90,118 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     this.invalidate();
   }
 
+  private _barColor!: string;
+  @Input()
+  public get barColor(): string {
+    return this._barColor;
+  }
+  public set barColor(v: string) {
+    if (this._barColor == v) {
+      return;
+    }
+    this._barColor = v;
+    this.invalidate();
+  }
+
+  private _barSize!: number;
+  @Input()
+  public get barSize(): number {
+    return this._barSize;
+  }
+  public set barSize(v: number) {
+    if (this._barSize == v) {
+      return;
+    }
+    this._barSize = v;
+    this.invalidate();
+  }
+
+  private _selectionColor!: string;
+  @Input()
+  public get selectionColor(): string {
+    return this._selectionColor;
+  }
+  public set selectionColor(v: string) {
+    if (this._selectionColor == v) {
+      return;
+    }
+    this._selectionColor = v;
+    this.invalidate();
+  }
+
+  private _tickType!: string;
+  @Input()
+  public get tickType(): string {
+    return this._tickType;
+  }
+  public set tickType(v: string) {
+    if (this._tickType == v) {
+      return;
+    }
+    this._tickType = v;
+    this.invalidate();
+  }
+
+  private _tickColor!: string;
+  @Input()
+  public get tickColor(): string {
+    return this._tickColor;
+  }
+  public set tickColor(v: string) {
+    if (this._tickColor == v) {
+      return;
+    }
+    this._tickColor = v;
+    this.invalidate();
+  }
+
+  private _tickBackground!: string;
+  @Input()
+  public get tickBackground(): string {
+    return this._tickBackground;
+  }
+  public set tickBackground(v: string) {
+    if (this._tickBackground == v) {
+      return;
+    }
+    this._tickBackground = v;
+    this.invalidate();
+  }
+
+  private _tickTop!: number;
+  @Input()
+  public get tickTop(): number {
+    return this._tickTop;
+  }
+  public set tickTop(v: number) {
+    if (this._tickTop == v) {
+      return;
+    }
+    this._tickTop = v;
+    this.invalidate();
+  }
+
+  @Output() startEvent = new EventEmitter<any>();
+  @Output() endEvent = new EventEmitter<any>();
+
   constructor(elementRef: ElementRef) {
     super(elementRef.nativeElement);
   }
 
   override refresh(fullUpdate?: boolean): void {
     this.bubble(this.isBubble);
-    this.pointer(this.pointerColor, this.pointerSize, this.pointerBorder);
-  }
-
-  ngOnInit(): void {
-    // this.bubble(this.isBubble);
-    // this.pointer(
-    //   this.pointerColor,
-    //   this.pointerSize,
-    //   this.pointerTop,
-    //   this.pointerBorder
-    // );
-    // console.log(this.slider);
-
+    this.pointer(
+      this.pointerColor,
+      this.pointerSize,
+      this.pointerTop,
+      this.pointerBorder
+    );
     this.bar(this.barColor, this.barSize);
     this.selection(this.selectionColor);
-    setTimeout(() => {
-      this.tick(
-        this.tickType,
-        this.tickColor,
-        this.tickBackground,
-        this.tickTop
-      );
-    });
+    this.tick(this.tickType, this.tickColor, this.tickBackground, this.tickTop);
   }
+
+  ngOnInit(): void {}
 
   bubble(boolean: boolean) {
     const bubble = Array.from(
@@ -135,27 +210,25 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
       ) as HTMLCollectionOf<HTMLElement>
     );
     bubble.forEach((element) => {
-      if (boolean) {
-        element.style.display = 'block';
-      } else if (!boolean) {
-        element.style.display = 'none';
-      }
+      wjc.toggleClass(element, 'hidden', !boolean);
     });
   }
 
-  pointer(color: string, size: number, border: string) {
+  pointer(color: string, size: number, top: number, border: string) {
     const pointer = Array.from(
       document.getElementsByClassName(
         'ngx-slider-pointer'
       ) as HTMLCollectionOf<HTMLElement>
     );
     pointer.forEach((element) => {
-      element.style.background = color;
-      element.style.maxWidth = size + 'px';
-      element.style.maxHeight = size + 'px';
-      element.style.border = border;
-      element.style.borderRadius = '100%';
-      element.style.top = -((size - 32) / 2 + 14 + 4) + 'px';
+      wjc.setCss(element, {
+        backgroundColor: color,
+        maxWidth: size + 'px',
+        maxHeight: size + 'px',
+        top: top + 'px',
+        border: border,
+        borderRadius: '100%',
+      });
     });
   }
 
@@ -166,7 +239,9 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
       ) as HTMLCollectionOf<HTMLElement>
     );
     selection.forEach((element) => {
-      element.style.background = color;
+      wjc.setCss(element, {
+        backgroundColor: color,
+      });
     });
   }
 
@@ -177,8 +252,10 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
       ) as HTMLCollectionOf<HTMLElement>
     );
     selection.forEach((element) => {
-      element.style.background = color;
-      element.style.height = size + 'px';
+      wjc.setCss(element, {
+        backgroundColor: color,
+        height: size + 'px',
+      });
     });
   }
 
@@ -190,27 +267,30 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     );
     tick.forEach((element) => {
       if (type == 'vertical') {
-        element.style.width = '1px';
-        element.style.height = '5px';
-        element.style.background = background;
-        element.style.color = color;
-        element.style.borderRadius = 'unset';
-        element.style.top = top + 'px';
+        wjc.setCss(element, {
+          width: '1px',
+          height: '5px',
+          background: background,
+          color: color,
+          borderRadius: 'unset',
+          marginTop: top + 'px',
+        });
       } else if (type == 'circle') {
-        element.style.width = '15px';
-        element.style.height = '15px';
-        element.style.top = '-3px';
-        element.style.borderRadius = '100%';
-        element.style.background = background;
-        element.style.color = color;
-        element.style.top = top + 'px';
+        wjc.setCss(element, {
+          width: '15px',
+          height: '15px',
+          top: '-3px',
+          borderRadius: '100%',
+          background: background,
+          color: color,
+          marginTop: top + 'px',
+        });
       }
     });
   }
 
-  // event
   onUserChangeStart(changeContext: ChangeContext): void {
-    this.minEvent.emit(changeContext.value);
+    this.getChangeContextString(changeContext);
   }
 
   onUserChange(changeContext: ChangeContext): void {
@@ -218,7 +298,7 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   }
 
   onUserChangeEnd(changeContext: ChangeContext): void {
-    this.maxEvent.emit(changeContext.highValue);
+    this.getChangeContextString(changeContext);
   }
 
   getChangeContextString(changeContext: ChangeContext): string {
