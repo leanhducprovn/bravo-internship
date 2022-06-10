@@ -1,5 +1,4 @@
 import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
-// import { SliderComponent } from '@angular-slider/ngx-slider/slider.component';
 import {
   Component,
   ElementRef,
@@ -17,8 +16,6 @@ import * as wjc from '@grapecity/wijmo';
   styleUrls: ['./bravo-slider.component.css'],
 })
 export class BravoSliderComponent extends wjc.Control implements OnInit {
-  // @ViewChild(SliderComponent) slider!: SliderComponent;
-
   @Input() min!: number;
   @Input() start!: any;
   @Input() end!: number;
@@ -44,6 +41,8 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
 
   @Output() startEvent = new EventEmitter<any>();
   @Output() endEvent = new EventEmitter<any>();
+  @Output() minEvent = new EventEmitter<any>();
+  @Output() maxEvent = new EventEmitter<any>();
 
   private _isBubble!: boolean;
   private _pointerColor!: string;
@@ -115,7 +114,6 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
     //   this.pointerTop,
     //   this.pointerBorder
     // );
-    // this.slider.minPointerStyle['width'] = '50px';
     // console.log(this.slider);
 
     this.bar(this.barColor, this.barSize);
@@ -211,8 +209,16 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   }
 
   // event
+  onUserChangeStart(changeContext: ChangeContext): void {
+    this.minEvent.emit(changeContext.value);
+  }
+
   onUserChange(changeContext: ChangeContext): void {
     this.getChangeContextString(changeContext);
+  }
+
+  onUserChangeEnd(changeContext: ChangeContext): void {
+    this.maxEvent.emit(changeContext.highValue);
   }
 
   getChangeContextString(changeContext: ChangeContext): string {
