@@ -7,18 +7,31 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  forwardRef,
   Input,
   OnInit,
   Output,
 } from '@angular/core';
 import * as wjc from '@grapecity/wijmo';
 
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+
 @Component({
   selector: 'bravo-slider',
   templateUrl: './bravo-slider.component.html',
   styleUrls: ['./bravo-slider.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: forwardRef(() => BravoSliderComponent),
+    },
+  ],
 })
-export class BravoSliderComponent extends wjc.Control implements OnInit {
+export class BravoSliderComponent
+  extends wjc.Control
+  implements OnInit, ControlValueAccessor
+{
   @Input()
   public start!: number;
 
@@ -189,6 +202,19 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
 
   constructor(elementRef: ElementRef) {
     super(elementRef.nativeElement);
+  }
+
+  private onTouchedCallback = (value: any) => {};
+  private onChangeCallback = (value: any) => {};
+
+  writeValue(obj: any): void {}
+
+  public registerOnChange(onChangeCallback: any): void {
+    this.onChangeCallback = onChangeCallback;
+  }
+
+  public registerOnTouched(onTouchedCallback: any): void {
+    this.onTouchedCallback = onTouchedCallback;
   }
 
   override refresh(fullUpdate?: boolean): void {
