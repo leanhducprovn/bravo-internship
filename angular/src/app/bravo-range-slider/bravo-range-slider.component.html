@@ -24,15 +24,9 @@
     <div class="slider">
         <bravo-slider (startEvent)="startEvent($event)" (endEvent)="endEvent($event)" [pointerSize]="20"
             [pointerTop]="-11" [pointerBorder]="'4px solid #fff'" [selectionColor]="'#0079d7'"
-            [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4" [min]="0"
+            [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
             [start]="countDays(minValue ? minValue : today, min ? min : today)"
-            [end]="countDays(minValue ? minValue : today, max ? max : today)"
-            [max]="countDays(minValue ? minValue : today, maxValue ? maxValue : today)" [step]="1" [ticks]="false">
-        </bravo-slider>
-        <bravo-slider [pointerSize]="20" [pointerTop]="-11" [pointerBorder]="'4px solid #fff'"
-            [selectionColor]="'#0079d7'" [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
-            [min]="0" [start]="10" [max]="10" [step]="1" [ticks]="true" [tickType]="'vertical'" [tickColor]="'black'"
-            [tickBackground]="'#0db9f0'" [tickTop]="6" [ticksValues]="true" [tickStep]="1" [selectionBar]="true">
+            [end]="countDays(minValue ? minValue : today, max ? max : today)" [options]="options">
         </bravo-slider>
     </div>
 </div>

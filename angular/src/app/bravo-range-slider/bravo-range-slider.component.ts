@@ -1,11 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Options } from '@angular-slider/ngx-slider';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
@@ -27,6 +21,7 @@ export class BravoRangeSliderComponent implements OnInit {
 
   min!: Date | number;
   max!: Date | number;
+  options!: Options;
 
   today = new Date();
   typeDate = false;
@@ -35,6 +30,16 @@ export class BravoRangeSliderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.options = {
+      floor: 1,
+      ceil: 100,
+      step: 1,
+      noSwitching: true,
+      showTicks: false,
+      showSelectionBar: false,
+      showTicksValues: false,
+      tickStep: 1,
+    };
     this.checkType();
   }
 

@@ -1,5 +1,3 @@
-<ngx-slider [value]="start" [highValue]="end"
-    [options]="{ floor: min, ceil: max, step: step, noSwitching: true, showTicks: ticks, showSelectionBar: selectionBar, showTicksValues: ticksValues, tickStep: tickStep }"
-    (userChangeStart)="onUserChangeStart($event)" (userChange)="onUserChange($event)"
-    (userChangeEnd)="onUserChangeEnd($event)">
+<ngx-slider [value]="start" [highValue]="end" [options]="options" (userChangeStart)="onUserChangeStart($event)"
+    (userChange)="onUserChange($event)" (userChangeEnd)="onUserChangeEnd($event)">
 </ngx-slider>

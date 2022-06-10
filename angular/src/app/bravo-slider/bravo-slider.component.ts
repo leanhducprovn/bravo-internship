@@ -1,4 +1,8 @@
-import { ChangeContext, PointerType } from '@angular-slider/ngx-slider';
+import {
+  ChangeContext,
+  Options,
+  PointerType,
+} from '@angular-slider/ngx-slider';
 import {
   Component,
   ElementRef,
@@ -24,6 +28,8 @@ export class BravoSliderComponent extends wjc.Control implements OnInit {
   @Input() tickStep!: number;
   @Input() ticksValues!: boolean;
   @Input() selectionBar!: boolean;
+
+  @Input() public options: Options = new Options();
 
   private _isBubble!: boolean;
   @Input()
