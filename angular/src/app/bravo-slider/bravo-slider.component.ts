@@ -207,13 +207,13 @@ export class BravoSliderComponent
   private onTouchedCallback = (value: any) => {};
   private onChangeCallback = (value: any) => {};
 
-  public writeValue(obj: any): void {}
+  writeValue(obj: any): void {}
 
-  public registerOnChange(onChangeCallback: any): void {
+  registerOnChange(onChangeCallback: any): void {
     this.onChangeCallback = onChangeCallback;
   }
 
-  public registerOnTouched(onTouchedCallback: any): void {
+  registerOnTouched(onTouchedCallback: any): void {
     this.onTouchedCallback = onTouchedCallback;
   }
 
