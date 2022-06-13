@@ -326,15 +326,15 @@ export class BravoSliderComponent
   }
 
   onUserChangeStart(changeContext: ChangeContext): void {
-    this.getChangeContextString(changeContext);
+    console.log(this.getChangeContextString(changeContext));
   }
 
   onUserChange(changeContext: ChangeContext): void {
-    this.getChangeContextString(changeContext);
+    console.log(this.getChangeContextString(changeContext));
   }
 
   onUserChangeEnd(changeContext: ChangeContext): void {
-    this.getChangeContextString(changeContext);
+    console.log(this.getChangeContextString(changeContext));
   }
 
   getChangeContextString(changeContext: ChangeContext): string {
