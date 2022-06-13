@@ -204,8 +204,8 @@ export class BravoSliderComponent
     super(elementRef.nativeElement);
   }
 
-  private onTouchedCallback = (value: any) => {};
-  private onChangeCallback = (value: any) => {};
+  onTouchedCallback = (value: any) => {};
+  onChangeCallback = (value: any) => {};
 
   writeValue(obj: any): void {}
 
