@@ -39,7 +39,7 @@ export class BravoSliderComponent
   public end!: number;
 
   @Input()
-  public options: Options = new Options();
+  public options!: Options;
 
   private _isBubble!: boolean;
   @Input()
@@ -203,6 +203,13 @@ export class BravoSliderComponent
   constructor(elementRef: ElementRef) {
     super(elementRef.nativeElement);
   }
+
+  defaultStart = 50;
+  defaultEnd = 200;
+  defaultOptions: Options = {
+    floor: 0,
+    ceil: 250,
+  };
 
   onTouchedCallback = (value: any) => {};
   onChangeCallback = (value: any) => {};
