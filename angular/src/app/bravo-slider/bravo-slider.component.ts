@@ -14,7 +14,11 @@ import {
 } from '@angular/core';
 import * as wjc from '@grapecity/wijmo';
 
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormBuilder,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'bravo-slider',
@@ -200,21 +204,27 @@ export class BravoSliderComponent
   @Output() startEvent = new EventEmitter<any>();
   @Output() endEvent = new EventEmitter<any>();
 
-  constructor(elementRef: ElementRef) {
+  constructor(elementRef: ElementRef, private fb: FormBuilder) {
     super(elementRef.nativeElement);
   }
 
-  defaultStart = 50;
-  defaultEnd = 200;
-  defaultOptions: Options = {
-    floor: 0,
-    ceil: 250,
-  };
+  form = this.fb.group({
+    min: ['', { updateOn: 'blur' }],
+    max: ['', { updateOn: 'blur' }],
+    input: [''],
+  });
 
   onTouchedCallback = (value: any) => {};
   onChangeCallback = (value: any) => {};
 
-  writeValue(obj: any): void {}
+  writeValue(obj: any): void {
+    if (obj instanceof Array) {
+      this.start = obj[0];
+      this.end = obj[1];
+    } else {
+      this.start = obj;
+    }
+  }
 
   registerOnChange(onChangeCallback: any): void {
     this.onChangeCallback = onChangeCallback;
@@ -338,6 +348,7 @@ export class BravoSliderComponent
   }
 
   getChangeContextString(changeContext: ChangeContext): string {
+    console.log(this.form.value.input);
     if (changeContext.pointerType == 0) {
       this.startEvent.emit(changeContext.value);
     } else if (changeContext.pointerType == 1) {

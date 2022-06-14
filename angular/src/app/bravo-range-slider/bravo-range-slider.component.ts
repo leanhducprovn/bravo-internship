@@ -3,6 +3,8 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
+import { FormBuilder } from '@angular/forms';
+
 @Component({
   selector: 'bravo-range-slider',
   templateUrl: './bravo-range-slider.component.html',
@@ -27,7 +29,13 @@ export class BravoRangeSliderComponent implements OnInit {
   typeDate = false;
   typeNumber = false;
 
-  constructor() {}
+  form = this.fb.group({
+    min: ['', { updateOn: 'blur' }],
+    max: ['', { updateOn: 'blur' }],
+    input: [''],
+  });
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.options = {
@@ -45,6 +53,7 @@ export class BravoRangeSliderComponent implements OnInit {
 
   startEvent(event: any) {
     console.log(event);
+    console.log(this.form.value);
   }
 
   endEvent(event: any) {

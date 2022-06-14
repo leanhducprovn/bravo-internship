@@ -1,4 +1,6 @@
-<ngx-slider [value]="start ? start : defaultStart" [highValue]="end ? end : defaultEnd"
-    [options]="options ? options : defaultOptions" (userChangeStart)="onUserChangeStart($event)"
-    (userChange)="onUserChange($event)" (userChangeEnd)="onUserChangeEnd($event)">
-</ngx-slider>
+<form [formGroup]="form">
+    <ngx-slider formControlName="input" [value]="start" [highValue]="end" [options]="options"
+        (userChangeStart)="onUserChangeStart($event)" (userChange)="onUserChange($event)"
+        (userChangeEnd)="onUserChangeEnd($event)">
+    </ngx-slider>
+</form>

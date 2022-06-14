@@ -22,11 +22,15 @@
         </div>
     </div>
     <div class="slider">
-        <bravo-slider (startEvent)="startEvent($event)" (endEvent)="endEvent($event)" [pointerSize]="20"
-            [pointerTop]="-11" [pointerBorder]="'4px solid #fff'" [selectionColor]="'#0079d7'"
-            [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
-            [start]="countDays(minValue ? minValue : today, min ? min : today)"
-            [end]="countDays(minValue ? minValue : today, max ? max : today)" [options]="options">
-        </bravo-slider>
+        <form [formGroup]="form">
+            <input type="text" formControlName="min">
+            <input type="text" formControlName="max">
+            <bravo-slider formControlName="input" (startEvent)="startEvent($event)" (endEvent)="endEvent($event)"
+                [pointerSize]="20" [pointerTop]="-11" [pointerBorder]="'4px solid #fff'" [selectionColor]="'#0079d7'"
+                [pointerColor]="'#2066a7'" [isBubble]="false" [barColor]="'#fff'" [barSize]="4"
+                [start]="countDays(minValue ? minValue : today, min ? min : today)"
+                [end]="countDays(minValue ? minValue : today, max ? max : today)" [options]="options">
+            </bravo-slider>
+        </form>
     </div>
 </div>
