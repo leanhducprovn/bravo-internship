@@ -82,6 +82,7 @@ import { InputDateAppComponent } from './wijmo/input-date-app/input-date-app.com
 import { BravoComponent } from './bravo/bravo.component';
 import { BravoRangeSliderComponent } from './bravo-range-slider/bravo-range-slider.component';
 import { BravoRangeTimeComponent } from './bravo-range-time/bravo-range-time.component';
+import { GetDateComponent } from './get-date/get-date.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -129,6 +130,7 @@ import { BravoRangeTimeComponent } from './bravo-range-time/bravo-range-time.com
     BravoComponent,
     BravoRangeSliderComponent,
     BravoRangeTimeComponent,
+    GetDateComponent,
   ],
   imports: [
     BrowserModule,
