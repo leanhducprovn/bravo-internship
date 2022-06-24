@@ -11,6 +11,7 @@ export class GetDateComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    // test
     for (let i = 0; i < 14; i++) {
       console.log(
         new Date(
