@@ -30,11 +30,15 @@
     width: 100%;
     border: 3px solid #2066a7;
     margin-right: 10px;
-    background-color: #2066a7;
+    background-color: #ddd;
 }
 
-.container .content .right .box {
+.container .content .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: calc(100% - 6px);
     width: 400px;
     border: 3px solid #2066a7;
+    background-color: #ddd;
 }
