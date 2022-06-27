@@ -30,8 +30,6 @@ export class BravoRangeSliderComponent implements OnInit {
   typeNumber = false;
 
   form = this.fb.group({
-    min: ['', { updateOn: 'blur' }],
-    max: ['', { updateOn: 'blur' }],
     input: [''],
   });
 
@@ -53,7 +51,6 @@ export class BravoRangeSliderComponent implements OnInit {
 
   startEvent(event: any) {
     console.log(event);
-    console.log(this.form.value);
   }
 
   endEvent(event: any) {
