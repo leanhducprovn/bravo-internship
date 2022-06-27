@@ -29,6 +29,7 @@ import { BravoComponent } from './bravo/bravo.component';
 import { BravoRangeTimeComponent } from './bravo-range-time/bravo-range-time.component';
 import { BravoSliderComponent } from './bravo-slider/bravo-slider.component';
 import { GetDateComponent } from './get-date/get-date.component';
+import { ResponsiveInputDateComponent } from './responsive-input-date/responsive-input-date.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'responsive-input-date',
+        component: ResponsiveInputDateComponent,
+      },
       {
         path: 'get-date',
         component: GetDateComponent,
