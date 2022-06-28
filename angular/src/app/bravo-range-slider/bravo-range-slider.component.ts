@@ -5,6 +5,11 @@ import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
 import { FormBuilder } from '@angular/forms';
 
+import * as wijmo from '@grapecity/wijmo';
+
+import { BravoGraphicsRenderer } from '../graphics/bravo.graphics.renderer';
+import { Font } from '../graphics/font';
+
 @Component({
   selector: 'bravo-range-slider',
   templateUrl: './bravo-range-slider.component.html',
@@ -47,6 +52,12 @@ export class BravoRangeSliderComponent implements OnInit {
       tickStep: 1,
     };
     this.checkType();
+    console.log(
+      BravoGraphicsRenderer.measureString(
+        this.formatDate(this.minValue, this.format),
+        new Font('Segoe UI', 13.5)
+      )
+    );
   }
 
   startEvent(event: any) {
@@ -85,5 +96,9 @@ export class BravoRangeSliderComponent implements OnInit {
     let ms1 = min.getTime();
     let ms2 = max.getTime();
     return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
+  }
+
+  formatDate(time: Date | number, format: string) {
+    return wijmo.Globalize.format(time, format);
   }
 }
