@@ -1,11 +1,11 @@
 import { Options } from '@angular-slider/ngx-slider';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
 import { FormBuilder } from '@angular/forms';
 
-import * as wijmo from '@grapecity/wijmo';
+import * as wjc from '@grapecity/wijmo';
 
 import { BravoGraphicsRenderer } from '../graphics/bravo.graphics.renderer';
 import { Font } from '../graphics/font';
@@ -15,7 +15,7 @@ import { Font } from '../graphics/font';
   templateUrl: './bravo-range-slider.component.html',
   styleUrls: ['./bravo-range-slider.component.css'],
 })
-export class BravoRangeSliderComponent implements OnInit {
+export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   @ViewChild('theLowerDate') theLowerDate!: WjInputDate;
   @ViewChild('theUpperDate') theUpperDate!: WjInputDate;
 
@@ -23,8 +23,21 @@ export class BravoRangeSliderComponent implements OnInit {
   @Input() upperLabel!: string;
   @Input() type!: string;
   @Input() format!: string;
-  @Input() minValue!: Date | number;
+  // @Input() minValue!: Date | number;
   @Input() maxValue!: Date | number;
+
+  private _minValue!: Date | number;
+  @Input()
+  public get minValue(): Date | number {
+    return this._minValue;
+  }
+  public set minValue(v: Date | number) {
+    if (this._minValue == v) {
+      return;
+    }
+    this._minValue = v;
+    this.invalidate();
+  }
 
   min!: Date | number;
   max!: Date | number;
@@ -38,7 +51,20 @@ export class BravoRangeSliderComponent implements OnInit {
     input: [''],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(elementRef: ElementRef, private fb: FormBuilder) {
+    super(elementRef.nativeElement);
+  }
+
+  override refresh(fullUpdate?: boolean): void {
+    this.responsive(
+      Number(
+        BravoGraphicsRenderer.measureString(
+          this.formatDate(this.minValue, this.format),
+          new Font('Segoe UI', 9.75)
+        )?.width
+      ) + 8
+    );
+  }
 
   ngOnInit(): void {
     this.options = {
@@ -52,12 +78,7 @@ export class BravoRangeSliderComponent implements OnInit {
       tickStep: 1,
     };
     this.checkType();
-    console.log(
-      BravoGraphicsRenderer.measureString(
-        this.formatDate(this.minValue, this.format),
-        new Font('Segoe UI', 13.5)
-      )
-    );
+    setTimeout(() => {});
   }
 
   startEvent(event: any) {
@@ -99,6 +120,19 @@ export class BravoRangeSliderComponent implements OnInit {
   }
 
   formatDate(time: Date | number, format: string) {
-    return wijmo.Globalize.format(time, format);
+    return wjc.Globalize.format(time, format);
+  }
+
+  responsive(width: number) {
+    const responsive = Array.from(
+      document.getElementsByClassName(
+        'wj-form-control'
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+    responsive.forEach((element) => {
+      wjc.setCss(element, {
+        width: width + 'pt',
+      });
+    });
   }
 }

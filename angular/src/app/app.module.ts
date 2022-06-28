@@ -84,6 +84,7 @@ import { BravoRangeSliderComponent } from './bravo-range-slider/bravo-range-slid
 import { BravoRangeTimeComponent } from './bravo-range-time/bravo-range-time.component';
 import { GetDateComponent } from './get-date/get-date.component';
 import { ResponsiveInputDateComponent } from './responsive-input-date/responsive-input-date.component';
+import { ToolsComponent } from './tools/tools.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -133,6 +134,7 @@ import { ResponsiveInputDateComponent } from './responsive-input-date/responsive
     BravoRangeTimeComponent,
     GetDateComponent,
     ResponsiveInputDateComponent,
+    ToolsComponent,
   ],
   imports: [
     BrowserModule,

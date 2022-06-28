@@ -39,21 +39,21 @@
     display: none;
 }
 
-.content .input .group .date .wj-content {
+/* .content .input .group .date .wj-content {
     background-color: #fff;
     border-radius: 4px;
-}
+} */
 
-.content .input .group .number .wj-content {
+/* .content .input .group .number .wj-content {
     background-color: #fff;
     border-radius: 4px;
-}
+} */
 
 :host >>> .content .input .group .date .wj-control .wj-input-group .wj-form-control {
-    padding: 14px;
-    font-size: 18px;
+    /* padding: 14px; */
+    font-size: 9.75pt;
 }
 
-:host >>> .content .input .group .number .wj-control .wj-input-group .wj-form-control {
+/* :host >>> .content .input .group .number .wj-control .wj-input-group .wj-form-control {
     padding: 14px;
-}
+} */
