@@ -125,28 +125,42 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   }
 
   responsive() {
-    this.theLowerDate._elRef.setAttribute(
-      'style',
-      `width: ${
-        Number(
-          BravoGraphicsRenderer.measureString(
-            wjc.Globalize.format(this.minValue, this.format),
-            new Font('Segoe UI', 9.75)
-          )?.width
-        ) + 16
-      }px;`
+    const theLowerDate = Array.from(
+      this.theLowerDate.hostElement.getElementsByClassName(
+        'wj-form-control'
+      ) as HTMLCollectionOf<HTMLElement>
     );
-    this.theUpperDate._elRef.setAttribute(
-      'style',
-      `width: ${
-        Number(
-          BravoGraphicsRenderer.measureString(
-            wjc.Globalize.format(this.minValue, this.format),
-            new Font('Segoe UI', 9.75)
-          )?.width
-        ) + 16
-      }px;`
+    theLowerDate.forEach((element) => {
+      wjc.setCss(element, {
+        width:
+          Number(
+            BravoGraphicsRenderer.measureString(
+              wjc.Globalize.format(this.minValue, this.format),
+              new Font('Segoe UI', 9.75)
+            )?.width
+          ) +
+          16 +
+          'px',
+      });
+    });
+    const theUpperDate = Array.from(
+      this.theUpperDate.hostElement.getElementsByClassName(
+        'wj-form-control'
+      ) as HTMLCollectionOf<HTMLElement>
     );
+    theUpperDate.forEach((element) => {
+      wjc.setCss(element, {
+        width:
+          Number(
+            BravoGraphicsRenderer.measureString(
+              wjc.Globalize.format(this.minValue, this.format),
+              new Font('Segoe UI', 9.75)
+            )?.width
+          ) +
+          16 +
+          'px',
+      });
+    });
   }
 
   getPreferredSize() {
