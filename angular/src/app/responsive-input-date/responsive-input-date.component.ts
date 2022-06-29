@@ -17,19 +17,4 @@ export class ResponsiveInputDateComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  sizeEvent(width: number, height: number) {
-    this.width = width;
-    this.height = height;
-    console.log(this.width, this.height);
-    const left = Array.from(
-      document.getElementsByClassName('left') as HTMLCollectionOf<HTMLElement>
-    );
-    left.forEach((element) => {
-      wjc.setCss(element, {
-        width: `calc(100% - ${this.width}` + `pt`,
-        height: this.height + 'pt',
-      });
-    });
-  }
 }

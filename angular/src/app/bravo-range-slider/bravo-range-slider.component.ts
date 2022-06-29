@@ -59,8 +59,6 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     this.invalidate();
   }
 
-  @Output() size = new EventEmitter<any>();
-
   min!: Date | number;
   max!: Date | number;
   options!: Options;
@@ -81,40 +79,11 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     this.responsive(
       Number(
         BravoGraphicsRenderer.measureString(
-          this.formatDate(this.minValue, this.format),
+          wjc.Globalize.format(this.minValue, this.format),
           new Font('Segoe UI', 9.75)
         )?.width
-      ) + 12
+      ) + 16
     );
-    this.size.emit({
-      width:
-        (Number(
-          BravoGraphicsRenderer.measureString(
-            this.formatDate(this.minValue, this.format),
-            new Font('Segoe UI', 9.75)
-          )?.width
-        ) +
-          12 +
-          24) *
-          2 +
-        15,
-      height:
-        Number(
-          BravoGraphicsRenderer.measureString(
-            this.lowerLabel,
-            new Font('Segoe UI', 9.75)
-          )?.height
-        ) +
-        7.5 +
-        Number(
-          BravoGraphicsRenderer.measureString(
-            this.formatDate(this.minValue, this.format),
-            new Font('Segoe UI', 9.75)
-          )?.height
-        ) +
-        6 +
-        40.5,
-    });
   }
 
   ngOnInit(): void {
@@ -129,6 +98,7 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
       tickStep: 1,
     };
     this.checkType();
+    console.log(this.getPreferredSize());
   }
 
   startEvent(event: any) {
@@ -169,10 +139,6 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
   }
 
-  formatDate(time: Date | number, format: string) {
-    return wjc.Globalize.format(time, format);
-  }
-
   responsive(width: number) {
     const responsive = Array.from(
       document.getElementsByClassName(
@@ -181,8 +147,39 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     );
     responsive.forEach((element) => {
       wjc.setCss(element, {
-        width: width + 'pt',
+        width: width + 'px',
       });
     });
+  }
+
+  getPreferredSize() {
+    let size = new wjc.Size(
+      (Number(
+        BravoGraphicsRenderer.measureString(
+          wjc.Globalize.format(this.minValue, this.format),
+          new Font('Segoe UI', 9.75)
+        )?.width
+      ) +
+        16 +
+        32) *
+        2 +
+        20,
+      Number(
+        BravoGraphicsRenderer.measureString(
+          this.lowerLabel,
+          new Font('Segoe UI', 9.75)
+        )?.height
+      ) +
+        10 +
+        Number(
+          BravoGraphicsRenderer.measureString(
+            wjc.Globalize.format(this.minValue, this.format),
+            new Font('Segoe UI', 9.75)
+          )?.height
+        ) +
+        8 +
+        54
+    );
+    return size;
   }
 }
