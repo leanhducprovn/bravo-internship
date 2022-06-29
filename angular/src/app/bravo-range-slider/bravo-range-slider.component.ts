@@ -1,13 +1,5 @@
 import { Options } from '@angular-slider/ngx-slider';
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
@@ -76,14 +68,7 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   }
 
   override refresh(fullUpdate?: boolean): void {
-    this.responsive(
-      Number(
-        BravoGraphicsRenderer.measureString(
-          wjc.Globalize.format(this.minValue, this.format),
-          new Font('Segoe UI', 9.75)
-        )?.width
-      ) + 16
-    );
+    this.responsive();
   }
 
   ngOnInit(): void {
@@ -139,17 +124,29 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
   }
 
-  responsive(width: number) {
-    const responsive = Array.from(
-      document.getElementsByClassName(
-        'wj-form-control'
-      ) as HTMLCollectionOf<HTMLElement>
+  responsive() {
+    this.theLowerDate._elRef.setAttribute(
+      'style',
+      `width: ${
+        Number(
+          BravoGraphicsRenderer.measureString(
+            wjc.Globalize.format(this.minValue, this.format),
+            new Font('Segoe UI', 9.75)
+          )?.width
+        ) + 16
+      }px;`
     );
-    responsive.forEach((element) => {
-      wjc.setCss(element, {
-        width: width + 'px',
-      });
-    });
+    this.theUpperDate._elRef.setAttribute(
+      'style',
+      `width: ${
+        Number(
+          BravoGraphicsRenderer.measureString(
+            wjc.Globalize.format(this.minValue, this.format),
+            new Font('Segoe UI', 9.75)
+          )?.width
+        ) + 16
+      }px;`
+    );
   }
 
   getPreferredSize() {
