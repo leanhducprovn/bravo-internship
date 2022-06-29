@@ -125,7 +125,7 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   }
 
   responsive() {
-    this.theLowerDate.hostElement.setAttribute(
+    this.theLowerDate._elRef.setAttribute(
       'style',
       `width: ${
         Number(
@@ -136,7 +136,7 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
         ) + 16
       }px;`
     );
-    this.theUpperDate.hostElement.setAttribute(
+    this.theUpperDate._elRef.setAttribute(
       'style',
       `width: ${
         Number(
