@@ -188,7 +188,6 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
             new Font('Segoe UI', 9.75)
           )?.height
         ) +
-        8 +
         54
     );
     return size;
