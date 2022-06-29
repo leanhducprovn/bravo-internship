@@ -27,6 +27,10 @@
     width: 100%;
 }
 
+.content .input .group label {
+    font-size: 9.75pt;
+}
+
 .content .input .group .date wj-input-date {
     width: 100%;
 }

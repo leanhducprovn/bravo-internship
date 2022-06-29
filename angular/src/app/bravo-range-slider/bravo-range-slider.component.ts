@@ -27,8 +27,21 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   @ViewChild('theLowerDate') theLowerDate!: WjInputDate;
   @ViewChild('theUpperDate') theUpperDate!: WjInputDate;
 
-  @Input() lowerLabel!: string;
   @Input() upperLabel!: string;
+
+  private _lowerLabel!: string;
+  @Input()
+  public get lowerLabel(): string {
+    return this._lowerLabel;
+  }
+  public set lowerLabel(v: string) {
+    if (this._lowerLabel == v) {
+      return;
+    }
+    this._lowerLabel = v;
+    this.invalidate();
+  }
+
   @Input() type!: string;
   @Input() format!: string;
   @Input() maxValue!: Date | number;
@@ -86,16 +99,21 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
           2 +
         15,
       height:
-        (Number(
+        Number(
+          BravoGraphicsRenderer.measureString(
+            this.lowerLabel,
+            new Font('Segoe UI', 9.75)
+          )?.height
+        ) +
+        7.5 +
+        Number(
           BravoGraphicsRenderer.measureString(
             this.formatDate(this.minValue, this.format),
             new Font('Segoe UI', 9.75)
-          )?.width
+          )?.height
         ) +
-          12 +
-          24) *
-          2 +
-        15,
+        6 +
+        40.5,
     });
   }
 
@@ -111,7 +129,6 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
       tickStep: 1,
     };
     this.checkType();
-    setTimeout(() => {});
   }
 
   startEvent(event: any) {

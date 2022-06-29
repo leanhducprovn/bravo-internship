@@ -28,6 +28,7 @@ export class ResponsiveInputDateComponent implements OnInit {
     left.forEach((element) => {
       wjc.setCss(element, {
         width: `calc(100% - ${this.width}` + `pt`,
+        height: this.height + 'pt',
       });
     });
   }
