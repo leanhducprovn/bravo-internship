@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/segoe-fonts@1.0.1/segoe-fonts.min.css');
+
 html,
 body {
   cursor: url("https://1.bp.blogspot.com/-qbWo9mPKO2Y/YL9utYdQBdI/AAAAAAAAFs4/mtjGu6u2uGwtJsT4gZG4lbhLV1a5lG6OQCLcBGAsYHQ/s0/mouse-f1.png"),
@@ -7,9 +9,10 @@ a:hover {
   cursor: url("https://1.bp.blogspot.com/-nYv2dLl3oXY/YL9utYBCh8I/AAAAAAAAFtA/wII4lVw5w4k-4isGMY41heTqk8U4TJujgCLcBGAsYHQ/s0/mouse-f2.png"),
     auto;
 }
+
 /* Global Styles */
 * {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI";
 }
 h1 {
   color: #264d73;

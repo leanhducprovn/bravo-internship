@@ -7,8 +7,8 @@
             <div class="box"></div>
         </div>
         <div class="right">
-            <bravo-range-slider [minValue]="min" [maxValue]="max" type="date" format="dd/MM/yy hh:mm:ss"
-                lowerLabel="Từ ngày" upperLabel="Đến ngày">
+            <bravo-range-slider (size)="sizeEvent($event.width, $event.height)" [minValue]="min" [maxValue]="max"
+                type="date" format="dd/MM/yy hh:mm:ss" lowerLabel="Từ ngày" upperLabel="Đến ngày">
             </bravo-range-slider>
         </div>
     </div>

@@ -1,5 +1,13 @@
 import { Options } from '@angular-slider/ngx-slider';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 import { WjInputDate } from '@grapecity/wijmo.angular2.input';
 
@@ -23,7 +31,6 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   @Input() upperLabel!: string;
   @Input() type!: string;
   @Input() format!: string;
-  // @Input() minValue!: Date | number;
   @Input() maxValue!: Date | number;
 
   private _minValue!: Date | number;
@@ -38,6 +45,8 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
     this._minValue = v;
     this.invalidate();
   }
+
+  @Output() size = new EventEmitter<any>();
 
   min!: Date | number;
   max!: Date | number;
@@ -62,8 +71,32 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
           this.formatDate(this.minValue, this.format),
           new Font('Segoe UI', 9.75)
         )?.width
-      ) + 8
+      ) + 12
     );
+    this.size.emit({
+      width:
+        (Number(
+          BravoGraphicsRenderer.measureString(
+            this.formatDate(this.minValue, this.format),
+            new Font('Segoe UI', 9.75)
+          )?.width
+        ) +
+          12 +
+          24) *
+          2 +
+        15,
+      height:
+        (Number(
+          BravoGraphicsRenderer.measureString(
+            this.formatDate(this.minValue, this.format),
+            new Font('Segoe UI', 9.75)
+          )?.width
+        ) +
+          12 +
+          24) *
+          2 +
+        15,
+    });
   }
 
   ngOnInit(): void {

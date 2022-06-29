@@ -10,7 +10,6 @@
 }
 
 .container .content {
-    height: 200px;
     width: calc(100% - 26px);
     background-color: #3a87cf;
     border: 3px solid #2066a7;
@@ -22,11 +21,9 @@
 .container .content .left {
     display: flex;
     flex-direction: row;
-    width: calc(100% - 400px)
 }
 
 .container .content .left .box {
-    height: calc(100% - 6px);
     width: 100%;
     border: 3px solid #2066a7;
     margin-right: 10px;
@@ -37,8 +34,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: calc(100% - 6px);
-    width: 400px;
     border: 3px solid #2066a7;
     background-color: #ddd;
 }
