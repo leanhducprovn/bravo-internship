@@ -74,7 +74,7 @@ export class BravoRangeSliderComponent extends wjc.Control implements OnInit {
   ngOnInit(): void {
     this.options = {
       floor: 1,
-      ceil: 100,
+      ceil: 200,
       step: 1,
       noSwitching: true,
       showTicks: false,
